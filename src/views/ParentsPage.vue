@@ -50,8 +50,8 @@
                 CN
               </div>
               <div>
-                <h4 class="font-bold text-gray-800">Cô Đặng Xuân Tuyền</h4>
-                <p class="text-sm text-gray-600">GVCN Lớp 6A</p>
+                <h4 class="font-bold text-gray-800">Cô Nguyễn Thị Minh</h4>
+                <p class="text-sm text-gray-600">GVCN Lớp 5A</p>
               </div>
             </div>
             <h3 class="text-xl font-bold text-gray-800 mb-2">{{ message.title }}</h3>

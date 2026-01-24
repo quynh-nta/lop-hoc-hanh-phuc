@@ -23,7 +23,7 @@
                 🎓
               </div>
               <div>
-                <h3 class="text-2xl font-bold">Lớp 6A</h3>
+                <h3 class="text-2xl font-bold">Lớp 5A</h3>
                 <p class="text-blue-100">Lớp Học Hạnh Phúc</p>
               </div>
             </div>
@@ -50,7 +50,7 @@
                 CN
               </div>
               <div>
-                <h3 class="text-2xl font-bold text-gray-800">Cô Đặng Xuân Tuyền</h3>
+                <h3 class="text-2xl font-bold text-gray-800">Cô Nguyễn Thị Minh</h3>
                 <p class="text-gray-600">Giáo viên chủ nhiệm</p>
               </div>
             </div>
@@ -208,7 +208,7 @@
         </h2>
         <div class="max-w-4xl mx-auto space-y-4 text-lg leading-relaxed">
           <p>
-            Lớp 6A không chỉ là một lớp học thông thường, mà là một gia đình nhỏ, 
+            Lớp 5A không chỉ là một lớp học thông thường, mà là một gia đình nhỏ, 
             nơi mỗi em học sinh đều được yêu thương, tôn trọng và khích lệ phát triển.
           </p>
           <p>

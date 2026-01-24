@@ -3,14 +3,14 @@
     <div class="container mx-auto px-4">
       <!-- Header -->
       <div class="text-center mb-12">
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-2">
-          📢 Thông báo
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+          🎨 Hoạt động của lớp
         </h1>
-        <p class="text-s text-gray-600">Cập nhật những thông tin mới nhất từ lớp học và nhà trường</p>
+        <p class="text-xl text-gray-600">Những khoảnh khắc đáng nhớ của chúng mình</p>
       </div>
 
       <!-- Filter Tabs -->
-      <div class="mb-4 flex flex-wrap justify-center gap-3">
+      <div class="mb-8 flex flex-wrap justify-center gap-3">
         <button 
           v-for="category in categories" 
           :key="category.id"
@@ -42,60 +42,40 @@
       <!-- Activities Grid -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div 
-          v-for="announcement in filteredAnnouncements" 
-          :key="announcement.id"
-          class="flex flex-col p-4 bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+          v-for="activity in filteredActivities" 
+          :key="activity.id"
+          class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
         >
-                      <div class="flex items-start justify-between mb-4">
-                <div class="flex items-center space-x-3">
-                  <div :class="[
-                    'min-w-fit p-1 rounded-full flex items-center justify-center text-2xl',
-                    announcement.priority === 'high' ? 'bg-red-100' :
-                      announcement.priority === 'medium' ? 'bg-yellow-100' :
-                        'bg-blue-100'
-                  ]">
-                    {{ announcement.icon }}
-                  </div>
-                  <div>
-                    <h3 class="text-xl font-bold text-gray-800">{{ announcement.title }}</h3>
-                    <p class="text-sm text-gray-500">{{ announcement.date }} | {{ announcement.period }}</p>
-                  </div>
-                </div>
-                <span :class="[
-                  'min-w-fit px-3 py-1 rounded-full text-xs font-semibold',
-                  announcement.priority === 'high' ? 'bg-red-100 text-red-600' :
-                    announcement.priority === 'medium' ? 'bg-yellow-100 text-yellow-600' :
-                      'bg-blue-100 text-blue-600'
-                ]">
-                  {{ getPriorityText(announcement.priority) }}
-                </span>
-              </div>
-              <p class="text-gray-700 leading-relaxed whitespace-pre-line">{{ announcement.content }}</p>
-              <div v-if="announcement.attachments" class="mt-4 flex flex-wrap gap-2">
-                <a v-for="(file, index) in announcement.attachments" :key="index" href="#"
-                  class="inline-flex items-center space-x-2 px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors">
-                  <span>📎</span>
-                  <span class="text-sm">{{ file }}</span>
-                </a>
-              </div>
-          <div class="mt-auto flex items-center justify-between text-sm text-gray-500 pt-4">
-            <button @click="handleLike(announcement)" class="flex items-center space-x-1 hover:text-pink-600 transition-colors">
-              <span>❤️</span>
-              <span>{{ announcement.likes }}</span>
-            </button>
-            <button @click="openComments(announcement)" class="flex items-center space-x-1 hover:text-blue-600 transition-colors">
-              <span>💬</span>
-              <span>{{ announcement.comments }} bình luận</span>
+          <div class="relative">
+            <img :src="activity.image" :alt="activity.title" class="w-full h-56 object-cover" />
+            <div class="absolute top-4 right-4">
+              <span class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-gray-800">
+                {{ activity.category }}
+              </span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">{{ activity.title }}</h3>
+            <p class="text-gray-600 mb-4 line-clamp-3">{{ activity.description }}</p>
+            <div class="flex items-center justify-between text-sm text-gray-500">
+              <span>📅 {{ activity.date }}</span>
+              <span>👁️ {{ activity.views }} lượt xem</span>
+            </div>
+            <button 
+              @click="viewActivity(activity)"
+              class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-semibold transition-colors duration-300"
+            >
+              Xem chi tiết
             </button>
           </div>
         </div>
       </div>
 
       <!-- Empty State -->
-      <div v-if="filteredAnnouncements.length === 0" class="text-center py-16">
+      <div v-if="filteredActivities.length === 0" class="text-center py-16">
         <div class="text-6xl mb-4">📭</div>
-        <h3 class="text-2xl font-bold text-gray-800 mb-2">Chưa có thông báo nào</h3>
-        <p class="text-gray-600">Hãy quay lại sau để xem các thông báo mới!</p>
+        <h3 class="text-2xl font-bold text-gray-800 mb-2">Chưa có hoạt động nào</h3>
+        <p class="text-gray-600">Hãy quay lại sau để xem các hoạt động mới!</p>
       </div>
     </div>
 
@@ -141,99 +121,23 @@
         </div>
       </div>
     </div>
-
-    <!-- Comment Modal -->
-    <div
-      v-if="commentModalOpen"
-      @click="commentModalOpen = false"
-      class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50"
-    >
-      <div
-        @click.stop
-        class="bg-white rounded-2xl w-full max-w-2xl max-h-[80vh] flex flex-col shadow-2xl"
-      >
-        <!-- Modal Header -->
-        <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-t-2xl flex items-center justify-between">
-          <h3 class="text-xl font-bold">💬 Bình luận</h3>
-          <button
-            @click="commentModalOpen = false"
-            class="w-8 h-8 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors"
-          >
-            ✕
-          </button>
-        </div>
-
-        <!-- Comments List -->
-        <div class="flex-1 overflow-y-auto p-6 space-y-4">
-          <div
-            v-for="comment in currentComments"
-            :key="comment.id"
-            class="flex space-x-3 p-4 bg-gray-50 rounded-lg"
-          >
-            <div class="w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold flex-shrink-0">
-              {{ comment.author.charAt(0) }}
-            </div>
-            <div class="flex-1">
-              <div class="flex items-center justify-between mb-1">
-                <h4 class="font-bold text-gray-800">{{ comment.author }}</h4>
-                <span class="text-xs text-gray-500">{{ comment.time }}</span>
-              </div>
-              <p class="text-gray-700">{{ comment.text }}</p>
-            </div>
-          </div>
-          <div v-if="currentComments.length === 0" class="text-center py-8 text-gray-500">
-            <div class="text-4xl mb-2">💬</div>
-            <p>Chưa có bình luận nào. Hãy là người đầu tiên!</p>
-          </div>
-        </div>
-
-        <!-- Add Comment Input -->
-        <div class="p-4 border-t">
-          <div class="flex space-x-3">
-            <input
-              v-model="newComment"
-              @keypress.enter="addComment"
-              type="text"
-              placeholder="Viết bình luận..."
-              class="flex-1 px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <button
-              @click="addComment"
-              :disabled="!newComment.trim()"
-              :class="[
-                'px-6 py-3 rounded-full font-semibold transition-all duration-300',
-                newComment.trim()
-                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-lg'
-                  : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-              ]"
-            >
-              Gửi
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue'
-import ChatComponent from '../components/ChatComponent.vue'
 
 const selectedCategory = ref('all')
 const selectedMonth = ref('all')
 const selectedActivity = ref(null)
-const showChatBox = ref(false)
-const commentModalOpen = ref(false)
-const currentAnnouncementId = ref(null)
-const newComment = ref('')
-const commentsData = ref({})
 
 const categories = [
   { id: 'all', name: 'Tất cả', icon: '📚' },
-  { id: 'high', name: 'Quan trọng', icon: '🚨' },
-  { id: 'medium', name: 'Trung bình', icon: '⚠️' },
-  { id: 'normal', name: 'Thông thường', icon: 'ℹ️' }
+  { id: 'learning', name: 'Học tập', icon: '✏️' },
+  { id: 'experience', name: 'Trải nghiệm', icon: '🌍' },
+  { id: 'art', name: 'Văn nghệ', icon: '🎭' },
+  { id: 'sports', name: 'Thể thao', icon: '⚽' },
+  { id: 'life-skills', name: 'Kỹ năng sống', icon: '🛠️' }
 ]
 
 const months = [
@@ -285,7 +189,7 @@ Qua bài học này, các em không chỉ học được kiến thức về khoa
     id: 3,
     title: 'Ngày hội văn nghệ "Tài năng nhí"',
     description: 'Các em thể hiện tài năng ca hát, múa, kể chuyện trong ngày hội văn nghệ.',
-    fullDescription: `Ngày hội văn nghệ "Tài năng nhí" đã diễn ra thành công tốt đẹp với sự tham gia nhiệt tình của toàn thể học sinh lớp 6A.
+    fullDescription: `Ngày hội văn nghệ "Tài năng nhí" đã diễn ra thành công tốt đẹp với sự tham gia nhiệt tình của toàn thể học sinh lớp 5A.
 
 Các tiết mục đa dạng từ ca hát, múa, kịch, kể chuyện đều thể hiện sự sáng tạo và tự tin của các em. Đặc biệt, tiết mục múa "Bông hoa đẹp nhất" của nhóm bạn nữ đã để lại ấn tượng sâu sắc cho khán giả.
 
@@ -300,8 +204,8 @@ Ngày hội không chỉ là dịp để các em thể hiện tài năng mà cò
   {
     id: 4,
     title: 'Giải bóng đá mini liên lớp',
-    description: 'Đội bóng lớp 6A vô địch giải bóng đá mini cấp trường.',
-    fullDescription: `Sau những trận đấu căng thẳng và kịch tính, đội bóng lớp 6A đã xuất sắc giành chức vô địch giải bóng đá mini cấp trường.
+    description: 'Đội bóng lớp 5A vô địch giải bóng đá mini cấp trường.',
+    fullDescription: `Sau những trận đấu căng thẳng và kịch tính, đội bóng lớp 5A đã xuất sắc giành chức vô địch giải bóng đá mini cấp trường.
 
 Với tinh thần đoàn kết, chiến thuật thông minh và kỹ năng chơi bóng tốt, các cầu thủ đã mang về vinh quang cho lớp. Trận chung kết với tỷ số 3-2 đã để lại những khoảnh khắc đáng nhớ.
 
@@ -333,7 +237,7 @@ Những kỹ năng này sẽ rất hữu ích không chỉ trong học tập mà
     id: 6,
     title: 'Dự án làm vườn xanh',
     description: 'Các em tự tay trồng và chăm sóc vườn rau sạch của lớp.',
-    fullDescription: `Dự án "Vườn xanh lớp 6A" đã chính thức khởi động. Mỗi em đều được phân công chăm sóc một luống rau riêng.
+    fullDescription: `Dự án "Vườn xanh lớp 5A" đã chính thức khởi động. Mỗi em đều được phân công chăm sóc một luống rau riêng.
 
 Các em học cách xới đất, gieo hạt, tưới nước và chăm sóc cây trồng hàng ngày. Qua dự án này, các em không chỉ học được kiến thức về nông nghiệp mà còn hiểu được giá trị của lao động và thực phẩm sạch.
 
@@ -346,16 +250,9 @@ Trong tháng tới, chúng mình sẽ thu hoạch những rau sạch đầu tiê
     views: 201
   }
 ])
-const getPriorityText = (priority) => {
-  const map = {
-    high: 'Quan trọng',
-    medium: 'Trung bình',
-    normal: 'Thông thường'
-  }
-  return map[priority] || 'Thông thường'
-}
-const filteredAnnouncements = computed(() => {
-  let result = announcements.value
+
+const filteredActivities = computed(() => {
+  let result = activities.value
 
   if (selectedCategory.value !== 'all') {
     result = result.filter(a => a.categoryId === selectedCategory.value)
@@ -371,238 +268,6 @@ const filteredAnnouncements = computed(() => {
 const viewActivity = (activity) => {
   selectedActivity.value = activity
 }
-
-const handleLike = (announcement) => {
-  announcement.likes++
-}
-
-const openComments = (announcement) => {
-  currentAnnouncementId.value = announcement.id
-  commentModalOpen.value = true
-  
-  // Initialize comments for this announcement if not exists
-  if (!commentsData.value[announcement.id]) {
-    commentsData.value[announcement.id] = [
-      {
-        id: 1,
-        author: 'Phụ huynh Minh',
-        text: 'Cảm ơn cô đã thông báo!',
-        time: '10:30'
-      },
-      {
-        id: 2,
-        author: 'Phụ huynh Hương',
-        text: 'Em tôi rất thích hoạt động này.',
-        time: '11:15'
-      }
-    ]
-  }
-}
-
-const currentComments = computed(() => {
-  return commentsData.value[currentAnnouncementId.value] || []
-})
-
-const addComment = () => {
-  if (!newComment.value.trim()) return
-  
-  const announcement = announcements.value.find(a => a.id === currentAnnouncementId.value)
-  if (announcement) {
-    announcement.comments++
-  }
-  
-  if (!commentsData.value[currentAnnouncementId.value]) {
-    commentsData.value[currentAnnouncementId.value] = []
-  }
-  
-  const comment = {
-    id: Date.now(),
-    author: 'Bạn',
-    text: newComment.value,
-    time: new Date().toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })
-  }
-  
-  commentsData.value[currentAnnouncementId.value].push(comment)
-  newComment.value = ''
-}
-
-const announcements = ref([
-  {
-    id: 1,
-    title: 'Lịch học tuần 3 tháng 1',
-    content: `Kính gửi quý phụ huynh,
-
-Lịch học tuần này:
-- Thứ 2-6: Học bình thường theo thời khóa biểu
-- Thứ 4 (22/1): Có buổi sinh hoạt ngoại khóa từ 14h-16h
-- Thứ 6 (24/1): Kiểm tra Toán học kỳ I
-
-Nhờ quý phụ huynh lưu ý và chuẩn bị cho các em.
-Trân trọng!`,
-    date: '20/01/2026',
-    month: 'Tháng 1/2026',
-    priority: 'high',
-    icon: '📅',
-    categoryId: 'high',
-    comments: 5,
-    likes: 20
-  },
-  {
-    id: 2,
-    title: 'Thông báo về chuyến tham quan',
-    content: `Lớp 6A sẽ có chuyến tham quan bảo tàng vào ngày 28/1/2026.
-
-Chi tiết:
-- Thời gian: 8h00 - 16h00
-- Địa điểm: Bảo tàng Lịch sử TP.HCM
-- Chi phí: 150.000đ/em (bao gồm xe, vé, bữa trưa)
-- Hạn đóng tiền: 25/01/2026
-
-Mọi thắc mắc xin liên hệ Cô Tuyền.`,
-    date: '18/01/2026',
-    month: 'Tháng 1/2026',
-    priority: 'medium',
-    categoryId: 'medium',
-    icon: '🚌',
-    attachments: ['Đơn đồng ý.pdf', 'Lịch trình chi tiết.pdf'],
-    comments: 2,
-    likes: 15
-  },
-  {
-    id: 3,
-    title: 'Kết quả học tập tháng 12',
-    content: `Tổng kết học tập tháng 12/2025:
-- 90% học sinh đạt kết quả tốt trở lên
-- 5 em đạt học sinh xuất sắc
-- Không có em nào yếu kém
-
-Cảm ơn sự đồng hành của quý phụ huynh!`,
-    date: '05/01/2026',
-    month: 'Tháng 12/2025',
-    priority: 'normal',
-    icon: '📊',
-    categoryId: 'normal',
-    comments: 0,
-    likes: 8
-  },
-  {    id: 4,
-    title: 'Lịch nghỉ Tết Nguyên Đán',
-    content: `Kính gửi quý phụ huynh,
-    Lịch nghỉ Tết Nguyên Đán 2026:
-    - Bắt đầu nghỉ: 01/02/2026
-    - Đi học lại: 10/02/2026
-    Chúc quý phụ huynh và các em học sinh một năm mới an khang thịnh vượng!
-    Trân trọng!`,
-    date: '25/01/2026',
-    month: 'Tháng 1/2026',
-    priority: 'high',
-    categoryId: 'high',
-    icon: '🎉' ,
-    comments: 3,
-    likes: 25
-  },
-  {
-    id: 5,
-    title: 'Mời tham gia buổi họp phụ huynh',
-    content: `Kính mời quý phụ huynh tham gia buổi họp phụ huynh cuối học kỳ I:
-    - Thời gian: 15h00, ngày 30/01/2026
-    - Địa điểm: Phòng học lớp 6A
-    Nội dung: Báo cáo kết quả học tập, thảo luận kế hoạch học kỳ II.
-    Rất mong sự có mặt của quý phụ huynh!`,
-    date: '22/01/2026',
-    month: 'Tháng 1/2026',
-    priority: 'medium',
-    categoryId: 'medium',
-    icon: '📢',
-    comments: 4,
-    likes: 18
-  },
-  {
-    id: 6,
-    title: 'Nhắc nhở đóng học phí',
-    content: `Kính gửi quý phụ huynh,
-    Nhắc nhở quý phụ huynh đóng học phí học kỳ II trước ngày 05/02/2026.
-    Mức học phí: 2.500.000đ/học kỳ.
-    Quý phụ huynh vui lòng liên hệ văn phòng nhà trường để hoàn tất thủ tục.
-    Trân trọng!`,
-    date: '28/01/2026',
-    month: 'Tháng 1/2026',
-    priority: 'normal',
-    categoryId: 'normal',
-    icon: '💰',
-    comments: 1,
-    likes: 10
-  },
-  {
-    id: 7,
-    title: 'Cập nhật chương trình học kỳ II',
-    content: `Kính gửi quý phụ huynh,
-    Chương trình học kỳ II sẽ có một số thay đổi như sau:
-    - Thêm môn Kỹ năng sống vào thứ 5 hàng tuần.
-    - Tăng cường các hoạt động ngoại khóa vào cuối tuần.
-    Chi tiết chương trình sẽ được gửi trong buổi họp phụ huynh ngày 30/01/2026.
-    Trân trọng!`,
-    date: '26/01/2026',
-    month: 'Tháng 1/2026',
-    priority: 'medium',
-    categoryId: 'medium',
-    icon: '📝',
-    comments: 2,
-    likes: 12
-  },
-  {
-    id: 8,
-    title: 'Thông báo về an toàn học đường',
-    content: `Kính gửi quý phụ huynh,
-    Nhà trường xin thông báo về các biện pháp đảm bảo an toàn học đường:
-    - Tăng cường giám sát khu vực cổng trường.
-    - Tổ chức các buổi tuyên truyền về an toàn giao thông cho học sinh.
-    - Yêu cầu học sinh tuân thủ nội quy nhà trường nghiêm ngặt.
-    Rất mong sự phối hợp từ quý phụ huynh để đảm bảo môi trường học tập an toàn cho các em.`,
-    date: '15/01/2026',
-    month: 'Tháng 1/2026',
-    priority: 'high',
-    categoryId: 'high',
-    icon: '🛡️',
-    comments: 6,
-    likes: 30
-  },
-  {
-    id: 9,
-    title: 'Lịch thi học kỳ I',
-    content: `Kính gửi quý phụ huynh,
-    Lịch thi học kỳ I năm học 2025-2026 như sau:
-    - Toán: 20/01/2026
-    - Tiếng Việt: 22/01/2026
-    - Khoa học: 24/01/2026
-    Quý phụ huynh vui lòng nhắc nhở các em ôn tập và chuẩn bị tốt cho kỳ thi.
-    Trân trọng!`,
-    date: '10/01/2026',
-    month: 'Tháng 1/2026',
-    priority: 'high',
-    categoryId: 'high',
-    icon: '📝',
-    comments: 3,
-    likes: 22
-  },
-  {
-    id: 10,
-    title: 'Chương trình ngoại khóa cuối tuần',
-    content: `Kính gửi quý phụ huynh,
-    Nhà trường tổ chức chương trình ngoại khóa cuối tuần với các hoạt động thú vị:
-    - Thứ 7 (31/01): Dã ngoại tại công viên
-    - Chủ nhật (01/02): Workshop nghệ thuật và thủ công
-    Quý phụ huynh vui lòng đăng ký cho các em tham gia trước ngày 28/01/2026.
-    Trân trọng!`,
-    date: '12/01/2026',
-    month: 'Tháng 1/2026',
-    priority: 'normal',
-    categoryId: 'normal',
-    icon: '🎨',
-    comments: 0,
-    likes: 14
-  }
-])
 </script>
 
 <style scoped>

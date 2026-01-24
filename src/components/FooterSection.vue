@@ -22,7 +22,7 @@
 
         <!-- Liên hệ -->
         <div>
-          <router-link to="/lien-he" class="nav-link">Liên hệ</router-link>
+          <h4 class="text-xl font-semibold mb-4">Liên hệ</h4>
           <p class="text-blue-100 mb-2">📧 Email: lophochangphuc@school.edu.vn</p>
           <p class="text-blue-100 mb-2">📱 Hotline: 0123 456 789</p>
           <p class="text-blue-100">🏫 Trường Tiểu học ABC</p>

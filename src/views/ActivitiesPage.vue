@@ -171,8 +171,8 @@ Qua chuyến đi, các em không chỉ học được kiến thức lịch sử 
   {
     id: 2,
     title: 'Giờ học STEM sáng tạo',
-    description: 'Các em thực hành làm đồng hồ sử dụng số La Mã.',
-    fullDescription: `Tiết học STEM hôm nay thật thú vị! Các em được chia thành các nhóm nhỏ để cùng nhau đồng hồ sử dụng số La Mã.
+    description: 'Các em thực hành làm robot mini và học về khoa học công nghệ.',
+    fullDescription: `Tiết học STEM hôm nay thật thú vị! Các em được chia thành các nhóm nhỏ để cùng nhau lắp ráp robot mini.
 
 Ban đầu, các em gặp nhiều khó khăn, nhưng với sự hướng dẫn tận tình của thầy cô và tinh thần làm việc nhóm, cuối cùng mỗi nhóm đều hoàn thành sản phẩm của mình.
 
@@ -189,7 +189,7 @@ Qua bài học này, các em không chỉ học được kiến thức về khoa
     id: 3,
     title: 'Ngày hội văn nghệ "Tài năng nhí"',
     description: 'Các em thể hiện tài năng ca hát, múa, kể chuyện trong ngày hội văn nghệ.',
-    fullDescription: `Ngày hội văn nghệ "Tài năng nhí" đã diễn ra thành công tốt đẹp với sự tham gia nhiệt tình của toàn thể học sinh lớp 6A.
+    fullDescription: `Ngày hội văn nghệ "Tài năng nhí" đã diễn ra thành công tốt đẹp với sự tham gia nhiệt tình của toàn thể học sinh lớp 5A.
 
 Các tiết mục đa dạng từ ca hát, múa, kịch, kể chuyện đều thể hiện sự sáng tạo và tự tin của các em. Đặc biệt, tiết mục múa "Bông hoa đẹp nhất" của nhóm bạn nữ đã để lại ấn tượng sâu sắc cho khán giả.
 
@@ -204,8 +204,8 @@ Ngày hội không chỉ là dịp để các em thể hiện tài năng mà cò
   {
     id: 4,
     title: 'Giải bóng đá mini liên lớp',
-    description: 'Đội bóng lớp 6A vô địch giải bóng đá mini cấp trường.',
-    fullDescription: `Sau những trận đấu căng thẳng và kịch tính, đội bóng lớp 6A đã xuất sắc giành chức vô địch giải bóng đá mini cấp trường.
+    description: 'Đội bóng lớp 5A vô địch giải bóng đá mini cấp trường.',
+    fullDescription: `Sau những trận đấu căng thẳng và kịch tính, đội bóng lớp 5A đã xuất sắc giành chức vô địch giải bóng đá mini cấp trường.
 
 Với tinh thần đoàn kết, chiến thuật thông minh và kỹ năng chơi bóng tốt, các cầu thủ đã mang về vinh quang cho lớp. Trận chung kết với tỷ số 3-2 đã để lại những khoảnh khắc đáng nhớ.
 
@@ -237,7 +237,7 @@ Những kỹ năng này sẽ rất hữu ích không chỉ trong học tập mà
     id: 6,
     title: 'Dự án làm vườn xanh',
     description: 'Các em tự tay trồng và chăm sóc vườn rau sạch của lớp.',
-    fullDescription: `Dự án "Vườn xanh lớp 6A" đã chính thức khởi động. Mỗi em đều được phân công chăm sóc một luống rau riêng.
+    fullDescription: `Dự án "Vườn xanh lớp 5A" đã chính thức khởi động. Mỗi em đều được phân công chăm sóc một luống rau riêng.
 
 Các em học cách xới đất, gieo hạt, tưới nước và chăm sóc cây trồng hàng ngày. Qua dự án này, các em không chỉ học được kiến thức về nông nghiệp mà còn hiểu được giá trị của lao động và thực phẩm sạch.
 

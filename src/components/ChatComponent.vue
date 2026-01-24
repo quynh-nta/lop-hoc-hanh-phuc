@@ -161,7 +161,7 @@ const messages = ref([
   {
     id: 1,
     sender: 'other',
-    text: `Xin chào! Tôi là phụ huynh của em Nga`,
+    text: `Xin chào! Tôi là phụ huynh của em ${props.recipient.name}`,
     time: '10:30'
   },
   {
