@@ -232,7 +232,7 @@ const latestActivities = [
   {
     id: 2,
     title: 'Giờ học STEM sáng tạo',
-    description: 'Các em thực hành làm robot mini và học về khoa học công nghệ.',
+    description: 'Các em thực hành làm đồng hồ sử dụng số La Mã.',
     image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=600&fit=crop',
     category: 'Học tập',
     date: '12/01/2026'
@@ -331,7 +331,7 @@ Trân trọng!`,
   {
     id: 2,
     title: 'Thông báo về chuyến tham quan',
-    content: `Lớp 5A sẽ có chuyến tham quan bảo tàng vào ngày 28/1/2026.
+    content: `Lớp 6A sẽ có chuyến tham quan bảo tàng vào ngày 28/1/2026.
 
 Chi tiết:
 - Thời gian: 8h00 - 16h00
@@ -339,7 +339,7 @@ Chi tiết:
 - Chi phí: 150.000đ/em (bao gồm xe, vé, bữa trưa)
 - Hạn đóng tiền: 25/01/2026
 
-Mọi thắc mắc xin liên hệ cô Minh.`,
+Mọi thắc mắc xin liên hệ Cô Tuyền.`,
     date: '18/01/2026',
     period: 'Tháng 1/2026',
     priority: 'medium',

@@ -33,7 +33,6 @@
           <li><router-link to="/phu-huynh" class="nav-link">Phụ huynh</router-link></li>
           <li><router-link to="/truyen-thong" class="nav-link">Truyền thông</router-link></li>
           <li><router-link to="/danh-sach" class="nav-link">Danh sách</router-link></li>
-          <li><router-link to="/lien-he" class="nav-link">Liên hệ</router-link></li>
         </ul>
       </div>
 
