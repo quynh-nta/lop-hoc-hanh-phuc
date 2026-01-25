@@ -1,38 +1,40 @@
 <template>
-  <div class="sharing-page py-16 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
+  <div class="sharing-page py-8 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
     <div class="container mx-auto px-4">
       <!-- Header -->
-      <div class="text-center mb-12">
+      <div class="text-center mb-6">
         <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
           💭 Góc chia sẻ cảm xúc
         </h1>
-        <p class="text-xl text-gray-600 mb-6">
-          Nơi các em được tự do chia sẻ suy nghĩ, cảm xúc và những khoảnh khắc hạnh phúc
+        <p class="text-md text-gray-600 text-xs">
+            Nơi các em được tự do chia sẻ suy nghĩ, cảm xúc và những khoảnh khắc hạnh phúc
         </p>
+        <div class="mt-4">
+        <p class="text-md text-gray-600 text-xs">
+            ✅ Được kiểm duyệt: Giáo viên sẽ xem xét trước khi hiển thị
+        </p>
+        <p class="text-md text-gray-600 text-xs">
+            🤗 An toàn & Tự tin: Bạn có thể chọn ẩn tên khi chia sẻ
+        </p>
+        <p class="text-md text-gray-600 mb-8 text-xs">
+            💖 Nội dung tích cực: Chia sẻ những điều tốt đẹp, ý nghĩa
+        </p>
+        </div>
+
         <button 
           @click="showSubmitForm = true"
           class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
         >
-          ✍️ Chia sẻ cảm xúc của bạn
+          ✍️ Hãy chia sẻ cảm xúc của bạn
         </button>
       </div>
 
-      <!-- Info Cards -->
+      <!-- Info-->
       <div class="grid md:grid-cols-3 gap-6 mb-12">
-        <div class="bg-white rounded-xl p-6 shadow-md text-center">
-          <div class="text-4xl mb-3">🤗</div>
-          <h3 class="font-bold text-gray-800 mb-2">An toàn & Tự tin</h3>
-          <p class="text-sm text-gray-600">Bạn có thể chọn ẩn tên khi chia sẻ</p>
-        </div>
-        <div class="bg-white rounded-xl p-6 shadow-md text-center">
-          <div class="text-4xl mb-3">✅</div>
-          <h3 class="font-bold text-gray-800 mb-2">Được kiểm duyệt</h3>
-          <p class="text-sm text-gray-600">Giáo viên sẽ xem xét trước khi hiển thị</p>
-        </div>
-        <div class="bg-white rounded-xl p-6 shadow-md text-center">
-          <div class="text-4xl mb-3">💖</div>
-          <h3 class="font-bold text-gray-800 mb-2">Nội dung tích cực</h3>
-          <p class="text-sm text-gray-600">Chia sẻ những điều tốt đẹp, ý nghĩa</p>
+
+        <div class="text-center">
+          <h3 class="font-bold text-gray-800 mb-2"></h3>
+          <p class="text-sm text-gray-600"></p>
         </div>
       </div>
 
@@ -124,26 +126,8 @@
     </div>
 
     <!-- Submit Form Modal -->
-    <div 
-      v-if="showSubmitForm"
-      @click="showSubmitForm = false"
-      class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50 overflow-y-auto"
-    >
-      <div 
-        @click.stop
-        class="bg-white rounded-2xl max-w-2xl w-full p-8 my-8"
-      >
-        <div class="flex items-center justify-between mb-6">
-          <h2 class="text-2xl font-bold text-gray-800">✍️ Chia sẻ cảm xúc</h2>
-          <button 
-            @click="showSubmitForm = false"
-            class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
-          >
-            ✕
-          </button>
-        </div>
-
-        <form @submit.prevent="submitShare" class="space-y-6">
+    <FormModal v-model="showSubmitForm" title="✍️ Chia sẻ cảm xúc">
+      <form @submit.prevent="submitShare" class="space-y-6">
           <!-- Name -->
           <div>
             <label class="block text-gray-700 font-semibold mb-2">
@@ -167,7 +151,7 @@
               class="w-5 h-5 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
             />
             <label for="anonymous" class="text-gray-700">
-              Ẩn tên của tôi khi hiển thị (chỉ giáo viên biết)
+              Ẩn tên của tôi khi hiển thị
             </label>
           </div>
 
@@ -183,7 +167,7 @@
                 type="button"
                 @click="formData.category = category.id"
                 :class="[
-                  'p-4 rounded-lg border-2 transition-all duration-300',
+                  'p-2 rounded-lg border-2 transition-all duration-300',
                   formData.category === category.id 
                     ? 'border-purple-600 bg-purple-50' 
                     : 'border-gray-200 hover:border-purple-300'
@@ -197,7 +181,7 @@
 
           <!-- Content -->
           <div>
-            <label class="block text-gray-700 font-semibold mb-2">
+            <label class="block text-gray-700 font-semibold mb-1">
               Nội dung chia sẻ <span class="text-red-500">*</span>
             </label>
             <textarea 
@@ -207,24 +191,19 @@
               placeholder="Hãy chia sẻ suy nghĩ, cảm xúc của bạn... Ví dụ: 'Em rất vui khi được học trong lớp này vì...'"
               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
             ></textarea>
-            <p class="text-sm text-gray-500 mt-1">
-              {{ formData.content.length }} / 500 ký tự
-            </p>
           </div>
 
           <!-- Guidelines -->
-          <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-0">
             <p class="text-sm text-blue-800 font-semibold mb-2">📌 Lưu ý khi chia sẻ:</p>
             <ul class="text-sm text-blue-700 space-y-1">
-              <li>• Chia sẻ những điều tích cực, lịch sự</li>
-              <li>• Không viết nội dung tiêu cực về bạn bè, giáo viên</li>
-              <li>• Giáo viên sẽ xem xét trước khi hiển thị</li>
+              <li>• Chia sẻ những điều tích cực, lịch sự. GV sẽ xem xét trước khi hiển thị</li>
               <li>• Bạn có thể chọn ẩn tên để tự tin chia sẻ hơn</li>
             </ul>
           </div>
 
           <!-- Submit Button -->
-          <div class="flex space-x-4">
+          <div class="flex space-x-4 mt-2">
             <button 
               type="button"
               @click="showSubmitForm = false"
@@ -246,19 +225,11 @@
             </button>
           </div>
         </form>
-      </div>
-    </div>
+    </FormModal>
 
     <!-- Success Modal -->
-    <div 
-      v-if="showSuccessModal"
-      @click="showSuccessModal = false"
-      class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50"
-    >
-      <div 
-        @click.stop
-        class="bg-white rounded-2xl max-w-md w-full p-8 text-center"
-      >
+    <FormModal v-model="showSuccessModal" title="" max-width="max-w-md">
+      <div class="text-center">
         <div class="text-6xl mb-4">✅</div>
         <h3 class="text-2xl font-bold text-gray-800 mb-4">Gửi thành công!</h3>
         <p class="text-gray-600 mb-6">
@@ -271,12 +242,13 @@
           Đóng
         </button>
       </div>
-    </div>
+    </FormModal>
   </div>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue'
+import FormModal from '../components/FormModal.vue'
 
 const activeTab = ref('all')
 const showSubmitForm = ref(false)

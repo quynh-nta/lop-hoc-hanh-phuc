@@ -166,7 +166,7 @@
                   Nhiều phụ huynh đề xuất thêm chức năng tìm kiếm để dễ dàng tìm lại các bài viết, hoạt động cũ.
                 </p>
                 <div class="inline-block px-4 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
-                  ✅ Đã cải tiến - Sẽ ra mắt tháng 2/2026
+                  ✅ Đã cải tiến - Sẽ ra mắt tháng 2/2025
                 </div>
               </div>
             </div>
@@ -181,7 +181,7 @@
                   Một số hình ảnh hiển thị chưa tốt trên điện thoại di động.
                 </p>
                 <div class="inline-block px-4 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
-                  ✅ Đã cải tiến - Cập nhật ngày 15/01/2026
+                  ✅ Đã cải tiến - Cập nhật ngày 15/01/2025
                 </div>
               </div>
             </div>

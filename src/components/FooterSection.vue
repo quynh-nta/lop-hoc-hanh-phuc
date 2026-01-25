@@ -5,7 +5,7 @@
         <!-- Thông tin lớp -->
         <div>
           <h3 class="text-2xl font-bold mb-4">🎓 Lớp Học Hạnh Phúc</h3>
-          <p class="text-blue-100 mb-2">Năm học 2025-2026</p>
+          <p class="text-blue-100 mb-2">Năm học 2024-2025</p>
           <p class="text-blue-100">Nơi chia sẻ khoảnh khắc đẹp và lan tỏa hạnh phúc</p>
         </div>
 
@@ -25,11 +25,11 @@
           <router-link to="/lien-he" class="nav-link">Liên hệ</router-link>
           <p class="text-blue-100 mb-2">📧 Email: lophochangphuc@school.edu.vn</p>
           <p class="text-blue-100 mb-2">📱 Hotline: 0123 456 789</p>
-          <p class="text-blue-100">🏫 Trường Tiểu học ABC</p>
+          <p class="text-blue-100">🏫 Trường THCS Hoài Hải</p>
         </div>
       </div>
 
-      <div class="border-t border-blue-400 mt-8 pt-6 text-center">
+      <div class="border-t border-white mt-8 pt-6 text-center">
         <p class="text-blue-100">
           © {{ currentYear }} Lớp Học Hạnh Phúc. 
           <span class="mx-2">|</span>

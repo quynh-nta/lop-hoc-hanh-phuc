@@ -237,8 +237,8 @@ const categories = [
 ]
 
 const months = [
-  'Tháng 1/2026', 'Tháng 2/2026', 'Tháng 3/2026', 'Tháng 4/2026',
-  'Tháng 5/2026', 'Tháng 6/2026', 'Tháng 7/2026', 'Tháng 8/2026',
+  'Tháng 1/2025', 'Tháng 2/2025', 'Tháng 3/2025', 'Tháng 4/2025',
+  'Tháng 5/2025', 'Tháng 6/2025', 'Tháng 7/2025', 'Tháng 8/2025',
   'Tháng 9/2025', 'Tháng 10/2025', 'Tháng 11/2025', 'Tháng 12/2025'
 ]
 
@@ -255,8 +255,8 @@ Qua chuyến đi, các em không chỉ học được kiến thức lịch sử 
     image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&h=600&fit=crop',
     category: 'Trải nghiệm',
     categoryId: 'experience',
-    date: '15/01/2026',
-    month: 'Tháng 1/2026',
+    date: '15/01/2025',
+    month: 'Tháng 1/2025',
     views: 234,
     gallery: [
       'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=300&fit=crop',
@@ -276,8 +276,8 @@ Qua bài học này, các em không chỉ học được kiến thức về khoa
     image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=600&fit=crop',
     category: 'Học tập',
     categoryId: 'learning',
-    date: '12/01/2026',
-    month: 'Tháng 1/2026',
+    date: '12/01/2025',
+    month: 'Tháng 1/2025',
     views: 189,
     gallery: []
   },
@@ -293,8 +293,8 @@ Ngày hội không chỉ là dịp để các em thể hiện tài năng mà cò
     image: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&h=600&fit=crop',
     category: 'Văn nghệ',
     categoryId: 'art',
-    date: '10/01/2026',
-    month: 'Tháng 1/2026',
+    date: '10/01/2025',
+    month: 'Tháng 1/2025',
     views: 312
   },
   {
@@ -309,8 +309,8 @@ Cả lớp đều tự hào về đội bóng của mình. Đây là minh chứn
     image: 'https://images.unsplash.com/photo-1516567727245-ad8d273f8a67?w=800&h=600&fit=crop',
     category: 'Thể thao',
     categoryId: 'sports',
-    date: '08/01/2026',
-    month: 'Tháng 1/2026',
+    date: '08/01/2025',
+    month: 'Tháng 1/2025',
     views: 278
   },
   {
@@ -325,8 +325,8 @@ Những kỹ năng này sẽ rất hữu ích không chỉ trong học tập mà
     image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop',
     category: 'Kỹ năng sống',
     categoryId: 'life-skills',
-    date: '05/01/2026',
-    month: 'Tháng 1/2026',
+    date: '05/01/2025',
+    month: 'Tháng 1/2025',
     views: 156
   },
   {
@@ -439,8 +439,8 @@ Lịch học tuần này:
 
 Nhờ quý phụ huynh lưu ý và chuẩn bị cho các em.
 Trân trọng!`,
-    date: '20/01/2026',
-    month: 'Tháng 1/2026',
+    date: '20/01/2025',
+    month: 'Tháng 1/2025',
     priority: 'high',
     icon: '📅',
     categoryId: 'high',
@@ -450,17 +450,17 @@ Trân trọng!`,
   {
     id: 2,
     title: 'Thông báo về chuyến tham quan',
-    content: `Lớp 6A sẽ có chuyến tham quan bảo tàng vào ngày 28/1/2026.
+    content: `Lớp 6A sẽ có chuyến tham quan bảo tàng vào ngày 28/1/2025.
 
 Chi tiết:
 - Thời gian: 8h00 - 16h00
-- Địa điểm: Bảo tàng Lịch sử TP.HCM
+- Địa điểm: Bảo tàng Quang Trung tỉnh Gia Lai
 - Chi phí: 150.000đ/em (bao gồm xe, vé, bữa trưa)
-- Hạn đóng tiền: 25/01/2026
+- Hạn đóng tiền: 25/01/2025
 
 Mọi thắc mắc xin liên hệ Cô Tuyền.`,
-    date: '18/01/2026',
-    month: 'Tháng 1/2026',
+    date: '18/01/2025',
+    month: 'Tháng 1/2025',
     priority: 'medium',
     categoryId: 'medium',
     icon: '🚌',
@@ -477,7 +477,7 @@ Mọi thắc mắc xin liên hệ Cô Tuyền.`,
 - Không có em nào yếu kém
 
 Cảm ơn sự đồng hành của quý phụ huynh!`,
-    date: '05/01/2026',
+    date: '05/01/2025',
     month: 'Tháng 12/2025',
     priority: 'normal',
     icon: '📊',
@@ -488,13 +488,13 @@ Cảm ơn sự đồng hành của quý phụ huynh!`,
   {    id: 4,
     title: 'Lịch nghỉ Tết Nguyên Đán',
     content: `Kính gửi quý phụ huynh,
-    Lịch nghỉ Tết Nguyên Đán 2026:
-    - Bắt đầu nghỉ: 01/02/2026
-    - Đi học lại: 10/02/2026
+    Lịch nghỉ Tết Nguyên Đán 2025:
+    - Bắt đầu nghỉ: 01/02/2025
+    - Đi học lại: 10/02/2025
     Chúc quý phụ huynh và các em học sinh một năm mới an khang thịnh vượng!
     Trân trọng!`,
-    date: '25/01/2026',
-    month: 'Tháng 1/2026',
+    date: '25/01/2025',
+    month: 'Tháng 1/2025',
     priority: 'high',
     categoryId: 'high',
     icon: '🎉' ,
@@ -505,12 +505,12 @@ Cảm ơn sự đồng hành của quý phụ huynh!`,
     id: 5,
     title: 'Mời tham gia buổi họp phụ huynh',
     content: `Kính mời quý phụ huynh tham gia buổi họp phụ huynh cuối học kỳ I:
-    - Thời gian: 15h00, ngày 30/01/2026
+    - Thời gian: 15h00, ngày 30/01/2025
     - Địa điểm: Phòng học lớp 6A
     Nội dung: Báo cáo kết quả học tập, thảo luận kế hoạch học kỳ II.
     Rất mong sự có mặt của quý phụ huynh!`,
-    date: '22/01/2026',
-    month: 'Tháng 1/2026',
+    date: '22/01/2025',
+    month: 'Tháng 1/2025',
     priority: 'medium',
     categoryId: 'medium',
     icon: '📢',
@@ -521,12 +521,12 @@ Cảm ơn sự đồng hành của quý phụ huynh!`,
     id: 6,
     title: 'Nhắc nhở đóng học phí',
     content: `Kính gửi quý phụ huynh,
-    Nhắc nhở quý phụ huynh đóng học phí học kỳ II trước ngày 05/02/2026.
+    Nhắc nhở quý phụ huynh đóng học phí học kỳ II trước ngày 05/02/2025.
     Mức học phí: 2.500.000đ/học kỳ.
     Quý phụ huynh vui lòng liên hệ văn phòng nhà trường để hoàn tất thủ tục.
     Trân trọng!`,
-    date: '28/01/2026',
-    month: 'Tháng 1/2026',
+    date: '28/01/2025',
+    month: 'Tháng 1/2025',
     priority: 'normal',
     categoryId: 'normal',
     icon: '💰',
@@ -540,10 +540,10 @@ Cảm ơn sự đồng hành của quý phụ huynh!`,
     Chương trình học kỳ II sẽ có một số thay đổi như sau:
     - Thêm môn Kỹ năng sống vào thứ 5 hàng tuần.
     - Tăng cường các hoạt động ngoại khóa vào cuối tuần.
-    Chi tiết chương trình sẽ được gửi trong buổi họp phụ huynh ngày 30/01/2026.
+    Chi tiết chương trình sẽ được gửi trong buổi họp phụ huynh ngày 30/01/2025.
     Trân trọng!`,
-    date: '26/01/2026',
-    month: 'Tháng 1/2026',
+    date: '26/01/2025',
+    month: 'Tháng 1/2025',
     priority: 'medium',
     categoryId: 'medium',
     icon: '📝',
@@ -559,8 +559,8 @@ Cảm ơn sự đồng hành của quý phụ huynh!`,
     - Tổ chức các buổi tuyên truyền về an toàn giao thông cho học sinh.
     - Yêu cầu học sinh tuân thủ nội quy nhà trường nghiêm ngặt.
     Rất mong sự phối hợp từ quý phụ huynh để đảm bảo môi trường học tập an toàn cho các em.`,
-    date: '15/01/2026',
-    month: 'Tháng 1/2026',
+    date: '15/01/2025',
+    month: 'Tháng 1/2025',
     priority: 'high',
     categoryId: 'high',
     icon: '🛡️',
@@ -571,14 +571,14 @@ Cảm ơn sự đồng hành của quý phụ huynh!`,
     id: 9,
     title: 'Lịch thi học kỳ I',
     content: `Kính gửi quý phụ huynh,
-    Lịch thi học kỳ I năm học 2025-2026 như sau:
-    - Toán: 20/01/2026
-    - Tiếng Việt: 22/01/2026
-    - Khoa học: 24/01/2026
+    Lịch thi học kỳ I năm học 2024-2025 như sau:
+    - Toán: 20/01/2025
+    - Tiếng Việt: 22/01/2025
+    - Khoa học: 24/01/2025
     Quý phụ huynh vui lòng nhắc nhở các em ôn tập và chuẩn bị tốt cho kỳ thi.
     Trân trọng!`,
-    date: '10/01/2026',
-    month: 'Tháng 1/2026',
+    date: '10/01/2025',
+    month: 'Tháng 1/2025',
     priority: 'high',
     categoryId: 'high',
     icon: '📝',
@@ -592,10 +592,10 @@ Cảm ơn sự đồng hành của quý phụ huynh!`,
     Nhà trường tổ chức chương trình ngoại khóa cuối tuần với các hoạt động thú vị:
     - Thứ 7 (31/01): Dã ngoại tại công viên
     - Chủ nhật (01/02): Workshop nghệ thuật và thủ công
-    Quý phụ huynh vui lòng đăng ký cho các em tham gia trước ngày 28/01/2026.
+    Quý phụ huynh vui lòng đăng ký cho các em tham gia trước ngày 28/01/2025.
     Trân trọng!`,
-    date: '12/01/2026',
-    month: 'Tháng 1/2026',
+    date: '12/01/2025',
+    month: 'Tháng 1/2025',
     priority: 'normal',
     categoryId: 'normal',
     icon: '🎨',

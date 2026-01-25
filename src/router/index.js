@@ -24,6 +24,11 @@ const routes = [
     component: NotifyPage
   },
   {
+    path: '/gioi-thieu',
+    name: 'Intro',
+    component: AboutPage
+  },
+  {
     path: '/hoat-dong',
     name: 'Activities',
     component: ActivitiesPage

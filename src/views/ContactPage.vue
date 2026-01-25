@@ -30,15 +30,15 @@
             <div class="space-y-3">
               <p class="flex items-center">
                 <span class="text-2xl mr-3">🏫</span>
-                <span>Trường Tiểu học ABC</span>
+                <span>Trường THCS Hoài Hải</span>
               </p>
               <p class="flex items-center">
                 <span class="text-2xl mr-3">📍</span>
-                <span>123 Đường Lý Thường Kiệt, Quận 10, TP.HCM</span>
+                <span>Tổ dân phố Kim Giao Thiện, Phường Hoài Nhơn Đông, Tỉnh Gia Lai</span>
               </p>
               <p class="flex items-center">
                 <span class="text-2xl mr-3">📅</span>
-                <span>Năm học 2025-2026</span>
+                <span>Năm học 2024-2025</span>
               </p>
             </div>
           </div>

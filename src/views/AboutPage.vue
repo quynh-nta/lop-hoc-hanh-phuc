@@ -54,7 +54,7 @@
               <span class="text-2xl mr-3">📅</span>
               <div>
                 <p class="font-semibold text-gray-800">Năm học:</p>
-                <p class="text-gray-700">2025 - 2026</p>
+                <p class="text-gray-700">2024 - 2025</p>
               </div>
             </div>
             <div class="flex items-start">
@@ -68,7 +68,7 @@
               <span class="text-2xl mr-3">🏫</span>
               <div>
                 <p class="font-semibold text-gray-800">Trường:</p>
-                <p class="text-gray-700">Trường Tiểu học ABC</p>
+                <p class="text-gray-700">Trường THCS Hoài Hải</p>
               </div>
             </div>
           </div>

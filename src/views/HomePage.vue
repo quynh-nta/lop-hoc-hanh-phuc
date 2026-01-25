@@ -225,25 +225,25 @@ const latestActivities = [
     id: 1,
     title: 'Tham quan bảo tàng',
     description: 'Chuyến đi thú vị đến bảo tàng lịch sử, các em học hỏi được nhiều điều bổ ích.',
-    image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&h=600&fit=crop',
+    image: new URL('../assets/Activities/bao_tang_quang_trung_du_lich_thu_duc_6.png', import.meta.url).href,
     category: 'Trải nghiệm',
-    date: '15/01/2026'
+    date: '15/01/2025'
   },
   {
     id: 2,
-    title: 'Giờ học STEM sáng tạo',
-    description: 'Các em thực hành làm đồng hồ sử dụng số La Mã.',
-    image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=600&fit=crop',
-    category: 'Học tập',
-    date: '12/01/2026'
+    title: 'Ngày hội văn nghệ',
+    description: 'Các em thể hiện tài năng ca hát, múa hát và kể chuyện.',
+    image: new URL('../assets/Activities/vannghe.png', import.meta.url).href,
+    category: 'Văn nghệ',
+    date: '10/01/2025',
   },
   {
     id: 3,
-    title: 'Ngày hội văn nghệ',
-    description: 'Các em thể hiện tài năng ca hát, múa hát và kể chuyện.',
-    image: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&h=600&fit=crop',
-    category: 'Văn nghệ',
-    date: '10/01/2026'
+    title: 'Giải bóng đá mini liên lớp',
+    description: 'Đội bóng lớp 6A vô địch giải bóng đá mini cấp trường.',
+    image: new URL('../assets/Activities/soccer.jpg', import.meta.url).href,
+    category: 'Thể thao',
+    date: '08/01/2025',
   }
 ]
 
@@ -254,7 +254,7 @@ const recentShares = [
     initial: '?',
     anonymous: true,
     content: 'Em rất vui khi được học trong lớp này. Thầy cô rất tốt và bạn bè thân thiện.',
-    date: '2 ngày trước'
+    date: 'hơn 1 năm trước'
   },
   {
     id: 2,
@@ -262,7 +262,7 @@ const recentShares = [
     initial: 'M',
     anonymous: false,
     content: 'Khoảnh khắc hạnh phúc của em là khi được cùng bạn bè làm dự án nhóm.',
-    date: '3 ngày trước'
+    date: 'hơn 1 năm trước'
   },
   {
     id: 3,
@@ -270,7 +270,7 @@ const recentShares = [
     initial: '?',
     anonymous: true,
     content: 'Em muốn nói lời cảm ơn đến cô giáo đã luôn quan tâm và động viên em.',
-    date: '5 ngày trước'
+    date: 'hơn 1 năm trước'
   }
 ]
 
@@ -323,25 +323,25 @@ Lịch học tuần này:
 
 Nhờ quý phụ huynh lưu ý và chuẩn bị cho các em.
 Trân trọng!`,
-    date: '20/01/2026',
-    period: 'Tuần 3/2026',
+    date: '20/01/2025',
+    period: 'Tuần 3/2025',
     priority: 'high',
     icon: '📅'
   },
   {
     id: 2,
     title: 'Thông báo về chuyến tham quan',
-    content: `Lớp 6A sẽ có chuyến tham quan bảo tàng vào ngày 28/1/2026.
+    content: `Lớp 6A sẽ có chuyến tham quan bảo tàng vào ngày 28/1/2025.
 
 Chi tiết:
 - Thời gian: 8h00 - 16h00
-- Địa điểm: Bảo tàng Lịch sử TP.HCM
+- Địa điểm: Bảo tàng Quang Trung tỉnh Gia Lai
 - Chi phí: 150.000đ/em (bao gồm xe, vé, bữa trưa)
-- Hạn đóng tiền: 25/01/2026
+- Hạn đóng tiền: 25/01/2025
 
 Mọi thắc mắc xin liên hệ Cô Tuyền.`,
-    date: '18/01/2026',
-    period: 'Tháng 1/2026',
+    date: '18/01/2025',
+    period: 'Tháng 1/2025',
     priority: 'medium',
     icon: '🚌',
     attachments: ['Đơn đồng ý.pdf', 'Lịch trình chi tiết.pdf']
@@ -355,7 +355,7 @@ Mọi thắc mắc xin liên hệ Cô Tuyền.`,
 - Không có em nào yếu kém
 
 Cảm ơn sự đồng hành của quý phụ huynh!`,
-    date: '05/01/2026',
+    date: '05/01/2025',
     period: 'Tháng 12/2025',
     priority: 'normal',
     icon: '📊'

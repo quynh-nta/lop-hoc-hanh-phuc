@@ -201,7 +201,7 @@ const products = ref([
     type: 'Video',
     typeId: 'video',
     author: 'Nguyễn Minh An',
-    date: '20/01/2026',
+    date: '20/01/2025',
     featured: true,
     fullContent: 'Video 5 phút ghi lại những khoảnh khắc vui vẻ, ý nghĩa trong một ngày học của lớp 6A. Từ giờ chào cờ đầu tuần, các tiết học sôi nổi, đến giờ ra chơi náo nhiệt. Đây là sản phẩm của cả nhóm sau 2 tuần quay và dựng.'
   },
@@ -213,7 +213,7 @@ const products = ref([
     type: 'Bài viết',
     typeId: 'article',
     author: 'Trần Bảo An',
-    date: '18/01/2026',
+    date: '18/01/2025',
     featured: false,
     fullContent: `Lớp học của em là một ngôi nhà ấm áp, nơi mà mỗi ngày đến trường đều mang lại niềm vui mới. 
 
@@ -229,7 +229,7 @@ Em nghĩ rằng, lớp học không chỉ là nơi để học chữ, học toá
     type: 'Ảnh',
     typeId: 'photo',
     author: 'Lê Quỳnh Anh',
-    date: '15/01/2026',
+    date: '15/01/2025',
     featured: true,
     fullContent: 'Bộ ảnh 20 tấm ghi lại chuyến tham quan bảo tàng lịch sử. Các em rất vui vẻ và hào hứng khi được tìm hiểu về lịch sử dân tộc qua các hiện vật quý giá.'
   },
@@ -241,7 +241,7 @@ Em nghĩ rằng, lớp học không chỉ là nơi để học chữ, học toá
     type: 'Video',
     typeId: 'video',
     author: 'Phạm Tuấn Anh',
-    date: '12/01/2026',
+    date: '12/01/2025',
     featured: false,
     fullContent: 'Video 3 phút ghi lại quá trình các nhóm làm việc, từ ý tưởng ban đầu, gặp khó khăn, cho đến khi hoàn thành robot mini. Rất nhiều cảm xúc và bài học ý nghĩa!'
   },
@@ -253,7 +253,7 @@ Em nghĩ rằng, lớp học không chỉ là nơi để học chữ, học toá
     type: 'Bài viết',
     typeId: 'article',
     author: 'Hoàng Mai Linh',
-    date: '10/01/2026',
+    date: '10/01/2025',
     featured: false,
     fullContent: `Bạn thân của em là một người rất tốt bụng và vui tính. Chúng em đã là bạn từ lớp 1 và luôn bên nhau trong mọi hoạt động.
 
@@ -269,7 +269,7 @@ Em hy vọng chúng em sẽ mãi là bạn thân, dù sau này có đi đâu, l�
     type: 'Ảnh',
     typeId: 'photo',
     author: 'Nguyễn Đức Thắng',
-    date: '08/01/2026',
+    date: '08/01/2025',
     featured: false,
     fullContent: 'Poster thiết kế với thông điệp "An toàn giao thông - Hạnh phúc mỗi nhà", sử dụng màu sắc bắt mắt và hình ảnh sinh động để thu hút sự chú ý.'
   }

@@ -1,12 +1,14 @@
 <template>
-  <div class="activities-page py-16 bg-gray-50">
+  <div class="activities-page py-8 bg-gray-50">
     <div class="container mx-auto px-4">
       <!-- Header -->
       <div class="text-center mb-12">
         <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
           🎨 Hoạt động của lớp
         </h1>
-        <p class="text-xl text-gray-600">Những khoảnh khắc đáng nhớ của chúng mình</p>
+        <p class="text-md text-gray-600 mb-8 text-xs">
+            Những khoảnh khắc đáng nhớ của chúng mình
+        </p>
       </div>
 
       <!-- Filter Tabs -->
@@ -141,8 +143,8 @@ const categories = [
 ]
 
 const months = [
-  'Tháng 1/2026', 'Tháng 2/2026', 'Tháng 3/2026', 'Tháng 4/2026',
-  'Tháng 5/2026', 'Tháng 6/2026', 'Tháng 7/2026', 'Tháng 8/2026',
+  'Tháng 1/2025', 'Tháng 2/2025', 'Tháng 3/2025', 'Tháng 4/2025',
+  'Tháng 5/2025', 'Tháng 6/2025', 'Tháng 7/2025', 'Tháng 8/2025',
   'Tháng 9/2025', 'Tháng 10/2025', 'Tháng 11/2025', 'Tháng 12/2025'
 ]
 
@@ -156,37 +158,20 @@ const activities = ref([
 Các em được nghe cô hướng dẫn viên kể những câu chuyện về lịch sử dân tộc, xem các hiện vật quý giá từ các thời kỳ khác nhau. Đặc biệt, các em rất thích thú khi được tham gia các hoạt động trải nghiệm như mặc trang phục truyền thống, chơi các trò chơi dân gian.
 
 Qua chuyến đi, các em không chỉ học được kiến thức lịch sử mà còn hiểu hơn về truyền thống văn hóa của dân tộc, từ đó có thêm tình yêu quê hương đất nước.`,
-    image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&h=600&fit=crop',
+    image: new URL('../assets/Activities/bao_tang_quang_trung_du_lich_thu_duc_6.png', import.meta.url).href,
     category: 'Trải nghiệm',
     categoryId: 'experience',
-    date: '15/01/2026',
-    month: 'Tháng 1/2026',
+    date: '15/01/2025',
+    month: 'Tháng 1/2025',
     views: 234,
     gallery: [
-      'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=300&fit=crop',
-      'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=300&fit=crop&sat=-100',
-      'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=300&fit=crop&hue=180'
+      new URL('../assets/Activities/baotang1.jpg', import.meta.url).href,
+      new URL('../assets/Activities/baotang2.jpg', import.meta.url).href,
+      new URL('../assets/Activities/baotang3.jpg', import.meta.url).href,
     ]
   },
   {
     id: 2,
-    title: 'Giờ học STEM sáng tạo',
-    description: 'Các em thực hành làm đồng hồ sử dụng số La Mã.',
-    fullDescription: `Tiết học STEM hôm nay thật thú vị! Các em được chia thành các nhóm nhỏ để cùng nhau đồng hồ sử dụng số La Mã.
-
-Ban đầu, các em gặp nhiều khó khăn, nhưng với sự hướng dẫn tận tình của thầy cô và tinh thần làm việc nhóm, cuối cùng mỗi nhóm đều hoàn thành sản phẩm của mình.
-
-Qua bài học này, các em không chỉ học được kiến thức về khoa học kỹ thuật mà còn rèn luyện được kỹ năng làm việc nhóm, giải quyết vấn đề và tư duy logic.`,
-    image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=600&fit=crop',
-    category: 'Học tập',
-    categoryId: 'learning',
-    date: '12/01/2026',
-    month: 'Tháng 1/2026',
-    views: 189,
-    gallery: []
-  },
-  {
-    id: 3,
     title: 'Ngày hội văn nghệ "Tài năng nhí"',
     description: 'Các em thể hiện tài năng ca hát, múa, kể chuyện trong ngày hội văn nghệ.',
     fullDescription: `Ngày hội văn nghệ "Tài năng nhí" đã diễn ra thành công tốt đẹp với sự tham gia nhiệt tình của toàn thể học sinh lớp 6A.
@@ -194,15 +179,15 @@ Qua bài học này, các em không chỉ học được kiến thức về khoa
 Các tiết mục đa dạng từ ca hát, múa, kịch, kể chuyện đều thể hiện sự sáng tạo và tự tin của các em. Đặc biệt, tiết mục múa "Bông hoa đẹp nhất" của nhóm bạn nữ đã để lại ấn tượng sâu sắc cho khán giả.
 
 Ngày hội không chỉ là dịp để các em thể hiện tài năng mà còn giúp các em rèn luyện kỹ năng biểu diễn, tự tin trước đám đông.`,
-    image: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&h=600&fit=crop',
+    image: new URL('../assets/Activities/vannghe.png', import.meta.url).href,
     category: 'Văn nghệ',
     categoryId: 'art',
-    date: '10/01/2026',
-    month: 'Tháng 1/2026',
+    date: '10/01/2025',
+    month: 'Tháng 1/2025',
     views: 312
   },
   {
-    id: 4,
+    id: 3,
     title: 'Giải bóng đá mini liên lớp',
     description: 'Đội bóng lớp 6A vô địch giải bóng đá mini cấp trường.',
     fullDescription: `Sau những trận đấu căng thẳng và kịch tính, đội bóng lớp 6A đã xuất sắc giành chức vô địch giải bóng đá mini cấp trường.
@@ -210,15 +195,15 @@ Ngày hội không chỉ là dịp để các em thể hiện tài năng mà cò
 Với tinh thần đoàn kết, chiến thuật thông minh và kỹ năng chơi bóng tốt, các cầu thủ đã mang về vinh quang cho lớp. Trận chung kết với tỷ số 3-2 đã để lại những khoảnh khắc đáng nhớ.
 
 Cả lớp đều tự hào về đội bóng của mình. Đây là minh chứng cho tinh thần thể thao và sự nỗ lực không ngừng của các em.`,
-    image: 'https://images.unsplash.com/photo-1516567727245-ad8d273f8a67?w=800&h=600&fit=crop',
+    image: new URL('../assets/Activities/soccer.jpg', import.meta.url).href,
     category: 'Thể thao',
     categoryId: 'sports',
-    date: '08/01/2026',
-    month: 'Tháng 1/2026',
+    date: '08/01/2025',
+    month: 'Tháng 1/2025',
     views: 278
   },
   {
-    id: 5,
+    id: 4,
     title: 'Kỹ năng giao tiếp và làm việc nhóm',
     description: 'Buổi workshop về kỹ năng mềm cho học sinh.',
     fullDescription: `Buổi học kỹ năng mềm hôm nay tập trung vào giao tiếp và làm việc nhóm - hai kỹ năng quan trọng trong cuộc sống.
@@ -226,15 +211,15 @@ Cả lớp đều tự hào về đội bóng của mình. Đây là minh chứn
 Qua các trò chơi tương tác và bài tập nhóm, các em đã học được cách lắng nghe, chia sẻ ý kiến và làm việc hiệu quả với người khác. Các em cũng hiểu được tầm quan trọng của việc tôn trọng ý kiến đóng góp của bạn bè.
 
 Những kỹ năng này sẽ rất hữu ích không chỉ trong học tập mà còn trong cuộc sống hàng ngày.`,
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop',
+    image: new URL('../assets/Activities/teamwork.jpg', import.meta.url).href,
     category: 'Kỹ năng sống',
     categoryId: 'life-skills',
-    date: '05/01/2026',
-    month: 'Tháng 1/2026',
+    date: '05/01/2025',
+    month: 'Tháng 1/2025',
     views: 156
   },
   {
-    id: 6,
+    id: 5,
     title: 'Dự án làm vườn xanh',
     description: 'Các em tự tay trồng và chăm sóc vườn rau sạch của lớp.',
     fullDescription: `Dự án "Vườn xanh lớp 6A" đã chính thức khởi động. Mỗi em đều được phân công chăm sóc một luống rau riêng.
@@ -242,7 +227,7 @@ Những kỹ năng này sẽ rất hữu ích không chỉ trong học tập mà
 Các em học cách xới đất, gieo hạt, tưới nước và chăm sóc cây trồng hàng ngày. Qua dự án này, các em không chỉ học được kiến thức về nông nghiệp mà còn hiểu được giá trị của lao động và thực phẩm sạch.
 
 Trong tháng tới, chúng mình sẽ thu hoạch những rau sạch đầu tiên do chính tay mình trồng!`,
-    image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&h=600&fit=crop',
+    image: new URL('../assets/Activities/vuon-rau.jpg', import.meta.url).href,
     category: 'Trải nghiệm',
     categoryId: 'experience',
     date: '20/12/2025',

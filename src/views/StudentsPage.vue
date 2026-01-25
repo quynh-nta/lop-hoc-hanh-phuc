@@ -256,7 +256,7 @@ const students = ref([
     gender: 'male',
     dob: '15/03/2015',
     email: 'minhan@student.edu.vn',
-    address: '123 Lý Thường Kiệt, Q.10, TP.HCM',
+    address: 'Tổ dân phố Kim Giao Thiện, Phường Hoài Nhơn Đông, Tỉnh Gia Lai',
     isExcellent: true,
     achievements: ['Giải Nhất Toán', 'Giải Nhì Văn'],
     parent: {
@@ -272,7 +272,7 @@ const students = ref([
     gender: 'female',
     dob: '22/05/2015',
     email: 'baoan@student.edu.vn',
-    address: '456 Nguyễn Huệ, Q.1, TP.HCM',
+    address: 'Tổ dân phố Kim Giao Thiện, Phường Hoài Nhơn Đông, Tỉnh Gia Lai',
     isExcellent: true,
     achievements: ['Giải Nhất Vẽ tranh', 'Học sinh giỏi'],
     parent: {
@@ -288,7 +288,7 @@ const students = ref([
     gender: 'female',
     dob: '10/08/2015',
     email: 'quynhanh@student.edu.vn',
-    address: '789 Trần Hưng Đạo, Q.5, TP.HCM',
+    address: 'Tổ dân phố Kim Giao Thiện, Phường Hoài Nhơn Đông, Tỉnh Gia Lai',
     isExcellent: false,
     achievements: ['Giải Ba Toán'],
     parent: {
@@ -304,7 +304,7 @@ const students = ref([
     gender: 'male',
     dob: '05/12/2014',
     email: 'tuananh@student.edu.vn',
-    address: '321 Võ Văn Tần, Q.3, TP.HCM',
+    address: 'Tổ dân phố Kim Giao Thiện, Phường Hoài Nhơn Đông, Tỉnh Gia Lai',
     isExcellent: true,
     achievements: ['Giải Nhất STEM', 'Giải Nhì Tin học'],
     parent: {
@@ -320,7 +320,7 @@ const students = ref([
     gender: 'female',
     dob: '18/06/2015',
     email: 'mailinh@student.edu.vn',
-    address: '654 Lê Lợi, Q.1, TP.HCM',
+    address: 'Tổ dân phố Kim Giao Thiện, Phường Hoài Nhơn Đông, Tỉnh Gia Lai',
     isExcellent: false,
     achievements: ['Giải Khuyến khích Văn'],
     parent: {
@@ -336,7 +336,7 @@ const students = ref([
     gender: 'male',
     dob: '28/09/2015',
     email: 'ducthang@student.edu.vn',
-    address: '987 Hai Bà Trưng, Q.3, TP.HCM',
+    address: 'Tổ dân phố Kim Giao Thiện, Phường Hoài Nhơn Đông, Tỉnh Gia Lai',
     isExcellent: true,
     achievements: ['Giải Nhì Thể thao', 'Học sinh tiêu biểu'],
     parent: {
@@ -352,7 +352,7 @@ const students = ref([
     gender: 'female',
     dob: '14/04/2015',
     email: 'thuha@student.edu.vn',
-    address: '147 Pasteur, Q.1, TP.HCM',
+    address: 'Tổ dân phố Kim Giao Thiện, Phường Hoài Nhơn Đông, Tỉnh Gia Lai',
     isExcellent: true,
     achievements: ['Giải Nhất Vẽ tranh toàn quốc'],
     parent: {
@@ -368,7 +368,7 @@ const students = ref([
     gender: 'male',
     dob: '03/11/2015',
     email: 'minhkhoa@student.edu.vn',
-    address: '258 Nguyễn Thái Học, Q.1, TP.HCM',
+    address: 'Tổ dân phố Kim Giao Thiện, Phường Hoài Nhơn Đông, Tỉnh Gia Lai',
     isExcellent: false,
     achievements: [],
     parent: {
