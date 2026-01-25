@@ -152,7 +152,7 @@ const months = [
 // Load activities from JSON and update image URLs
 const activities = ref(activitiesData.map(activity => ({
   ...activity,
-  image: new URL(`..${activity.image}`, import.meta.url).href,
+  image: activity.image,
   gallery: activity.gallery ? activity.gallery.map(img => new URL(`..${img}`, import.meta.url).href) : undefined
 })))
 

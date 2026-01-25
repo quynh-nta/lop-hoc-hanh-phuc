@@ -214,7 +214,7 @@ const latestActivities = [
     id: 1,
     title: 'Tham quan bảo tàng',
     description: 'Chuyến đi thú vị đến bảo tàng lịch sử, các em học hỏi được nhiều điều bổ ích.',
-    image: new URL('../assets/Activities/bao_tang_quang_trung_du_lich_thu_duc_6.png', import.meta.url).href,
+    image: '/Activities/bao_tang_quang_trung_du_lich_thu_duc_6.png',
     category: 'Trải nghiệm',
     date: '15/01/2025'
   },
@@ -222,7 +222,7 @@ const latestActivities = [
     id: 2,
     title: 'Ngày hội văn nghệ',
     description: 'Các em thể hiện tài năng ca hát, múa hát và kể chuyện.',
-    image: new URL('../assets/Activities/vannghe.png', import.meta.url).href,
+    image: '/Activities/vannghe.png',
     category: 'Văn nghệ',
     date: '10/01/2025',
   },
@@ -230,7 +230,7 @@ const latestActivities = [
     id: 3,
     title: 'Giải bóng đá mini liên lớp',
     description: 'Đội bóng lớp 6A vô địch giải bóng đá mini cấp trường.',
-    image: new URL('../assets/Activities/soccer.jpg', import.meta.url).href,
+    image: '/Activities/soccer.jpg',
     category: 'Thể thao',
     date: '08/01/2025',
   }
