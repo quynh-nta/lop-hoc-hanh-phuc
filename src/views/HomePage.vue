@@ -207,10 +207,7 @@ import announcementsData from '../data/announcements.json'
 const currentSlide = ref(0)
 let slideInterval
 
-const heroImages = heroImagesData.map(img => ({
-  ...img,
-  url: new URL(`..${img.url}`, import.meta.url).href
-}))
+const heroImages = heroImagesData
 
 const latestActivities = [
   {
