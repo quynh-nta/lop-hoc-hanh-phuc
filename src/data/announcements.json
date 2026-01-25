@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Lịch học tuần 3 tháng 1",
+    "content": "Kính gửi quý phụ huynh,\n\nLịch học tuần này:\n- Thứ 2-6: Học bình thường theo thời khóa biểu\n- Thứ 4 (22/1): Có buổi sinh hoạt ngoại khóa từ 14h-16h\n- Thứ 6 (24/1): Kiểm tra Toán học kỳ I\n\nNhờ quý phụ huynh lưu ý và chuẩn bị cho các em.\nTrân trọng!",
+    "date": "20/01/2025",
+    "period": "Tuần 3/2025",
+    "priority": "high",
+    "icon": "📅"
+  },
+  {
+    "id": 2,
+    "title": "Thông báo về chuyến tham quan",
+    "content": "Lớp 6A sẽ có chuyến tham quan bảo tàng vào ngày 28/1/2025.\n\nChi tiết:\n- Thời gian: 8h00 - 16h00\n- Địa điểm: Bảo tàng Quang Trung tỉnh Gia Lai\n- Chi phí: 150.000đ/em (bao gồm xe, vé, bữa trưa)\n- Hạn đóng tiền: 25/01/2025\n\nMọi thắc mắc xin liên hệ Cô Tuyền.",
+    "date": "18/01/2025",
+    "period": "Tháng 1/2025",
+    "priority": "medium",
+    "icon": "🚌",
+    "attachments": ["Đơn đồng ý.pdf", "Lịch trình chi tiết.pdf"]
+  },
+  {
+    "id": 3,
+    "title": "Kết quả học tập tháng 12",
+    "content": "Tổng kết học tập tháng 12/2025:\n- 90% học sinh đạt kết quả tốt trở lên\n- 5 em đạt học sinh xuất sắc\n- Không có em nào yếu kém\n\nCảm ơn sự đồng hành của quý phụ huynh!",
+    "date": "05/01/2025",
+    "period": "Tháng 12/2025",
+    "priority": "normal",
+    "icon": "📊"
+  }
+]

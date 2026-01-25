@@ -33,6 +33,45 @@
           <li><router-link to="/phu-huynh" class="nav-link">Phụ huynh</router-link></li>
           <li><router-link to="/truyen-thong" class="nav-link">Truyền thông</router-link></li>
           <li><router-link to="/danh-sach" class="nav-link">Danh sách</router-link></li>
+          
+          <!-- User Menu -->
+          <li v-if="authStore.isAuthenticated" class="relative">
+            <button 
+              @click="showUserMenu = !showUserMenu"
+              class="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold">
+                {{ authStore.currentUser.name.charAt(0) }}
+              </div>
+              <span class="text-sm font-medium">{{ authStore.currentUser.name }}</span>
+            </button>
+            
+            <!-- Dropdown Menu -->
+            <div 
+              v-if="showUserMenu"
+              class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50"
+            >
+              <router-link 
+                v-if="authStore.isAdmin"
+                to="/quan-tri"
+                @click="showUserMenu = false"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              >
+                👨‍🏫 Quản trị
+              </router-link>
+              <button 
+                @click="handleLogout"
+                class="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50"
+              >
+                🚪 Đăng xuất
+              </button>
+            </div>
+          </li>
+          <li v-else>
+            <router-link to="/dang-nhap" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+              Đăng nhập
+            </router-link>
+          </li>
         </ul>
       </div>
 
@@ -52,6 +91,32 @@
           <li><router-link to="/an-toan-so" @click="showMenu = false" class="mobile-nav-link">An toàn số</router-link></li>
           <li><router-link to="/danh-sach" @click="showMenu = false" class="mobile-nav-link">👥 Danh sách lớp</router-link></li>
           <li><router-link to="/lien-he" @click="showMenu = false" class="mobile-nav-link">Liên hệ</router-link></li>
+          
+          <!-- Mobile User Menu -->
+          <li v-if="authStore.isAuthenticated" class="pt-4 border-t border-gray-200 mt-4">
+            <div class="px-4 py-2 text-sm font-medium text-gray-900">
+              {{ authStore.currentUser.name }}
+            </div>
+            <router-link 
+              v-if="authStore.isAdmin"
+              to="/quan-tri"
+              @click="showMenu = false"
+              class="mobile-nav-link"
+            >
+              👨‍🏫 Quản trị
+            </router-link>
+            <button 
+              @click="handleLogout"
+              class="w-full text-left mobile-nav-link text-red-600"
+            >
+              🚪 Đăng xuất
+            </button>
+          </li>
+          <li v-else class="pt-4 border-t border-gray-200 mt-4">
+            <router-link to="/dang-nhap" @click="showMenu = false" class="block mx-4 text-center bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+              Đăng nhập
+            </router-link>
+          </li>
         </ul>
       </div>
     </div>
@@ -60,8 +125,20 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { useAuthStore } from '../stores/auth'
 
+const router = useRouter()
+const authStore = useAuthStore()
 const showMenu = ref(false)
+const showUserMenu = ref(false)
+
+const handleLogout = () => {
+  authStore.logout()
+  showMenu.value = false
+  showUserMenu.value = false
+  router.push('/dang-nhap')
+}
 </script>
 
 <style scoped>

@@ -90,7 +90,7 @@
           <div class="space-y-3">
             <div class="flex items-center">
               <span class="text-xl mr-2">📧</span>
-              <p class="text-gray-700">minhnguyen@school.edu.vn</p>
+              <p class="text-gray-700">tuyendang@school.edu.vn</p>
             </div>
             <div class="flex items-center">
               <span class="text-xl mr-2">📱</span>

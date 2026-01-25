@@ -59,8 +59,8 @@
                 <span class="text-2xl mr-3">📧</span>
                 <div>
                   <p class="text-sm text-gray-500">Email</p>
-                  <a href="mailto:minhnguyen@school.edu.vn" class="text-blue-600 hover:underline font-semibold">
-                    minhnguyen@school.edu.vn
+                  <a href="mailto:tuyendang@school.edu.vn" class="text-blue-600 hover:underline font-semibold">
+                    tuyendang@school.edu.vn
                   </a>
                 </div>
               </div>

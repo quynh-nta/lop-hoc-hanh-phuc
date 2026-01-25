@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { useAuthStore } from '../stores/auth'
 import HomePage from '../views/HomePage.vue'
 import AboutPage from '../views/AboutPage.vue'
 import ActivitiesPage from '../views/ActivitiesPage.vue'
@@ -11,8 +12,15 @@ import ContactPage from '../views/ContactPage.vue'
 import AdminPage from '../views/AdminPage.vue'
 import StudentsPage from '../views/StudentsPage.vue'
 import NotifyPage from '../views/NotifyPage.vue'
+import LoginPage from '../views/LoginPage.vue'
 
 const routes = [
+  {
+    path: '/dang-nhap',
+    name: 'Login',
+    component: LoginPage,
+    meta: { public: true }
+  },
   {
     path: '/',
     name: 'Home',
@@ -69,9 +77,10 @@ const routes = [
     component: StudentsPage
   },
   {
-    path: '/admin',
+    path: '/quan-tri',
     name: 'Admin',
-    component: AdminPage
+    component: AdminPage,
+    meta: { requiresAuth: true, requiresAdmin: true }
   }
 ]
 
@@ -86,5 +95,30 @@ const router = createRouter({
     }
   }
 })
+// Navigation guard for authentication
+router.beforeEach((to, from, next) => {
+  const authStore = useAuthStore()
+  
+  // Allow public routes
+  if (to.meta.public) {
+    next()
+    return
+  }
+
+  // Check if route requires authentication
+  if (to.meta.requiresAuth && !authStore.isAuthenticated) {
+    next('/dang-nhap')
+    return
+  }
+
+  // Check if route requires admin role
+  if (to.meta.requiresAdmin && !authStore.isAdmin) {
+    next('/')
+    return
+  }
+
+  next()
+})
+
 
 export default router

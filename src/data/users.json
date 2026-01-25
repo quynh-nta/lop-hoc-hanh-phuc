@@ -1,0 +1,49 @@
+[
+  {
+    "id": "admin001",
+    "username": "admin",
+    "password": "admin123",
+    "role": "admin",
+    "name": "Cô Tuyền",
+    "email": "tuyen.teacher@school.edu.vn",
+    "phone": "0912345678"
+  },
+  {
+    "id": "student001",
+    "username": "minhan",
+    "password": "minhan123",
+    "role": "student",
+    "name": "Nguyễn Minh An",
+    "studentId": 1,
+    "email": "minhan@student.edu.vn"
+  },
+  {
+    "id": "student002",
+    "username": "baoan",
+    "password": "baoan123",
+    "role": "student",
+    "name": "Trần Bảo An",
+    "studentId": 2,
+    "email": "baoan@student.edu.vn"
+  },
+  {
+    "id": "parent001",
+    "username": "phminhan",
+    "password": "parent123",
+    "role": "parent",
+    "name": "Nguyễn Văn A",
+    "childId": 1,
+    "childName": "Nguyễn Minh An",
+    "phone": "0123456789"
+  },
+  {
+    "id": "parent002",
+    "username": "phbaoan",
+    "password": "parent123",
+    "role": "parent",
+    "name": "Trần Văn C",
+    "childId": 2,
+    "childName": "Trần Bảo An",
+    "phone": "0987654321"
+  }
+]

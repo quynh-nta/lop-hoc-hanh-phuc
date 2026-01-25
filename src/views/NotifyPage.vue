@@ -143,16 +143,11 @@
     </div>
 
     <!-- Comment Modal -->
-    <div
-      v-if="commentModalOpen"
-      @click="commentModalOpen = false"
-      class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50"
-    >
-      <div
-        @click.stop
-        class="bg-white rounded-2xl w-full max-w-2xl max-h-[80vh] flex flex-col shadow-2xl"
-      >
-        <!-- Modal Header -->
+     <CommonModal
+      v-model="commentModalOpen"
+      title="💬 Bình luận"
+      maxWidth="max-w-2xl" >
+      <!-- Modal Header -->
         <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-t-2xl flex items-center justify-between">
           <h3 class="text-xl font-bold">💬 Bình luận</h3>
           <button
@@ -211,14 +206,14 @@
             </button>
           </div>
         </div>
-      </div>
-    </div>
+    </CommonModal>
   </div>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue'
 import ChatComponent from '../components/ChatComponent.vue'
+import CommonModal from '../components/CommonModal.vue'
 
 const selectedCategory = ref('all')
 const selectedMonth = ref('all')

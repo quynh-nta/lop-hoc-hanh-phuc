@@ -240,6 +240,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import ChatComponent from '../components/ChatComponent.vue'
+import studentsData from '../data/students.json'
 
 const searchQuery = ref('')
 const filterGender = ref('all')
@@ -248,136 +249,7 @@ const showChat = ref(false)
 const showProfile = ref(false)
 const selectedStudent = ref(null)
 
-const students = ref([
-  {
-    id: 1,
-    name: 'Nguyễn Minh An',
-    number: '01',
-    gender: 'male',
-    dob: '15/03/2015',
-    email: 'minhan@student.edu.vn',
-    address: 'Tổ dân phố Kim Giao Thiện, Phường Hoài Nhơn Đông, Tỉnh Gia Lai',
-    isExcellent: true,
-    achievements: ['Giải Nhất Toán', 'Giải Nhì Văn'],
-    parent: {
-      father: 'Nguyễn Văn A',
-      mother: 'Trần Thị B',
-      phone: '0123456789'
-    }
-  },
-  {
-    id: 2,
-    name: 'Trần Bảo An',
-    number: '02',
-    gender: 'female',
-    dob: '22/05/2015',
-    email: 'baoan@student.edu.vn',
-    address: 'Tổ dân phố Kim Giao Thiện, Phường Hoài Nhơn Đông, Tỉnh Gia Lai',
-    isExcellent: true,
-    achievements: ['Giải Nhất Vẽ tranh', 'Học sinh giỏi'],
-    parent: {
-      father: 'Trần Văn C',
-      mother: 'Lê Thị D',
-      phone: '0987654321'
-    }
-  },
-  {
-    id: 3,
-    name: 'Lê Quỳnh Anh',
-    number: '03',
-    gender: 'female',
-    dob: '10/08/2015',
-    email: 'quynhanh@student.edu.vn',
-    address: 'Tổ dân phố Kim Giao Thiện, Phường Hoài Nhơn Đông, Tỉnh Gia Lai',
-    isExcellent: false,
-    achievements: ['Giải Ba Toán'],
-    parent: {
-      father: 'Lê Văn E',
-      mother: 'Phạm Thị F',
-      phone: '0369258147'
-    }
-  },
-  {
-    id: 4,
-    name: 'Phạm Tuấn Anh',
-    number: '04',
-    gender: 'male',
-    dob: '05/12/2014',
-    email: 'tuananh@student.edu.vn',
-    address: 'Tổ dân phố Kim Giao Thiện, Phường Hoài Nhơn Đông, Tỉnh Gia Lai',
-    isExcellent: true,
-    achievements: ['Giải Nhất STEM', 'Giải Nhì Tin học'],
-    parent: {
-      father: 'Phạm Văn G',
-      mother: 'Nguyễn Thị H',
-      phone: '0147258369'
-    }
-  },
-  {
-    id: 5,
-    name: 'Hoàng Mai Linh',
-    number: '05',
-    gender: 'female',
-    dob: '18/06/2015',
-    email: 'mailinh@student.edu.vn',
-    address: 'Tổ dân phố Kim Giao Thiện, Phường Hoài Nhơn Đông, Tỉnh Gia Lai',
-    isExcellent: false,
-    achievements: ['Giải Khuyến khích Văn'],
-    parent: {
-      father: 'Hoàng Văn I',
-      mother: 'Đỗ Thị K',
-      phone: '0258147369'
-    }
-  },
-  {
-    id: 6,
-    name: 'Nguyễn Đức Thắng',
-    number: '06',
-    gender: 'male',
-    dob: '28/09/2015',
-    email: 'ducthang@student.edu.vn',
-    address: 'Tổ dân phố Kim Giao Thiện, Phường Hoài Nhơn Đông, Tỉnh Gia Lai',
-    isExcellent: true,
-    achievements: ['Giải Nhì Thể thao', 'Học sinh tiêu biểu'],
-    parent: {
-      father: 'Nguyễn Văn L',
-      mother: 'Vũ Thị M',
-      phone: '0369147258'
-    }
-  },
-  {
-    id: 7,
-    name: 'Phạm Thu Hà',
-    number: '07',
-    gender: 'female',
-    dob: '14/04/2015',
-    email: 'thuha@student.edu.vn',
-    address: 'Tổ dân phố Kim Giao Thiện, Phường Hoài Nhơn Đông, Tỉnh Gia Lai',
-    isExcellent: true,
-    achievements: ['Giải Nhất Vẽ tranh toàn quốc'],
-    parent: {
-      father: 'Phạm Văn N',
-      mother: 'Lý Thị O',
-      phone: '0741852963'
-    }
-  },
-  {
-    id: 8,
-    name: 'Trần Minh Khoa',
-    number: '08',
-    gender: 'male',
-    dob: '03/11/2015',
-    email: 'minhkhoa@student.edu.vn',
-    address: 'Tổ dân phố Kim Giao Thiện, Phường Hoài Nhơn Đông, Tỉnh Gia Lai',
-    isExcellent: false,
-    achievements: [],
-    parent: {
-      father: 'Trần Văn P',
-      mother: 'Hoàng Thị Q',
-      phone: '0852963741'
-    }
-  }
-])
+const students = ref(studentsData)
 
 const filteredStudents = computed(() => {
   let result = students.value

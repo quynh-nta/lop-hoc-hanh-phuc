@@ -61,7 +61,7 @@
           v-for="share in filteredShares" 
           :key="share.id"
           :class="[
-            'bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1',
+            ' flex flex-col bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1',
             share.status === 'pending' ? 'border-2 border-yellow-300' : ''
           ]"
         >
@@ -98,12 +98,12 @@
             <p class="text-sm text-yellow-700 font-semibold">⏳ Đang chờ duyệt</p>
           </div>
 
-          <div class="flex items-center justify-between text-sm text-gray-500 mt-4">
-            <button class="flex items-center space-x-1 hover:text-pink-600 transition-colors">
+          <div class="mt-auto flex items-center justify-between text-sm text-gray-500 mt-4">
+            <button @click="handleLike(share)" class="flex items-center space-x-1 hover:text-pink-600 transition-colors">
               <span>❤️</span>
               <span>{{ share.likes }}</span>
             </button>
-            <button class="flex items-center space-x-1 hover:text-blue-600 transition-colors">
+            <button @click="openComments(share)" class="flex items-center space-x-1 hover:text-blue-600 transition-colors">
               <span>💬</span>
               <span>{{ share.comments }} bình luận</span>
             </button>
@@ -226,7 +226,70 @@
           </div>
         </form>
     </FormModal>
+     <CommonModal
+      v-model="commentModalOpen"
+      title="💬 Bình luận"
+      maxWidth="max-w-2xl" >
+      <!-- Modal Header -->
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-t-2xl flex items-center justify-between">
+          <h3 class="text-xl font-bold">💬 Bình luận</h3>
+          <button
+            @click="commentModalOpen = false"
+            class="w-8 h-8 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors"
+          >
+            ✕
+          </button>
+        </div>
 
+        <!-- Comments List -->
+        <div class="flex-1 overflow-y-auto p-6 space-y-4">
+          <div
+            v-for="comment in currentComments"
+            :key="comment.id"
+            class="flex space-x-3 p-4 bg-gray-50 rounded-lg"
+          >
+            <div class="w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold flex-shrink-0">
+              {{ comment.author.charAt(0) }}
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between mb-1">
+                <h4 class="font-bold text-gray-800">{{ comment.author }}</h4>
+                <span class="text-xs text-gray-500">{{ comment.time }}</span>
+              </div>
+              <p class="text-gray-700">{{ comment.text }}</p>
+            </div>
+          </div>
+          <div v-if="currentComments.length === 0" class="text-center py-8 text-gray-500">
+            <div class="text-4xl mb-2">💬</div>
+            <p>Chưa có bình luận nào. Hãy là người đầu tiên!</p>
+          </div>
+        </div>
+
+        <!-- Add Comment Input -->
+        <div class="p-4 border-t">
+          <div class="flex space-x-3">
+            <input
+              v-model="newComment"
+              @keypress.enter="addComment"
+              type="text"
+              placeholder="Viết bình luận..."
+              class="flex-1 px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <button
+              @click="addComment"
+              :disabled="!newComment.trim()"
+              :class="[
+                'px-6 py-3 rounded-full font-semibold transition-all duration-300',
+                newComment.trim()
+                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-lg'
+                  : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+              ]"
+            >
+              Gửi
+            </button>
+          </div>
+        </div>
+    </CommonModal>
     <!-- Success Modal -->
     <FormModal v-model="showSuccessModal" title="" max-width="max-w-md">
       <div class="text-center">
@@ -249,6 +312,8 @@
 <script setup>
 import { ref, computed } from 'vue'
 import FormModal from '../components/FormModal.vue'
+import CommonModal from '../components/CommonModal.vue'
+import sharesData from '../data/shares.json'
 
 const activeTab = ref('all')
 const showSubmitForm = ref(false)
@@ -274,68 +339,7 @@ const formData = ref({
   content: ''
 })
 
-const shares = ref([
-  {
-    id: 1,
-    name: 'Nguyễn Minh An',
-    initial: 'M',
-    anonymous: false,
-    content: 'Em rất vui khi được học trong lớp này. Thầy cô rất tốt và bạn bè thân thiện. Em cảm thấy mình được yêu thương và quan tâm mỗi ngày.',
-    category: 'happy',
-    date: '2 ngày trước',
-    likes: 24,
-    comments: 5,
-    status: 'approved'
-  },
-  {
-    id: 2,
-    name: 'Học sinh ẩn danh',
-    initial: '?',
-    anonymous: true,
-    content: 'Khoảnh khắc hạnh phúc của em là khi được cùng bạn bè làm dự án nhóm. Mọi người cùng nhau động não, chia sẻ ý tưởng và hoàn thành công việc. Em học được rất nhiều điều.',
-    category: 'happy',
-    date: '3 ngày trước',
-    likes: 18,
-    comments: 3,
-    status: 'approved'
-  },
-  {
-    id: 3,
-    name: 'Học sinh ẩn danh',
-    initial: '?',
-    anonymous: true,
-    content: 'Em muốn nói lời cảm ơn đến cô giáo đã luôn quan tâm và động viên em. Có những lúc em không tự tin, nhưng cô đã giúp em vượt qua và trở nên mạnh mẽ hơn.',
-    category: 'love',
-    date: '5 ngày trước',
-    likes: 32,
-    comments: 8,
-    status: 'approved'
-  },
-  {
-    id: 4,
-    name: 'Trần Bảo An',
-    initial: 'B',
-    anonymous: false,
-    content: 'Em nghĩ rằng lớp học là ngôi nhà thứ hai của chúng em. Ở đây, em không chỉ học kiến thức mà còn học cách làm người, cách yêu thương và chia sẻ.',
-    category: 'thoughts',
-    date: '1 tuần trước',
-    likes: 28,
-    comments: 6,
-    status: 'approved'
-  },
-  {
-    id: 5,
-    name: 'Phạm Thu Hà',
-    initial: 'H',
-    anonymous: false,
-    content: 'Cảm ơn tất cả mọi người đã luôn ủng hộ em trong cuộc thi vẽ tranh. Em rất hạnh phúc khi giành được giải nhất!',
-    category: 'love',
-    date: '1 tuần trước',
-    likes: 45,
-    comments: 12,
-    status: 'approved'
-  }
-])
+const shares = ref(sharesData)
 
 const filteredShares = computed(() => {
   if (activeTab.value === 'all') {
@@ -384,5 +388,65 @@ const submitShare = () => {
   
   showSubmitForm.value = false
   showSuccessModal.value = true
+}
+
+const handleLike = (share) => {
+  share.likes += 1
+}
+
+
+
+const commentModalOpen = ref(false)
+const currentShareId = ref(null)
+const commentsData = ref({})
+const newComment = ref('')
+const currentComments = computed(() => {
+  return commentsData.value[currentShareId.value] || []
+})
+
+const openComments = (share) => {
+  currentShareId.value = share.id
+  commentModalOpen.value = true
+  
+  // Initialize comments for this share if not exists
+  if (!commentsData.value[share.id]) {
+    commentsData.value[share.id] = [
+      {
+        id: 1,
+        author: 'Phụ huynh Minh',
+        text: 'Cảm ơn cô đã thông báo!',
+        time: '10:30'
+      },
+      {
+        id: 2,
+        author: 'Phụ huynh Hương',
+        text: 'Em tôi rất thích hoạt động này.',
+        time: '11:15'
+      }
+    ]
+  }
+}
+
+const addComment = () => {
+  if (!newComment.value.trim()) return
+  
+  const announcement = announcements.value.find(a => a.id === currentAnnouncementId.value)
+  if (announcement) {
+    announcement.comments++
+  }
+  
+  if (!commentsData.value[currentAnnouncementId.value]) {
+    commentsData.value[currentAnnouncementId.value] = []
+  }
+  
+  const comment = {
+    id: Date.now(),
+    author: 'Bạn',
+    text: newComment.value,
+    time: new Date().toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })
+  }
+  
+  commentsData.value[currentShareId.value].push(comment)
+  newComment.value = ''
 }
 </script>

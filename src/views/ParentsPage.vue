@@ -1,14 +1,12 @@
 <template>
-  <div class="parents-page py-16 bg-gradient-to-br from-blue-50 to-green-50">
+  <div class="parents-page py-8 bg-gradient-to-br from-blue-50 to-green-50">
     <div class="container mx-auto px-4">
       <!-- Header -->
       <div class="text-center mb-12">
         <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
           👨‍👩‍👧 Kết nối phụ huynh
         </h1>
-        <p class="text-xl text-gray-600">
-          Cùng đồng hành trong hành trình phát triển của các em
-        </p>
+        <p class="text-s text-gray-600">Cùng đồng hành trong hành trình phát triển của các em</p>
       </div>
 
       <!-- Quick Actions -->
@@ -98,12 +96,12 @@
 
           <div>
             <label class="block text-gray-700 font-semibold mb-2">
-              Email liên hệ
+              SĐT liên hệ
             </label>
             <input 
-              v-model="feedbackData.email"
-              type="email"
-              placeholder="email@example.com"
+              v-model="feedbackData.phone"
+              type="tel"
+              placeholder="0123 456 789"
               class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
             />
           </div>
@@ -159,42 +157,18 @@
 
 <script setup>
 import { ref } from 'vue'
+import teacherMessagesData from '../data/teacherMessages.json'
 
 const showFeedbackForm = ref(false)
 
 const feedbackData = ref({
   name: '',
-  email: '',
+  phone: '',
   type: 'feedback',
   content: ''
 })
 
-const teacherMessages = ref([
-  {
-    id: 1,
-    title: 'Cảm ơn sự đồng hành',
-    content: 'Quý phụ huynh thân mến, tháng vừa qua các em đã có nhiều tiến bộ đáng kể. Điều này không thể thiếu sự quan tâm, động viên của gia đình. Cô xin gửi lời cảm ơn sâu sắc đến quý phụ huynh!',
-    date: '15/01/2025'
-  },
-  {
-    id: 2,
-    title: 'Một số lưu ý về học tập',
-    content: 'Để các em có kết quả học tập tốt hơn, cô mong quý phụ huynh giúp các em: Đọc sách mỗi ngày ít nhất 30 phút, hoàn thành bài tập đúng hạn, và tham gia đầy đủ các hoạt động ngoại khóa.',
-    date: '10/01/2025'
-  },
-  {
-    id: 3,
-    title: 'Kế hoạch tháng 2',
-    content: 'Tháng 2 sắp tới, lớp sẽ tổ chức nhiều hoạt động ý nghĩa: ngày hội đọc sách, cuộc thi STEM, và chuyến tham quan tại vườn quốc gia. Cô rất mong được sự ủng hộ của quý phụ huynh.',
-    date: '08/01/2025'
-  },
-  {
-    id: 4,
-    title: 'Website "Lớp học hạnh phúc"',
-    content: 'Cô rất vui khi ra mắt website lớp học này. Đây là nơi để các em được thể hiện, chia sẻ và phát triển. Cô mong quý phụ huynh thường xuyên theo dõi và động viên các em!',
-    date: '05/01/2025'
-  }
-])
+const teacherMessages = ref(teacherMessagesData)
 
 
 
@@ -211,7 +185,7 @@ const submitFeedback = () => {
   showFeedbackForm.value = false
   feedbackData.value = {
     name: '',
-    email: '',
+    phone: '',
     type: 'feedback',
     content: ''
   }

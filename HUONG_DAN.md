@@ -246,7 +246,7 @@ npm run dev
 - Xem các trường có dấu * là bắt buộc
 
 ### Liên hệ hỗ trợ:
-- Email: minhnguyen@school.edu.vn
+- Email: tuyendang@school.edu.vn
 - Điện thoại: 0123 456 789
 - Giờ hỗ trợ: Thứ 2-6, 7:00-17:00
 

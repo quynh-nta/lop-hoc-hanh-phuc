@@ -201,24 +201,16 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import heroImagesData from '../data/heroImages.json'
+import announcementsData from '../data/announcements.json'
 
 const currentSlide = ref(0)
 let slideInterval
 
-const heroImages = [
-  {
-    url: new URL('../assets/class1.jpeg', import.meta.url).href,
-    title: 'Học sinh vui vẻ'
-  },
-  {
-    url: new URL('../assets/class2.jpeg', import.meta.url).href,
-    title: 'Hoạt động ngoại khóa'
-  },
-  {
-    url: new URL('../assets/class3.jpeg', import.meta.url).href,
-    title: 'Lớp học vui nhộn'
-  }
-]
+const heroImages = heroImagesData.map(img => ({
+  ...img,
+  url: new URL(`..${img.url}`, import.meta.url).href
+}))
 
 const latestActivities = [
   {
@@ -310,57 +302,7 @@ const getPriorityText = (priority) => {
   return map[priority] || 'Thông thường'
 }
 
-const announcements = ref([
-  {
-    id: 1,
-    title: 'Lịch học tuần 3 tháng 1',
-    content: `Kính gửi quý phụ huynh,
-
-Lịch học tuần này:
-- Thứ 2-6: Học bình thường theo thời khóa biểu
-- Thứ 4 (22/1): Có buổi sinh hoạt ngoại khóa từ 14h-16h
-- Thứ 6 (24/1): Kiểm tra Toán học kỳ I
-
-Nhờ quý phụ huynh lưu ý và chuẩn bị cho các em.
-Trân trọng!`,
-    date: '20/01/2025',
-    period: 'Tuần 3/2025',
-    priority: 'high',
-    icon: '📅'
-  },
-  {
-    id: 2,
-    title: 'Thông báo về chuyến tham quan',
-    content: `Lớp 6A sẽ có chuyến tham quan bảo tàng vào ngày 28/1/2025.
-
-Chi tiết:
-- Thời gian: 8h00 - 16h00
-- Địa điểm: Bảo tàng Quang Trung tỉnh Gia Lai
-- Chi phí: 150.000đ/em (bao gồm xe, vé, bữa trưa)
-- Hạn đóng tiền: 25/01/2025
-
-Mọi thắc mắc xin liên hệ Cô Tuyền.`,
-    date: '18/01/2025',
-    period: 'Tháng 1/2025',
-    priority: 'medium',
-    icon: '🚌',
-    attachments: ['Đơn đồng ý.pdf', 'Lịch trình chi tiết.pdf']
-  },
-  {
-    id: 3,
-    title: 'Kết quả học tập tháng 12',
-    content: `Tổng kết học tập tháng 12/2025:
-- 90% học sinh đạt kết quả tốt trở lên
-- 5 em đạt học sinh xuất sắc
-- Không có em nào yếu kém
-
-Cảm ơn sự đồng hành của quý phụ huynh!`,
-    date: '05/01/2025',
-    period: 'Tháng 12/2025',
-    priority: 'normal',
-    icon: '📊'
-  }
-])
+const announcements = ref(announcementsData)
 
 onMounted(() => {
   slideInterval = setInterval(() => {

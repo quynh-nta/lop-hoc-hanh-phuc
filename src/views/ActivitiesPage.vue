@@ -128,6 +128,7 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import activitiesData from '../data/activities.json'
 
 const selectedCategory = ref('all')
 const selectedMonth = ref('all')
@@ -148,93 +149,12 @@ const months = [
   'Tháng 9/2025', 'Tháng 10/2025', 'Tháng 11/2025', 'Tháng 12/2025'
 ]
 
-const activities = ref([
-  {
-    id: 1,
-    title: 'Tham quan bảo tàng lịch sử',
-    description: 'Chuyến đi thú vị đến bảo tàng, các em được tìm hiểu về lịch sử dân tộc.',
-    fullDescription: `Hôm nay, cả lớp chúng mình đã có một chuyến tham quan vô cùng ý nghĩa tại Bảo tàng Lịch sử Việt Nam. 
-
-Các em được nghe cô hướng dẫn viên kể những câu chuyện về lịch sử dân tộc, xem các hiện vật quý giá từ các thời kỳ khác nhau. Đặc biệt, các em rất thích thú khi được tham gia các hoạt động trải nghiệm như mặc trang phục truyền thống, chơi các trò chơi dân gian.
-
-Qua chuyến đi, các em không chỉ học được kiến thức lịch sử mà còn hiểu hơn về truyền thống văn hóa của dân tộc, từ đó có thêm tình yêu quê hương đất nước.`,
-    image: new URL('../assets/Activities/bao_tang_quang_trung_du_lich_thu_duc_6.png', import.meta.url).href,
-    category: 'Trải nghiệm',
-    categoryId: 'experience',
-    date: '15/01/2025',
-    month: 'Tháng 1/2025',
-    views: 234,
-    gallery: [
-      new URL('../assets/Activities/baotang1.jpg', import.meta.url).href,
-      new URL('../assets/Activities/baotang2.jpg', import.meta.url).href,
-      new URL('../assets/Activities/baotang3.jpg', import.meta.url).href,
-    ]
-  },
-  {
-    id: 2,
-    title: 'Ngày hội văn nghệ "Tài năng nhí"',
-    description: 'Các em thể hiện tài năng ca hát, múa, kể chuyện trong ngày hội văn nghệ.',
-    fullDescription: `Ngày hội văn nghệ "Tài năng nhí" đã diễn ra thành công tốt đẹp với sự tham gia nhiệt tình của toàn thể học sinh lớp 6A.
-
-Các tiết mục đa dạng từ ca hát, múa, kịch, kể chuyện đều thể hiện sự sáng tạo và tự tin của các em. Đặc biệt, tiết mục múa "Bông hoa đẹp nhất" của nhóm bạn nữ đã để lại ấn tượng sâu sắc cho khán giả.
-
-Ngày hội không chỉ là dịp để các em thể hiện tài năng mà còn giúp các em rèn luyện kỹ năng biểu diễn, tự tin trước đám đông.`,
-    image: new URL('../assets/Activities/vannghe.png', import.meta.url).href,
-    category: 'Văn nghệ',
-    categoryId: 'art',
-    date: '10/01/2025',
-    month: 'Tháng 1/2025',
-    views: 312
-  },
-  {
-    id: 3,
-    title: 'Giải bóng đá mini liên lớp',
-    description: 'Đội bóng lớp 6A vô địch giải bóng đá mini cấp trường.',
-    fullDescription: `Sau những trận đấu căng thẳng và kịch tính, đội bóng lớp 6A đã xuất sắc giành chức vô địch giải bóng đá mini cấp trường.
-
-Với tinh thần đoàn kết, chiến thuật thông minh và kỹ năng chơi bóng tốt, các cầu thủ đã mang về vinh quang cho lớp. Trận chung kết với tỷ số 3-2 đã để lại những khoảnh khắc đáng nhớ.
-
-Cả lớp đều tự hào về đội bóng của mình. Đây là minh chứng cho tinh thần thể thao và sự nỗ lực không ngừng của các em.`,
-    image: new URL('../assets/Activities/soccer.jpg', import.meta.url).href,
-    category: 'Thể thao',
-    categoryId: 'sports',
-    date: '08/01/2025',
-    month: 'Tháng 1/2025',
-    views: 278
-  },
-  {
-    id: 4,
-    title: 'Kỹ năng giao tiếp và làm việc nhóm',
-    description: 'Buổi workshop về kỹ năng mềm cho học sinh.',
-    fullDescription: `Buổi học kỹ năng mềm hôm nay tập trung vào giao tiếp và làm việc nhóm - hai kỹ năng quan trọng trong cuộc sống.
-
-Qua các trò chơi tương tác và bài tập nhóm, các em đã học được cách lắng nghe, chia sẻ ý kiến và làm việc hiệu quả với người khác. Các em cũng hiểu được tầm quan trọng của việc tôn trọng ý kiến đóng góp của bạn bè.
-
-Những kỹ năng này sẽ rất hữu ích không chỉ trong học tập mà còn trong cuộc sống hàng ngày.`,
-    image: new URL('../assets/Activities/teamwork.jpg', import.meta.url).href,
-    category: 'Kỹ năng sống',
-    categoryId: 'life-skills',
-    date: '05/01/2025',
-    month: 'Tháng 1/2025',
-    views: 156
-  },
-  {
-    id: 5,
-    title: 'Dự án làm vườn xanh',
-    description: 'Các em tự tay trồng và chăm sóc vườn rau sạch của lớp.',
-    fullDescription: `Dự án "Vườn xanh lớp 6A" đã chính thức khởi động. Mỗi em đều được phân công chăm sóc một luống rau riêng.
-
-Các em học cách xới đất, gieo hạt, tưới nước và chăm sóc cây trồng hàng ngày. Qua dự án này, các em không chỉ học được kiến thức về nông nghiệp mà còn hiểu được giá trị của lao động và thực phẩm sạch.
-
-Trong tháng tới, chúng mình sẽ thu hoạch những rau sạch đầu tiên do chính tay mình trồng!`,
-    image: new URL('../assets/Activities/vuon-rau.jpg', import.meta.url).href,
-    category: 'Trải nghiệm',
-    categoryId: 'experience',
-    date: '20/12/2025',
-    month: 'Tháng 12/2025',
-    views: 201
-  }
-])
+// Load activities from JSON and update image URLs
+const activities = ref(activitiesData.map(activity => ({
+  ...activity,
+  image: new URL(`..${activity.image}`, import.meta.url).href,
+  gallery: activity.gallery ? activity.gallery.map(img => new URL(`..${img}`, import.meta.url).href) : undefined
+})))
 
 const filteredActivities = computed(() => {
   let result = activities.value
