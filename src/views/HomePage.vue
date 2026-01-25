@@ -302,7 +302,7 @@ const getPriorityText = (priority) => {
   return map[priority] || 'Thông thường'
 }
 
-const announcements = ref(announcementsData)
+const announcements = ref(announcementsData.slice(0, 3))
 
 onMounted(() => {
   slideInterval = setInterval(() => {

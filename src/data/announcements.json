@@ -6,7 +6,53 @@
     "date": "20/01/2025",
     "period": "Tuần 3/2025",
     "priority": "high",
-    "icon": "📅"
+    "icon": "📅",
+    "comments": 7,
+    "commentsData": [
+      {
+        "id": 1,
+        "author": "Nguyễn Thị Lan",
+        "text": "Cảm ơn thầy cô đã thông báo. Tôi sẽ nhắc nhở con chuẩn bị tốt cho buổi kiểm tra.",
+        "time": "10:15 20/01/2025"
+      },
+      {
+        "id": 2,
+        "author": "Trần Văn Hùng",
+        "text": "Buổi sinh hoạt ngoại khóa có cần chuẩn bị gì đặc biệt không ạ?",
+        "time": "11:30 20/01/2025"
+      },
+      {
+        "id": 3,
+        "author": "Phạm Thị Hoa",
+        "text": "Tôi sẽ cho con mang theo đồ dùng học tập cần thiết cho buổi kiểm tra.",
+        "time": "12:45 20/01/2025"
+      },
+      {
+        "id": 4,
+        "author": "Lê Minh Tuấn",
+        "text": "Cảm ơn nhà trường đã tổ chức các hoạt động ngoại khóa bổ ích cho các em.",
+        "time": "13:20 20/01/2025"
+      },
+      {
+        "id": 5,
+        "author": "Đỗ Thị Mai",
+        "text": "Tôi sẽ liên hệ với cô giáo nếu có thắc mắc về lịch học.",
+        "time": "14:05 20/01/2025"
+      },
+      {
+        "id": 6,
+        "author": "Vũ Anh Khoa",
+        "text": "Con tôi rất hào hứng với buổi sinh hoạt ngoại khóa. Cảm ơn thầy cô!",
+        "time": "15:30 20/01/2025"
+      },
+      {
+        "id": 7,
+        "author": "Ngô Thị Hạnh",
+        "text": "Tôi sẽ đảm bảo con tôi có mặt đúng giờ vào các buổi học.",
+        "time": "16:10 20/01/2025"
+      }
+    ],
+    "likes": 20
   },
   {
     "id": 2,
@@ -16,7 +62,9 @@
     "period": "Tháng 1/2025",
     "priority": "medium",
     "icon": "🚌",
-    "attachments": ["Đơn đồng ý.pdf", "Lịch trình chi tiết.pdf"]
+    "attachments": ["Đơn đồng ý.pdf", "Lịch trình chi tiết.pdf"],
+        "comments": 0,
+    "likes": 0
   },
   {
     "id": 3,
@@ -25,6 +73,92 @@
     "date": "05/01/2025",
     "period": "Tháng 12/2025",
     "priority": "normal",
-    "icon": "📊"
+    "icon": "📊",
+    "comments": 0,
+    "likes": 0
+  },
+  {
+    "id": 4,
+    "title": "Lịch nghỉ Tết Nguyên Đán",
+    "content": "Kính gửi quý phụ huynh,\nLịch nghỉ Tết Nguyên Đán 2025:\n- Bắt đầu nghỉ: 01/02/2025\n- Đi học lại: 10/02/2025\nChúc quý phụ huynh và các em học sinh một năm mới an khang thịnh vượng!\nTrân trọng!",
+    "date": "25/01/2025",
+    "month": "Tháng 1/2025",
+    "priority": "high",
+    "categoryId": "high",
+    "icon": "🎉",
+    "comments": 0,
+    "likes": 0
+  },
+  {
+    "id": 5,
+    "title": "Mời tham gia buổi họp phụ huynh",
+    "content": "Kính mời quý phụ huynh tham gia buổi họp phụ huynh cuối học kỳ I:\n- Thời gian: 15h00, ngày 30/01/2025\n- Địa điểm: Phòng học lớp 6A\nNội dung: Báo cáo kết quả học tập, thảo luận kế hoạch học kỳ II.\nRất mong sự có mặt của quý phụ huynh!",
+    "date": "22/01/2025",
+    "month": "Tháng 1/2025",
+    "priority": "medium",
+    "categoryId": "medium",
+    "icon": "📢",
+    "comments": 0,
+    "likes": 0
+  },
+  {
+    "id": 6,
+    "title": "Nhắc nhở đóng học phí",
+    "content": "Kính gửi quý phụ huynh,\nNhắc nhở quý phụ huynh đóng học phí học kỳ II trước ngày 05/02/2025.\nMức học phí: 2.500.000đ/học kỳ.\nQuý phụ huynh vui lòng liên hệ văn phòng nhà trường để hoàn tất thủ tục.\nTrân trọng!",
+    "date": "28/01/2025",
+    "month": "Tháng 1/2025",
+    "priority": "normal",
+    "categoryId": "normal",
+    "icon": "💰",
+    "comments": 0,
+    "likes": 0
+  },
+  {
+    "id": 7,
+    "title": "Cập nhật chương trình học kỳ II",
+    "content": "Kính gửi quý phụ huynh,\nChương trình học kỳ II sẽ có một số thay đổi như sau:\n- Thêm môn Kỹ năng sống vào thứ 5 hàng tuần.\n- Tăng cường các hoạt động ngoại khóa vào cuối tuần.\nChi tiết chương trình sẽ được gửi trong buổi họp phụ huynh ngày 30/01/2025.\nTrân trọng!",
+    "date": "26/01/2025",
+    "month": "Tháng 1/2025",
+    "priority": "medium",
+    "categoryId": "medium",
+    "icon": "📝",
+    "comments": 0,
+    "likes": 0
+  },
+  {
+    "id": 8,
+    "title": "Thông báo về an toàn học đường",
+    "content": "Kính gửi quý phụ huynh,\nNhà trường xin thông báo về các biện pháp đảm bảo an toàn học đường:\n- Tăng cường giám sát khu vực cổng trường.\n- Tổ chức các buổi tuyên truyền về an toàn giao thông cho học sinh.\n- Yêu cầu học sinh tuân thủ nội quy nhà trường nghiêm ngặt.\nRất mong sự phối hợp từ quý phụ huynh để đảm bảo môi trường học tập an toàn cho các em.",
+    "date": "15/01/2025",
+    "month": "Tháng 1/2025",
+    "priority": "high",
+    "categoryId": "high",
+    "icon": "🛡️",
+    "comments": 0,
+    "likes": 0
+  },
+  {
+    "id": 9,
+    "title": "Lịch thi học kỳ I",
+    "content": "Kính gửi quý phụ huynh,\nLịch thi học kỳ I năm học 2024-2025 như sau:\n- Toán: 20/01/2025\n- Tiếng Việt: 22/01/2025\n- Khoa học: 24/01/2025\nQuý phụ huynh vui lòng nhắc nhở các em ôn tập và chuẩn bị tốt cho kỳ thi.\nTrân trọng!",
+    "date": "10/01/2025",
+    "month": "Tháng 1/2025",
+    "priority": "high",
+    "categoryId": "high",
+    "icon": "📝",
+    "comments": 0,
+    "likes": 0
+  },
+  {
+    "id": 10,
+    "title": "Chương trình ngoại khóa cuối tuần",
+    "content": "Kính gửi quý phụ huynh,\nNhà trường tổ chức chương trình ngoại khóa cuối tuần với các hoạt động thú vị:\n- Thứ 7 (31/01): Dã ngoại tại công viên\n- Chủ nhật (01/02): Workshop nghệ thuật và thủ công\nQuý phụ huynh vui lòng đăng ký cho các em tham gia trước ngày 28/01/2025.\nTrân trọng!",
+    "date": "12/01/2025",
+    "month": "Tháng 1/2025",
+    "priority": "normal",
+    "categoryId": "normal",
+    "icon": "🎨",
+    "comments": 0,
+    "likes": 0
   }
 ]

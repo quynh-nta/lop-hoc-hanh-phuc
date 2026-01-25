@@ -8,7 +8,7 @@
       </div>
 
       <!-- Login Form (if not logged in) -->
-      <div v-if="!isLoggedIn" class="max-w-md mx-auto">
+      <!-- <div v-if="!isLoggedIn" class="max-w-md mx-auto">
         <div class="bg-white rounded-xl p-8 shadow-lg">
           <div class="text-center mb-6">
             <div class="text-6xl mb-4">🔒</div>
@@ -49,10 +49,10 @@
             </p>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Admin Dashboard (if logged in) -->
-      <div v-else>
+      <div>
         <!-- Stats Cards -->
         <div class="grid md:grid-cols-4 gap-6 mb-8">
           <div class="bg-white rounded-xl p-6 shadow-md">
