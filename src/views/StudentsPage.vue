@@ -76,7 +76,7 @@
           :key="student.id"
           class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
         >
-          <div class="p-6">
+          <div class="p-6 flex flex-col h-full">
             <!-- Student Info -->
             <div class="flex items-start space-x-4 mb-4">
               <div :class="[
@@ -138,7 +138,7 @@
             </div>
 
             <!-- Action Buttons -->
-            <div class="flex space-x-2 mt-4">
+            <div class="mt-auto flex space-x-2 mt-4">
               <button 
                 @click="startChat(student)"
                 class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-1"

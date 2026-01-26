@@ -69,16 +69,40 @@
             </a>
           </div>
           <div class="mt-auto flex items-center justify-between text-sm text-gray-500 pt-4">
-            <button @click="handleLike(announcement)"
-              class="flex items-center space-x-1 hover:text-pink-600 transition-colors">
-              <span>❤️</span>
-              <span>{{ announcement.likes }}</span>
-            </button>
+
             <button @click="openComments(announcement)"
               class="flex items-center space-x-1 hover:text-blue-600 transition-colors">
               <span>💬</span>
               <span>{{ announcement.comments }} bình luận</span>
             </button>
+            <div class="flex flex-row gap-2">
+              <button @click="handleLike(announcement.id)"
+                class="flex items-center space-x-1 hover:text-pink-600 transition-colors">
+                <span>❤️</span>
+                <span>{{ announcement.likes }}</span>
+              </button>
+               | 
+              <Tooltip :title="`${announcement.likes} người thích`" position="top">
+                <template #trigger>
+                  <span>Xem</span>
+                </template>
+                <template #content>
+                  <div v-if="likesData[announcement.id]?.length" class="space-y-2">
+                    <div v-for="like in likesData[announcement.id]" :key="like.id" class="flex items-center gap-2 py-1">
+                      <div
+                        class="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center text-sm font-semibold">
+                        {{ like.charAt(0) }}
+                      </div>
+                      <span class="text-sm text-gray-700">{{ like }}</span>
+                    </div>
+                  </div>
+                  <div v-else class="text-sm text-gray-500 text-center py-2">
+                    Chưa có ai thích bài viết này
+                  </div>
+                </template>
+              </Tooltip>
+            </div>
+
           </div>
         </div>
       </div>
@@ -178,6 +202,7 @@
 import { ref, computed } from 'vue'
 import CommonModal from '../components/CommonModal.vue'
 import announcementsData from '../data/announcements.json'
+import Tooltip from '../components/Tooltip.vue'
 
 const selectedCategory = ref('all')
 const selectedMonth = ref('all')
@@ -186,6 +211,12 @@ const commentModalOpen = ref(false)
 const currentAnnouncementId = ref(null)
 const newComment = ref('')
 const commentsData = ref({})
+const likesData = ref({})
+announcementsData.forEach(announcement => {
+  if (announcement.likesData) {
+    likesData.value[announcement.id] = announcement.likesData
+  }
+})
 
 const categories = [
   { id: 'all', name: 'Tất cả', icon: '📚' },
@@ -222,8 +253,11 @@ const filteredAnnouncements = computed(() => {
   return result
 })
 
-const handleLike = (announcement) => {
-  announcement.likes++
+const handleLike = (announcementId) => {
+  const announcement = announcements.value.find(a => a.id === announcementId)
+  if (announcement) {
+    announcement.likes++
+  }
 }
 
 const openComments = (announcement) => {
