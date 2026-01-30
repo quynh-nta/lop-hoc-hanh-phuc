@@ -195,7 +195,7 @@ const categories = [
 const products = ref([
   {
     id: 1,
-    title: 'Một ngày của lớp 6A',
+    title: 'Một ngày của lớp 6A1',
     description: 'Video ghi lại những khoảnh khắc vui vẻ trong ngày học của lớp.',
     thumbnail: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&h=600&fit=crop',
     type: 'Video',
@@ -203,7 +203,7 @@ const products = ref([
     author: 'Nguyễn Minh An',
     date: '20/01/2025',
     featured: true,
-    fullContent: 'Video 5 phút ghi lại những khoảnh khắc vui vẻ, ý nghĩa trong một ngày học của lớp 6A. Từ giờ chào cờ đầu tuần, các tiết học sôi nổi, đến giờ ra chơi náo nhiệt. Đây là sản phẩm của cả nhóm sau 2 tuần quay và dựng.'
+    fullContent: 'Video 5 phút ghi lại những khoảnh khắc vui vẻ, ý nghĩa trong một ngày học của lớp 6A1. Từ giờ chào cờ đầu tuần, các tiết học sôi nổi, đến giờ ra chơi náo nhiệt. Đây là sản phẩm của cả nhóm sau 2 tuần quay và dựng.'
   },
   {
     id: 2,

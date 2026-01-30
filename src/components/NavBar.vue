@@ -26,16 +26,19 @@
 
         <!-- Desktop Menu -->
         <ul class="hidden md:flex items-center space-x-6">
-          <li><router-link to="/" class="nav-link">Trang chủ</router-link></li>
+          <li><router-link to="/" class="nav-link">🏠Trang chủ</router-link></li>
+          <li><router-link to="/vinh-danh" class="nav-link">🏆Vinh danh</router-link></li>
           <li><router-link to="/thong-bao" class="nav-link">Thông báo</router-link></li>
           <li><router-link to="/hoat-dong" class="nav-link">Hoạt động</router-link></li>
           <li><router-link to="/chia-se" class="nav-link">Góc chia sẻ</router-link></li>
           <li><router-link to="/phu-huynh" class="nav-link">Phụ huynh</router-link></li>
           <li><router-link to="/truyen-thong" class="nav-link">Truyền thông</router-link></li>
           <li><router-link to="/danh-sach" class="nav-link">Danh sách</router-link></li>
-          
+        </ul>
+
+        <div>
           <!-- User Menu -->
-          <li v-if="authStore.isAuthenticated" class="relative">
+          <div v-if="authStore.isAuthenticated" class="relative">
             <button 
               @click="showUserMenu = !showUserMenu"
               class="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
@@ -66,13 +69,13 @@
                 🚪 Đăng xuất
               </button>
             </div>
-          </li>
-          <li v-else>
+          </div>
+          <div v-else>
             <router-link to="/dang-nhap" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
               Đăng nhập
             </router-link>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
 
       <!-- Mobile Menu -->
@@ -81,16 +84,14 @@
         class="md:hidden overflow-hidden transition-all duration-300"
       >
         <ul class="pb-4 space-y-2">
-          <li><router-link to="/" @click="showMenu = false" class="mobile-nav-link">Trang chủ</router-link></li>
-          <li><router-link to="/gioi-thieu" @click="showMenu = false" class="mobile-nav-link">Giới thiệu</router-link></li>
+          <li><router-link to="/" @click="showMenu = false" class="mobile-nav-link">🏠Trang chủ</router-link></li>
+          <li><router-link to="/vinh-danh" @click="showMenu = false" class="mobile-nav-link">🏆Vinh danh</router-link></li>
+          <li><router-link to="/thong-bao" @click="showMenu = false" class="mobile-nav-link">📢Thông báo</router-link></li>
           <li><router-link to="/hoat-dong" @click="showMenu = false" class="mobile-nav-link">Hoạt động</router-link></li>
           <li><router-link to="/chia-se" @click="showMenu = false" class="mobile-nav-link">Góc chia sẻ</router-link></li>
           <li><router-link to="/phu-huynh" @click="showMenu = false" class="mobile-nav-link">Phụ huynh</router-link></li>
           <li><router-link to="/truyen-thong" @click="showMenu = false" class="mobile-nav-link">Truyền thông</router-link></li>
-          <li><router-link to="/danh-gia" @click="showMenu = false" class="mobile-nav-link">Đánh giá</router-link></li>
-          <li><router-link to="/an-toan-so" @click="showMenu = false" class="mobile-nav-link">An toàn số</router-link></li>
           <li><router-link to="/danh-sach" @click="showMenu = false" class="mobile-nav-link">👥 Danh sách lớp</router-link></li>
-          <li><router-link to="/lien-he" @click="showMenu = false" class="mobile-nav-link">Liên hệ</router-link></li>
           
           <!-- Mobile User Menu -->
           <li v-if="authStore.isAuthenticated" class="pt-4 border-t border-gray-200 mt-4">
@@ -148,11 +149,7 @@ const handleLogout = () => {
 
 .nav-link.router-link-active {
   @apply text-blue-600;
-}
-
-.nav-link.router-link-active::after {
-  content: '';
-  @apply absolute bottom-0 left-0 w-full h-0.5 bg-blue-600;
+  @apply font-semibold;
 }
 
 .mobile-nav-link {

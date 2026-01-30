@@ -10,9 +10,9 @@
 
       <div class="absolute inset-0 flex items-center">
         <div class="container mx-auto px-4">
-          <div class="max-w-3xl text-white space-y-6">
+          <div class="max-w-4xl text-white space-y-6">
             <h1 class="text-5xl md:text-6xl font-bold animate-fade-in">
-              🌟 Lớp Học Hạnh Phúc
+              🌟 Lớp Học Hạnh Phúc 6A1
             </h1>
             <p class="text-xl md:text-2xl animate-fade-in-delay">
               Nơi mỗi khoảnh khắc đều tràn đầy niềm vui và ý nghĩa
@@ -229,7 +229,7 @@ const latestActivities = [
   {
     id: 3,
     title: 'Giải bóng đá mini liên lớp',
-    description: 'Đội bóng lớp 6A vô địch giải bóng đá mini cấp trường.',
+    description: 'Đội bóng lớp 6A1 vô địch giải bóng đá mini cấp trường.',
     image: '/Activities/soccer.jpg',
     category: 'Thể thao',
     date: '08/01/2025',

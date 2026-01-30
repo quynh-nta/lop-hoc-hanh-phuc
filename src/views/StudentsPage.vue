@@ -7,7 +7,7 @@
           👥 Danh sách lớp học
         </h1>
         <p class="text-xl text-gray-600">
-          35 học sinh và 35 phụ huynh của lớp 6A
+          35 học sinh và 35 phụ huynh của lớp 6A1
         </p>
       </div>
 

@@ -1,0 +1,128 @@
+{
+  "weekly": [
+    {
+      "week": "Tuần 1 (22-26/01/2026)",
+      "topStudents": [
+        {
+          "id": 1,
+          "name": "Nguyễn Minh An",
+          "number": "01",
+          "points": 95,
+          "achievement": "Xuất sắc trong học tập và giúp đỡ bạn bè",
+          "avatar": "👦"
+        },
+        {
+          "id": 2,
+          "name": "Trần Bảo An",
+          "number": "02",
+          "points": 92,
+          "achievement": "Tích cực tham gia hoạt động lớp",
+          "avatar": "👧"
+        },
+        {
+          "id": 5,
+          "name": "Võ Minh Châu",
+          "number": "05",
+          "points": 90,
+          "achievement": "Luôn hoàn thành bài tập đúng hạn",
+          "avatar": "👧"
+        }
+      ]
+    },
+    {
+      "week": "Tuần 2 (13-17/01/2026)",
+      "topStudents": [
+        {
+          "id": 3,
+          "name": "Lê Quỳnh Anh",
+          "number": "03",
+          "points": 94,
+          "achievement": "Tiến bộ vượt bậc trong học tập",
+          "avatar": "👧"
+        },
+        {
+          "id": 7,
+          "name": "Đỗ Khánh Duy",
+          "number": "07",
+          "points": 91,
+          "achievement": "Giúp đỡ bạn trong giờ học nhóm",
+          "avatar": "👦"
+        },
+        {
+          "id": 1,
+          "name": "Nguyễn Minh An",
+          "number": "01",
+          "points": 89,
+          "achievement": "Luôn nhiệt tình trong mọi hoạt động",
+          "avatar": "👦"
+        }
+      ]
+    }
+  ],
+  "monthly": [
+    {
+      "month": "Tháng 1/2026",
+      "topStudents": [
+        {
+          "id": 1,
+          "name": "Nguyễn Minh An",
+          "number": "01",
+          "points": 97,
+          "achievement": "Học sinh xuất sắc toàn diện - Đạt điểm 10 môn Toán và Văn",
+          "avatar": "👦",
+          "awards": ["🏆 Học sinh giỏi", "📚 Đọc nhiều nhất", "🤝 Bạn tốt"]
+        },
+        {
+          "id": 2,
+          "name": "Trần Bảo An",
+          "number": "02",
+          "points": 95,
+          "achievement": "Tích cực tham gia hoạt động văn nghệ và thể thao",
+          "avatar": "👧",
+          "awards": ["🎨 Giải Nhất vẽ tranh", "⚽ Thể thao xuất sắc"]
+        },
+        {
+          "id": 5,
+          "name": "Võ Minh Châu",
+          "number": "05",
+          "points": 93,
+          "achievement": "Luôn chăm chỉ và có tinh thần trách nhiệm cao",
+          "avatar": "👧",
+          "awards": ["✍️ Viết đẹp", "🎯 Học tập chăm chỉ"]
+        }
+      ]
+    },
+    {
+      "month": "Tháng 12/2025",
+      "topStudents": [
+        {
+          "id": 3,
+          "name": "Lê Quỳnh Anh",
+          "number": "03",
+          "points": 96,
+          "achievement": "Tiến bộ vượt bậc và luôn giúp đỡ bạn bè",
+          "avatar": "👧",
+          "awards": ["⭐ Tiến bộ nhất", "💝 Tình bạn đẹp"]
+        },
+        {
+          "id": 7,
+          "name": "Đỗ Khánh Duy",
+          "number": "07",
+          "points": 94,
+          "achievement": "Xuất sắc trong môn Khoa học và Công nghệ",
+          "avatar": "👦",
+          "awards": ["🔬 Khoa học giỏi", "💻 Công nghệ xuất sắc"]
+        },
+        {
+          "id": 1,
+          "name": "Nguyễn Minh An",
+          "number": "01",
+          "points": 92,
+          "achievement": "Luôn là tấm gương cho các bạn noi theo",
+          "avatar": "👦",
+          "awards": ["🌟 Gương sáng", "📖 Học giỏi"]
+        }
+      ]
+    }
+  ]
+}

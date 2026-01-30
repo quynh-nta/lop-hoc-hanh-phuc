@@ -47,7 +47,7 @@
               <span class="text-2xl mr-3">📚</span>
               <div>
                 <p class="font-semibold text-gray-800">Tên lớp:</p>
-                <p class="text-gray-700">Lớp 6A - "Lớp Học Hạnh Phúc"</p>
+                <p class="text-gray-700">Lớp 6A1 - "Lớp Học Hạnh Phúc"</p>
               </div>
             </div>
             <div class="flex items-start">

@@ -13,6 +13,7 @@ import AdminPage from '../views/AdminPage.vue'
 import StudentsPage from '../views/StudentsPage.vue'
 import NotifyPage from '../views/NotifyPage.vue'
 import LoginPage from '../views/LoginPage.vue'
+import VinhDanhPage from '../views/VinhDanhPage.vue'
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
     path: '/thong-bao',
     name: 'Notify',
     component: NotifyPage
+  },
+  {
+    path: '/vinh-danh',
+    name: 'VinhDanh',
+    component: VinhDanhPage
   },
   {
     path: '/gioi-thieu',
