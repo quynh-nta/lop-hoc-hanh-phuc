@@ -29,15 +29,6 @@
         </button>
       </div>
 
-      <!-- Info-->
-      <div class="grid md:grid-cols-3 gap-6 mb-12">
-
-        <div class="text-center">
-          <h3 class="font-bold text-gray-800 mb-2"></h3>
-          <p class="text-sm text-gray-600"></p>
-        </div>
-      </div>
-
       <!-- Filter Tabs -->
       <div class="mb-8 flex flex-wrap justify-center gap-3">
         <button 
