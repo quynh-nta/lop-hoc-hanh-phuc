@@ -14,12 +14,20 @@ import StudentsPage from '../views/StudentsPage.vue'
 import NotifyPage from '../views/NotifyPage.vue'
 import LoginPage from '../views/LoginPage.vue'
 import VinhDanhPage from '../views/VinhDanhPage.vue'
+import SettingsPage from '../views/SettingsPage.vue'
+import ResetPasswordPage from '../views/ResetPasswordPage.vue'
 
 const routes = [
   {
     path: '/dang-nhap',
     name: 'Login',
     component: LoginPage,
+    meta: { public: true }
+  },
+  {
+    path: '/doi-mat-khau',
+    name: 'ResetPassword',
+    component: ResetPasswordPage,
     meta: { public: true }
   },
   {
@@ -86,6 +94,12 @@ const routes = [
     path: '/quan-tri',
     name: 'Admin',
     component: AdminPage,
+    meta: { requiresAuth: true, requiresAdmin: true }
+  },
+  {
+    path: '/cai-dat',
+    name: 'Settings',
+    component: SettingsPage,
     meta: { requiresAuth: true, requiresAdmin: true }
   }
 ]

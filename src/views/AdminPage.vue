@@ -127,27 +127,6 @@
           >
           </div>
         </div>
-
-        <!-- Settings -->
-        <div v-if="activeTab === 'settings'" class="space-y-4">
-          <h2 class="text-2xl font-bold text-gray-800 mb-4">⚙️ Cài đặt</h2>
-          <div class="bg-white rounded-xl p-6 shadow-md">
-            <div class="space-y-6">
-              <div>
-                <h3 class="text-lg font-bold text-gray-800 mb-2">Thông tin lớp</h3>
-                <p class="text-gray-600">Cập nhật thông tin cơ bản về lớp học</p>
-              </div>
-              <div>
-                <h3 class="text-lg font-bold text-gray-800 mb-2">Phân quyền</h3>
-                <p class="text-gray-600">Quản lý quyền truy cập và sử dụng</p>
-              </div>
-              <div>
-                <h3 class="text-lg font-bold text-gray-800 mb-2">Bảo mật</h3>
-                <p class="text-gray-600">Cài đặt bảo mật và kiểm duyệt nội dung</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -161,8 +140,7 @@ const activeTab = ref('pending')
 const adminTabs = [
   { id: 'pending', name: 'Chờ duyệt', icon: '⏳' },
   { id: 'approved', name: 'Đã duyệt', icon: '✅' },
-  { id: 'rejected', name: 'Đã từ chối', icon: '❌' },
-  { id: 'settings', name: 'Cài đặt', icon: '⚙️' }
+  { id: 'rejected', name: 'Đã từ chối', icon: '❌' }
 ]
 
 const pendingItems = ref([

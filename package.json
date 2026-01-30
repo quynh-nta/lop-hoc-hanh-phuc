@@ -11,7 +11,8 @@
     "pinia": "^3.0.4",
     "vue": "^3.2.25",
     "vue-router": "^4.6.4",
-    "vue3-smooth-scroll": "^0.8.1"
+    "vue3-smooth-scroll": "^0.8.1",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.2.0",
