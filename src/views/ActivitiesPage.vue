@@ -2,13 +2,19 @@
   <div class="activities-page py-8 bg-gray-50">
     <div class="container mx-auto px-4">
       <!-- Header -->
-      <div class="text-center mb-12">
+      <div class="text-center mb-8">
         <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
           🎨 Hoạt động của lớp
         </h1>
-        <p class="text-md text-gray-600 mb-8 text-xs">
+        <p class="text-md text-gray-600 mb-0 text-s">
           Những khoảnh khắc đáng nhớ của chúng mình
         </p>
+        <button v-if="authStore.isAdmin"
+          @click="showSubmitForm = true"
+          class="mt-2 py-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+        >
+          + Tạo hoạt động mới
+        </button>
       </div>
 
       <!-- Filter Tabs -->
@@ -112,10 +118,13 @@
 import { ref, computed } from 'vue'
 import activitiesData from '../data/activities.json'
 import CommonModal from '../components/CommonModal.vue'
+import { useAuthStore } from '../stores/auth'
 
+const authStore = useAuthStore()
 const selectedCategory = ref('all')
 const selectedMonth = ref('all')
 const selectedActivity = ref(null)
+const showSubmitForm = ref(false)
 
 const categories = [
   { id: 'all', name: 'Tất cả', icon: '📚' },

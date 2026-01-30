@@ -2,11 +2,17 @@
   <div class="activities-page py-8 bg-gray-50">
     <div class="container mx-auto px-4">
       <!-- Header -->
-      <div class="text-center mb-12">
+      <div class="text-center mb-8">
         <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-2">
           📢 Thông báo
         </h1>
         <p class="text-s text-gray-600">Cập nhật những thông tin mới nhất từ lớp học và nhà trường</p>
+        <button v-if="authStore.isAdmin"
+          @click="showSubmitForm = true"
+          class="mt-2 py-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+        >
+          + Tạo thông báo mới
+        </button>
       </div>
 
       <!-- Filter Tabs -->
@@ -203,7 +209,9 @@ import { ref, computed } from 'vue'
 import CommonModal from '../components/CommonModal.vue'
 import announcementsData from '../data/announcements.json'
 import Tooltip from '../components/Tooltip.vue'
+import { useAuthStore } from '../stores/auth'
 
+const authStore = useAuthStore()
 const selectedCategory = ref('all')
 const selectedMonth = ref('all')
 const selectedActivity = ref(null)
@@ -212,6 +220,8 @@ const currentAnnouncementId = ref(null)
 const newComment = ref('')
 const commentsData = ref({})
 const likesData = ref({})
+
+const showSubmitForm = ref(false)
 announcementsData.forEach(announcement => {
   if (announcement.likesData) {
     likesData.value[announcement.id] = announcement.likesData

@@ -9,6 +9,9 @@
     "address": "Tổ dân phố Kim Giao Thiện, Phường Hoài Nhơn Đông, Tỉnh Gia Lai",
     "isExcellent": true,
     "achievements": ["Giải Nhất Toán", "Giải Nhì Văn"],
+    "position": "Lớp trưởng",
+    "group": 1,
+    "weeklyPoints": 95,
     "parent": {
       "father": "Nguyễn Văn A",
       "mother": "Trần Thị B",
@@ -25,6 +28,9 @@
     "address": "Tổ dân phố Kim Giao Thiện, Phường Hoài Nhơn Đông, Tỉnh Gia Lai",
     "isExcellent": true,
     "achievements": ["Giải Nhất Vẽ tranh", "Học sinh giỏi"],
+    "position": "Lớp phó",
+    "group": 1,
+    "weeklyPoints": 92,
     "parent": {
       "father": "Trần Văn C",
       "mother": "Lê Thị D",
@@ -41,6 +47,9 @@
     "address": "Tổ dân phố Kim Giao Thiện, Phường Hoài Nhơn Đông, Tỉnh Gia Lai",
     "isExcellent": false,
     "achievements": ["Giải Ba Toán"],
+    "position": "",
+    "group": 1,
+    "weeklyPoints": 85,
     "parent": {
       "father": "Lê Văn E",
       "mother": "Phạm Thị F",
@@ -57,6 +66,9 @@
     "address": "Tổ dân phố Kim Giao Thiện, Phường Hoài Nhơn Đông, Tỉnh Gia Lai",
     "isExcellent": true,
     "achievements": ["Giải Nhất STEM", "Giải Nhì Tin học"],
+    "position": "Tổ trưởng",
+    "group": 2,
+    "weeklyPoints": 88,
     "parent": {
       "father": "Phạm Văn G",
       "mother": "Nguyễn Thị H",
@@ -73,6 +85,9 @@
     "address": "Tổ dân phố Kim Giao Thiện, Phường Hoài Nhơn Đông, Tỉnh Gia Lai",
     "isExcellent": false,
     "achievements": ["Giải Khuyến khích Văn"],
+    "position": "",
+    "group": 2,
+    "weeklyPoints": 90,
     "parent": {
       "father": "Hoàng Văn I",
       "mother": "Đỗ Thị K",
@@ -89,6 +104,9 @@
     "address": "Tổ dân phố Kim Giao Thiện, Phường Hoài Nhơn Đông, Tỉnh Gia Lai",
     "isExcellent": true,
     "achievements": ["Giải Nhì Thể thao", "Học sinh tiêu biểu"],
+    "position": "",
+    "group": 2,
+    "weeklyPoints": 87,
     "parent": {
       "father": "Nguyễn Văn L",
       "mother": "Vũ Thị M",
@@ -105,6 +123,9 @@
     "address": "Tổ dân phố Kim Giao Thiện, Phường Hoài Nhơn Đông, Tỉnh Gia Lai",
     "isExcellent": true,
     "achievements": ["Giải Nhất Vẽ tranh toàn quốc"],
+    "position": "Tổ trưởng",
+    "group": 3,
+    "weeklyPoints": 93,
     "parent": {
       "father": "Phạm Văn N",
       "mother": "Lý Thị O",
@@ -121,6 +142,9 @@
     "address": "Tổ dân phố Kim Giao Thiện, Phường Hoài Nhơn Đông, Tỉnh Gia Lai",
     "isExcellent": false,
     "achievements": [],
+    "position": "",
+    "group": 3,
+    "weeklyPoints": 82,
     "parent": {
       "father": "Trần Văn P",
       "mother": "Hoàng Thị Q",

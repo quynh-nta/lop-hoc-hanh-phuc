@@ -134,7 +134,7 @@
           <div class="space-y-2 text-xs text-gray-500">
             <div class="flex items-center justify-between bg-gray-50 p-2 rounded">
               <span>👨‍🏫 Giáo viên:</span>
-              <code class="bg-white px-2 py-1 rounded">admin / admin123</code>
+              <code class="bg-white px-2 py-1 rounded">DangTuyen / admin123</code>
             </div>
             <div class="flex items-center justify-between bg-gray-50 p-2 rounded">
               <span>👨‍👩‍👧 Phụ huynh:</span>

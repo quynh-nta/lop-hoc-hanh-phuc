@@ -2,60 +2,12 @@
   <div class="admin-page py-16 bg-gray-100 min-h-screen">
     <div class="container mx-auto px-4">
       <!-- Header -->
-      <div class="mb-8">
+      <div class="mb-8 border border-gray-200 bg-white rounded-xl p-4">
         <h1 class="text-4xl font-bold text-gray-800 mb-2">🔐 Trang quản trị</h1>
         <p class="text-gray-600">Quản lý nội dung và phê duyệt bài viết</p>
-      </div>
-
-      <!-- Login Form (if not logged in) -->
-      <!-- <div v-if="!isLoggedIn" class="max-w-md mx-auto">
-        <div class="bg-white rounded-xl p-8 shadow-lg">
-          <div class="text-center mb-6">
-            <div class="text-6xl mb-4">🔒</div>
-            <h2 class="text-2xl font-bold text-gray-800 mb-2">Đăng nhập</h2>
-            <p class="text-gray-600">Dành cho giáo viên</p>
-          </div>
-          <form @submit.prevent="handleLogin" class="space-y-4">
-            <div>
-              <label class="block text-gray-700 font-semibold mb-2">Tên đăng nhập</label>
-              <input 
-                v-model="loginData.username"
-                type="text"
-                required
-                placeholder="Nhập tên đăng nhập"
-                class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-            <div>
-              <label class="block text-gray-700 font-semibold mb-2">Mật khẩu</label>
-              <input 
-                v-model="loginData.password"
-                type="password"
-                required
-                placeholder="Nhập mật khẩu"
-                class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-            <button 
-              type="submit"
-              class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors"
-            >
-              Đăng nhập
-            </button>
-          </form>
-          <div class="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-            <p class="text-sm text-yellow-800">
-              <strong>Demo:</strong> username: <code>teacher</code>, password: <code>demo123</code>
-            </p>
-          </div>
-        </div>
-      </div> -->
-
-      <!-- Admin Dashboard (if logged in) -->
-      <div>
-        <!-- Stats Cards -->
-        <div class="grid md:grid-cols-4 gap-6 mb-8">
-          <div class="bg-white rounded-xl p-6 shadow-md">
+                <!-- Stats Cards -->
+        <div class="grid md:grid-cols-4 gap-6 mt-4">
+          <div class="bg-white rounded-xl p-6 border border-gray-200">
             <div class="flex items-center justify-between">
               <div>
                 <p class="text-gray-500 text-sm mb-1">Chờ duyệt</p>
@@ -64,7 +16,7 @@
               <div class="text-4xl">⏳</div>
             </div>
           </div>
-          <div class="bg-white rounded-xl p-6 shadow-md">
+          <div class="bg-white rounded-xl p-6 border border-gray-200">
             <div class="flex items-center justify-between">
               <div>
                 <p class="text-gray-500 text-sm mb-1">Đã duyệt</p>
@@ -73,7 +25,16 @@
               <div class="text-4xl">✅</div>
             </div>
           </div>
-          <div class="bg-white rounded-xl p-6 shadow-md">
+          <div class="bg-white rounded-xl p-6 border border-gray-200">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-gray-500 text-sm mb-1">Đã từ chối</p>
+                <p class="text-3xl font-bold text-red-600">{{ rejectedCount }}</p>
+              </div>
+              <div class="text-4xl">❌</div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-gray-200">
             <div class="flex items-center justify-between">
               <div>
                 <p class="text-gray-500 text-sm mb-1">Hoạt động</p>
@@ -82,16 +43,11 @@
               <div class="text-4xl">📸</div>
             </div>
           </div>
-          <div class="bg-white rounded-xl p-6 shadow-md">
-            <div class="flex items-center justify-between">
-              <div>
-                <p class="text-gray-500 text-sm mb-1">Người dùng</p>
-                <p class="text-3xl font-bold text-purple-600">{{ usersCount }}</p>
-              </div>
-              <div class="text-4xl">👥</div>
-            </div>
-          </div>
         </div>
+      </div>
+      <!-- Admin Dashboard (if logged in) -->
+      <div>
+
 
         <!-- Tabs -->
         <div class="mb-6 flex flex-wrap gap-3">
@@ -108,17 +64,10 @@
           >
             {{ tab.icon }} {{ tab.name }}
           </button>
-          <button 
-            @click="handleLogout"
-            class="ml-auto px-6 py-2 rounded-lg font-semibold bg-red-600 text-white hover:bg-red-700"
-          >
-            Đăng xuất
-          </button>
         </div>
 
         <!-- Pending Approvals -->
-        <div v-if="activeTab === 'pending'" class="space-y-4">
-          <h2 class="text-2xl font-bold text-gray-800 mb-4">⏳ Chờ phê duyệt</h2>
+        <div v-if="activeTab === 'pending'" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div 
             v-for="item in pendingItems" 
             :key="item.id"
@@ -162,22 +111,20 @@
 
         <!-- Approved Content -->
         <div v-if="activeTab === 'approved'" class="space-y-4">
-          <h2 class="text-2xl font-bold text-gray-800 mb-4">✅ Đã phê duyệt</h2>
-          <div class="bg-white rounded-xl p-6 shadow-md">
-            <p class="text-center text-gray-600">Danh sách nội dung đã được phê duyệt</p>
+          <div 
+            v-for="item in approvedItems" 
+            :key="item.id"
+            class="bg-white rounded-xl p-6 shadow-md"
+          >
           </div>
         </div>
-
-        <!-- Activities Management -->
-        <div v-if="activeTab === 'activities'" class="space-y-4">
-          <div class="flex justify-between items-center mb-4">
-            <h2 class="text-2xl font-bold text-gray-800">📸 Quản lý hoạt động</h2>
-            <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold">
-              + Thêm hoạt động
-            </button>
-          </div>
-          <div class="bg-white rounded-xl p-6 shadow-md">
-            <p class="text-center text-gray-600">Danh sách hoạt động của lớp</p>
+        <!-- Đã từ chối -->
+        <div v-if="activeTab === 'rejected'" class="space-y-4">
+          <div 
+            v-for="item in rejectedItems" 
+            :key="item.id"
+            class="bg-white rounded-xl p-6 shadow-md"
+          >
           </div>
         </div>
 
@@ -209,18 +156,12 @@
 <script setup>
 import { ref, computed } from 'vue'
 
-const isLoggedIn = ref(false)
 const activeTab = ref('pending')
-
-const loginData = ref({
-  username: '',
-  password: ''
-})
 
 const adminTabs = [
   { id: 'pending', name: 'Chờ duyệt', icon: '⏳' },
   { id: 'approved', name: 'Đã duyệt', icon: '✅' },
-  { id: 'activities', name: 'Hoạt động', icon: '📸' },
+  { id: 'rejected', name: 'Đã từ chối', icon: '❌' },
   { id: 'settings', name: 'Cài đặt', icon: '⚙️' }
 ]
 
@@ -243,23 +184,8 @@ const pendingItems = ref([
 
 const pendingCount = computed(() => pendingItems.value.length)
 const approvedCount = ref(45)
+const rejectedCount = ref(3)
 const activitiesCount = ref(12)
-const usersCount = ref(38)
-
-const handleLogin = () => {
-  // Demo login
-  if (loginData.value.username === 'teacher' && loginData.value.password === 'demo123') {
-    isLoggedIn.value = true
-  } else {
-    alert('Sai tên đăng nhập hoặc mật khẩu!')
-  }
-}
-
-const handleLogout = () => {
-  isLoggedIn.value = false
-  activeTab.value = 'pending'
-  loginData.value = { username: '', password: '' }
-}
 
 const approveItem = (id) => {
   pendingItems.value = pendingItems.value.filter(item => item.id !== id)

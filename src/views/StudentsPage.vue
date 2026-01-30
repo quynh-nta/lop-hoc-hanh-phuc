@@ -1,12 +1,12 @@
 <template>
-  <div class="students-page py-16 bg-gradient-to-br from-blue-50 to-purple-50">
+  <div class="students-page py-8 bg-gradient-to-br from-blue-50 to-purple-50">
     <div class="container mx-auto px-4">
       <!-- Header -->
-      <div class="text-center mb-12">
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+      <div class="text-center mb-8">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-0">
           👥 Danh sách lớp học
         </h1>
-        <p class="text-xl text-gray-600">
+        <p class="text-xxs text-gray-600">
           35 học sinh và 35 phụ huynh của lớp 6A1
         </p>
       </div>
@@ -37,7 +37,7 @@
 
       <!-- Search and Filter -->
       <div class="mb-8 bg-white rounded-xl p-6 shadow-md">
-        <div class="grid md:grid-cols-3 gap-4">
+        <div class="grid md:grid-cols-4 gap-4 mb-4">
           <div>
             <input 
               v-model="searchQuery"
@@ -58,12 +58,25 @@
           </div>
           <div>
             <select 
+              v-model="filterGroup"
+              class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
+            >
+              <option value="all">Tất cả tổ</option>
+              <option value="1">Tổ 1</option>
+              <option value="2">Tổ 2</option>
+              <option value="3">Tổ 3</option>
+              <option value="4">Tổ 4</option>
+            </select>
+          </div>
+          <div>
+            <select 
               v-model="sortBy"
               class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
             >
               <option value="name">Sắp xếp theo tên</option>
               <option value="number">Theo số báo danh</option>
               <option value="achievement">Theo thành tích</option>
+              <option value="points">Theo điểm tuần</option>
             </select>
           </div>
         </div>
@@ -77,6 +90,9 @@
           class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
         >
           <div class="p-6 flex flex-col h-full">
+            <span v-if="student.position" class="px-2 py-1 bg-purple-100 text-purple-600 rounded-full text-xs font-semibold text-center mb-2">
+                    👑 {{ student.position }}
+                  </span>
             <!-- Student Info -->
             <div class="flex items-start space-x-4 mb-4">
               <div :class="[
@@ -87,8 +103,8 @@
               </div>
               <div class="flex-1">
                 <h3 class="text-xl font-bold text-gray-800">{{ student.name }}</h3>
-                <p class="text-sm text-gray-500">SBD: {{ student.number }}</p>
-                <div class="flex items-center space-x-2 mt-1">
+                <p class="text-sm text-gray-500">SBD: {{ student.number }} • Tổ {{ student.group }}</p>
+                <div class="flex items-center flex-wrap gap-2 mt-1">
                   <span :class="[
                     'px-2 py-1 rounded-full text-xs font-semibold',
                     student.gender === 'male' ? 'bg-blue-100 text-blue-600' : 'bg-pink-100 text-pink-600'
@@ -97,6 +113,9 @@
                   </span>
                   <span v-if="student.isExcellent" class="px-2 py-1 bg-yellow-100 text-yellow-600 rounded-full text-xs font-semibold">
                     ⭐ Xuất sắc
+                  </span>
+                  <span class="px-2 py-1 bg-green-100 text-green-600 rounded-full text-xs font-semibold">
+                    ⭐ {{ student.weeklyPoints }} điểm
                   </span>
                 </div>
               </div>
@@ -138,19 +157,28 @@
             </div>
 
             <!-- Action Buttons -->
-            <div class="mt-auto flex space-x-2 mt-4">
+            <div class="mt-auto flex flex-col space-y-2 mt-4">
+              <div class="flex space-x-2">
+                <button 
+                  @click="startChat(student)"
+                  class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-1"
+                >
+                  <span>💬</span>
+                  <span>Chat</span>
+                </button>
+                <button 
+                  @click="viewProfile(student)"
+                  class="flex-1 bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-lg font-semibold transition-colors"
+                >
+                  👤 Hồ sơ
+                </button>
+              </div>
               <button 
-                @click="startChat(student)"
-                class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-1"
+                v-if="canSetPoints"
+                @click="openPointsModal(student)"
+                class="w-full bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white py-2 rounded-lg font-semibold transition-colors"
               >
-                <span>💬</span>
-                <span>Chat</span>
-              </button>
-              <button 
-                @click="viewProfile(student)"
-                class="flex-1 bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-lg font-semibold transition-colors"
-              >
-                👤 Hồ sơ
+                ⭐ Chấm điểm tuần
               </button>
             </div>
           </div>
@@ -220,6 +248,14 @@
               <p class="text-sm text-gray-600 mb-1">Hạnh kiểm</p>
               <p class="font-semibold text-gray-800">Tốt</p>
             </div>
+            <div class="bg-orange-50 rounded-lg p-4">
+              <p class="text-sm text-gray-600 mb-1">Tổ</p>
+              <p class="font-semibold text-gray-800">Tổ {{ selectedStudent.group }}</p>
+            </div>
+            <div class="bg-indigo-50 rounded-lg p-4">
+              <p class="text-sm text-gray-600 mb-1">Chức vụ</p>
+              <p class="font-semibold text-gray-800">{{ selectedStudent.position || 'Không có' }}</p>
+            </div>
           </div>
 
           <div class="bg-gray-50 rounded-lg p-4">
@@ -234,20 +270,98 @@
         </div>
       </div>
     </div>
+
+    <!-- Points Modal -->
+    <div 
+      v-if="showPointsModal"
+      @click="showPointsModal = false"
+      class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50"
+    >
+      <div 
+        @click.stop
+        class="bg-white rounded-2xl max-w-md w-full p-8"
+      >
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-2xl font-bold text-gray-800">⭐ Chấm điểm tuần</h2>
+          <button 
+            @click="showPointsModal = false"
+            class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200"
+          >
+            ✕
+          </button>
+        </div>
+        <div v-if="selectedStudent" class="space-y-4">
+          <div class="text-center mb-4">
+            <div :class="[
+              'w-20 h-20 rounded-full flex items-center justify-center text-white font-bold text-3xl mx-auto mb-3',
+              selectedStudent.gender === 'male' ? 'bg-gradient-to-br from-blue-400 to-blue-600' : 'bg-gradient-to-br from-pink-400 to-pink-600'
+            ]">
+              {{ selectedStudent.name.charAt(0) }}
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">{{ selectedStudent.name }}</h3>
+            <p class="text-gray-600">Tổ {{ selectedStudent.group }}</p>
+          </div>
+          
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-2">
+              Điểm tuần này (0-100)
+            </label>
+            <input 
+              v-model.number="weeklyPointsInput"
+              type="number"
+              min="0"
+              max="100"
+              class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 text-center text-2xl font-bold"
+              placeholder="85"
+            />
+          </div>
+
+          <div class="bg-blue-50 rounded-lg p-4">
+            <p class="text-sm text-gray-600 mb-2">💡 Hướng dẫn chấm điểm:</p>
+            <ul class="text-xs text-gray-600 space-y-1">
+              <li>• 90-100: Xuất sắc</li>
+              <li>• 80-89: Giỏi</li>
+              <li>• 70-79: Khá</li>
+              <li>• 60-69: Trung bình</li>
+            </ul>
+          </div>
+
+          <div class="flex space-x-3">
+            <button 
+              @click="showPointsModal = false"
+              class="flex-1 px-4 py-3 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg font-semibold transition-colors"
+            >
+              Hủy
+            </button>
+            <button 
+              @click="saveWeeklyPoints"
+              class="flex-1 px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg font-semibold transition-colors"
+            >
+              Lưu điểm
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue'
 import ChatComponent from '../components/ChatComponent.vue'
+import { useAuthStore } from '../stores/auth'
 import studentsData from '../data/students.json'
 
+const authStore = useAuthStore()
 const searchQuery = ref('')
 const filterGender = ref('all')
+const filterGroup = ref('all')
 const sortBy = ref('name')
 const showChat = ref(false)
 const showProfile = ref(false)
+const showPointsModal = ref(false)
 const selectedStudent = ref(null)
+const weeklyPointsInput = ref(0)
 
 const students = ref(studentsData)
 
@@ -270,6 +384,11 @@ const filteredStudents = computed(() => {
     result = result.filter(s => s.gender === filterGender.value)
   }
 
+  // Filter by group
+  if (filterGroup.value !== 'all') {
+    result = result.filter(s => s.group === parseInt(filterGroup.value))
+  }
+
   // Sort
   if (sortBy.value === 'name') {
     result.sort((a, b) => a.name.localeCompare(b.name, 'vi'))
@@ -277,9 +396,22 @@ const filteredStudents = computed(() => {
     result.sort((a, b) => parseInt(a.number) - parseInt(b.number))
   } else if (sortBy.value === 'achievement') {
     result.sort((a, b) => b.achievements.length - a.achievements.length)
+  } else if (sortBy.value === 'points') {
+    result.sort((a, b) => (b.weeklyPoints || 0) - (a.weeklyPoints || 0))
   }
 
   return result
+})
+
+// Check if current user can set weekly points (teacher or student with position)
+const canSetPoints = computed(() => {
+  if (authStore.isAdmin) return true
+  if (authStore.isAuthenticated && authStore.currentUser) {
+    // Find current user in students list
+    const currentStudent = students.value.find(s => s.name === authStore.currentUser.name)
+    return currentStudent && currentStudent.position && currentStudent.position.trim() !== ''
+  }
+  return false
 })
 
 const startChat = (student) => {
@@ -290,5 +422,25 @@ const startChat = (student) => {
 const viewProfile = (student) => {
   selectedStudent.value = student
   showProfile.value = true
+}
+
+const openPointsModal = (student) => {
+  selectedStudent.value = student
+  weeklyPointsInput.value = student.weeklyPoints || 0
+  showPointsModal.value = true
+}
+
+const saveWeeklyPoints = () => {
+  if (selectedStudent.value && weeklyPointsInput.value >= 0 && weeklyPointsInput.value <= 100) {
+    // Find and update student
+    const studentIndex = students.value.findIndex(s => s.id === selectedStudent.value.id)
+    if (studentIndex !== -1) {
+      students.value[studentIndex].weeklyPoints = weeklyPointsInput.value
+      selectedStudent.value.weeklyPoints = weeklyPointsInput.value
+    }
+    showPointsModal.value = false
+    // In a real app, you would save this to a backend/database
+    alert(`Đã lưu điểm ${weeklyPointsInput.value} cho ${selectedStudent.value.name}`)
+  }
 }
 </script>
