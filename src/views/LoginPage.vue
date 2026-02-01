@@ -5,7 +5,7 @@
       <div class="bg-gradient-to-br from-blue-600 to-purple-600 p-8 md:w-1/2 flex flex-col justify-center text-white">
         <div class="text-center space-y-4">
           <h1 class="text-4xl md:text-5xl font-bold">🌟</h1>
-          <h2 class="text-3xl font-bold">Lớp Học Hạnh Phúc</h2>
+          <h2 class="text-3xl font-bold">Lớp Học Hạnh Phúc 6A1</h2>
           <p class="text-blue-100 text-lg">
             Nơi mỗi khoảnh khắc đều tràn đầy niềm vui và ý nghĩa
           </p>

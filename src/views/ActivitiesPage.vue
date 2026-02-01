@@ -111,6 +111,12 @@
       </div>
     </CommonModal>
 
+    <!-- Create Activity Modal -->
+    <CreateActivityModal
+      v-model="showSubmitForm"
+      @submit="handleCreateActivity"
+    />
+
   </div>
 </template>
 
@@ -119,6 +125,7 @@ import { ref, computed } from 'vue'
 import activitiesData from '../data/activities.json'
 import CommonModal from '../components/CommonModal.vue'
 import { useAuthStore } from '../stores/auth'
+import CreateActivityModal from '../components/Modal/CreateActivityModal.vue'
 
 const authStore = useAuthStore()
 const selectedCategory = ref('all')
@@ -164,6 +171,18 @@ const filteredActivities = computed(() => {
 
 const viewActivity = (activity) => {
   selectedActivity.value = activity
+}
+
+const handleCreateActivity = (newActivity) => {
+  // Chuyển đổi format ngày từ YYYY-MM-DD sang DD/MM/YYYY
+  const [year, month, day] = newActivity.date.split('-')
+  newActivity.date = `${day}/${month}/${year}`
+  
+  // Thêm hoạt động mới vào đầu danh sách
+  activities.value.unshift(newActivity)
+  
+  // Hiển thị thông báo thành công (có thể thêm toast notification)
+  console.log('Hoạt động mới đã được tạo:', newActivity)
 }
 </script>
 

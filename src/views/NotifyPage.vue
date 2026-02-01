@@ -54,7 +54,7 @@
               </div>
               <div>
                 <h3 class="text-xl font-bold text-gray-800">{{ announcement.title }}</h3>
-                <p class="text-sm text-gray-500">{{ announcement.date }} | {{ announcement.period }}</p>
+                <p class="text-sm text-gray-500">{{ announcement.date }}</p>
               </div>
             </div>
             <span :class="[
@@ -201,6 +201,12 @@
         </div>
       </div>
     </CommonModal>
+
+    <!-- Create Notify Modal -->
+    <CreateNotifyModal
+      v-model="showSubmitForm"
+      @submit="handleCreateNotify"
+    />
   </div>
 </template>
 
@@ -210,6 +216,7 @@ import CommonModal from '../components/CommonModal.vue'
 import announcementsData from '../data/announcements.json'
 import Tooltip from '../components/Tooltip.vue'
 import { useAuthStore } from '../stores/auth'
+import CreateNotifyModal from '../components/Modal/CreateNotifyModal.vue'
 
 const authStore = useAuthStore()
 const selectedCategory = ref('all')
@@ -311,6 +318,26 @@ const addComment = () => {
 }
 
 const announcements = ref(announcementsData)
+
+const handleCreateNotify = (newNotification) => {
+  //format dd/mm/yyyy HH:MM
+  const now = new Date()
+  const day = String(now.getDate()).padStart(2, '0')
+  const month = String(now.getMonth() + 1).padStart(2, '0')
+  const year = now.getFullYear()
+  const hours = String(now.getHours()).padStart(2, '0')
+  const minutes = String(now.getMinutes()).padStart(2, '0')
+  newNotification.date = `${day}/${month}/${year} ${hours}:${minutes}`
+
+  // Xóa trường time khỏi object
+  delete newNotification.time
+  
+  // Thêm thông báo mới vào đầu danh sách
+  announcements.value.unshift(newNotification)
+  
+  // Hiển thị thông báo thành công (có thể thêm toast notification)
+  console.log('Thông báo mới đã được tạo:', newNotification)
+}
 </script>
 
 <style scoped>
