@@ -109,9 +109,9 @@
             <div class="flex items-center justify-between mb-4">
               <div class="flex items-center space-x-2">
                 <div class="w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-white font-bold text-sm">
-                  {{ product.author.charAt(0) }}
+                  {{ authStore.currentUser ? authStore.currentUser.name.charAt(0) : 'A' }}
                 </div>
-                <span class="text-sm text-gray-600">{{ product.author }}</span>
+                <span class="text-sm text-gray-600">{{  authStore.currentUser ? authStore.currentUser.name : product.author }}</span>
               </div>
               <span class="text-xs text-gray-500">{{ product.date }}</span>
             </div>
@@ -193,7 +193,9 @@
 <script setup>
 import { ref, computed } from 'vue'
 import CreateProductModal from '../components/Modal/CreateProductModal.vue'
+import { useAuthStore } from '../stores/auth'
 
+const authStore = useAuthStore();
 const selectedCategory = ref('all')
 const selectedProduct = ref(null)
 const showCreateModal = ref(false)

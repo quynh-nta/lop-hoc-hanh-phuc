@@ -1,9 +1,9 @@
 <template>
      <FormModal
-      :model-value="isOpen"
+      :model-value="modelValue"
       title="Tạo sản phẩm mới"
       max-width="max-w-3xl"
-      @update:model-value="isOpen = $event"
+      @update:model-value="$emit('update:modelValue', $event)"
     >
       <form @submit.prevent="handleSubmit" class="space-y-4">
                   <div>
@@ -66,7 +66,7 @@
             <div class="flex justify-end space-x-4 mt-6">
                 <button 
                 type="button" 
-                @click="isOpen = false"
+                @click="$emit('update:modelValue', false)"
                 class="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition"
                 >
                 Hủy
@@ -85,9 +85,15 @@
 import { ref, watch } from 'vue'
 import FormModal from '../FormModal.vue'
 
-const emit = defineEmits(['create-product'])
+const props = defineProps({
+  modelValue: {
+    type: Boolean,
+    required: true
+  }
+})
 
-const isOpen = ref(false)
+const emit = defineEmits(['update:modelValue', 'create-product'])
+
 const newProduct = ref({
   title: '',
   type: '',
@@ -95,20 +101,20 @@ const newProduct = ref({
   fullContent: '',
   thumbnail: ''
 })
+
 const handleSubmit = () => {
-    // Xử lý logic tạo sản phẩm mới ở đây
-    emit('create-product', { ...newProduct.value })
+  // Emit sản phẩm mới
+  emit('create-product', { ...newProduct.value })
 
-
-  // Đóng modal sau khi tạo sản phẩm
-  isOpen.value = false
+  // Đóng modal
+  emit('update:modelValue', false)
 
   // Reset form
   resetForm()
 }
 
 const resetForm = () => {
-    newProduct.value = {
+  newProduct.value = {
     title: '',
     type: '',
     description: '',
@@ -117,7 +123,7 @@ const resetForm = () => {
   }
 }
 
-watch(isOpen, (newValue) => {
+watch(() => props.modelValue, (newValue) => {
   if (!newValue) {
     resetForm()
   }

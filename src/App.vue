@@ -7,7 +7,7 @@
     <FooterSection />
     <!-- Chat List -->
     <div
-      v-if="showChatList"
+      v-if="showChatList && chatContacts.length > 0"
       class="fixed bottom-24 right-6 w-80 bg-white rounded-lg shadow-2xl z-50 max-h-96 overflow-y-auto"
     >
       <div class="bg-blue-600 text-white p-4 rounded-t-lg flex justify-between items-center">
@@ -32,6 +32,22 @@
             <div class="font-medium text-gray-900">{{ contact.name }}</div>
             <div class="text-sm text-gray-500">{{ contact.role }}</div>
           </div>
+        </button>
+      </div>
+    </div>
+    <div v-else-if="showChatList && authStore.currentUser" class="fixed bottom-24 right-6 z-50">
+      <div class="bg-white p-4 rounded-lg shadow-2xl flex flex-row items-center gap-4">
+        <p class="text-gray-600">Không có liên hệ nào để chat.</p>
+        <button @click="showChatList = false" class="text-blue-600 hover:underline">
+          ❌
+        </button>
+      </div>
+    </div>
+    <div v-else-if="showChatList && !authStore.currentUser" class="fixed bottom-24 right-6 z-50">
+      <div class="bg-white p-4 rounded-lg shadow-2xl flex flex-row items-center gap-4">
+        <p class="text-gray-600">Vui lòng đăng nhập để sử dụng tính năng chat.</p>
+        <button @click="showChatList = false" class="text-blue-600 hover:underline">
+          ❌
         </button>
       </div>
     </div>
