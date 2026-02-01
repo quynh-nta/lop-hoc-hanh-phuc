@@ -1,12 +1,12 @@
 <template>
   <nav class="bg-white shadow-lg sticky top-0 z-50">
-    <div class="container mx-auto px-4">
+    <div class="mx-auto px-4">
       <div class="flex justify-between items-center py-4">
         <!-- Logo -->
         <router-link to="/" class="flex items-center space-x-3">
           <div
-            class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-            <span class="text-white font-bold text-xl">🎓</span>
+            class="min-w-[48px] w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+            <span class="text-white font-bold text-4xl">🎓</span>
           </div>
           <div>
             <h1 class="text-xl font-bold text-gray-800">Lớp Học Hạnh Phúc 6A1</h1>
@@ -41,7 +41,7 @@
             <button @click="showUserMenu = !showUserMenu"
               class="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">
               <div
-                class="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold">
+                class="min-w-[32px] w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold">
                 {{ authStore.currentUser.name.charAt(0) }}
               </div>
               <span class="text-sm font-medium">{{ authStore.currentUser.name }}</span>

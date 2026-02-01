@@ -1,0 +1,26 @@
+{
+  "admin001": [
+    { "id": 1, "name": "Nguyễn Minh An", "role": "Học sinh", "gender": "male", "userId": "student001" },
+    { "id": 2, "name": "Trần Bảo An", "role": "Học sinh", "gender": "male", "userId": "student002" },
+    { "id": 3, "name": "Nguyễn Văn A", "role": "Phụ huynh Minh An", "gender": "male", "userId": "parent001" },
+    { "id": 4, "name": "Trần Văn C", "role": "Phụ huynh Bảo An", "gender": "male", "userId": "parent002" }
+  ],
+  "student001": [
+    { "id": 1, "name": "Cô Tuyền (GVCN)", "role": "Giáo viên chủ nhiệm", "gender": "female", "userId": "admin001" },
+    { "id": 2, "name": "Trần Bảo An", "role": "Học sinh", "gender": "male", "userId": "student002" },
+    { "id": 3, "name": "Nguyễn Văn A", "role": "Phụ huynh Minh An", "gender": "male", "userId": "parent001" }
+  ],
+  "student002": [
+    { "id": 1, "name": "Cô Tuyền (GVCN)", "role": "Giáo viên chủ nhiệm", "gender": "female", "userId": "admin001" },
+    { "id": 2, "name": "Nguyễn Minh An", "role": "Học sinh", "gender": "male", "userId": "student001" },
+    { "id": 3, "name": "Trần Văn C", "role": "Phụ huynh Bảo An", "gender": "male", "userId": "parent002" }
+  ],
+  "parent001": [
+    { "id": 1, "name": "Cô Tuyền (GVCN)", "role": "Giáo viên chủ nhiệm", "gender": "female", "userId": "admin001" },
+    { "id": 2, "name": "Nguyễn Minh An", "role": "Học sinh", "gender": "male", "userId": "student001" }
+  ],
+  "parent002": [
+    { "id": 1, "name": "Cô Tuyền (GVCN)", "role": "Giáo viên chủ nhiệm", "gender": "female", "userId": "admin001" },
+    { "id": 2, "name": "Trần Bảo An", "role": "Học sinh", "gender": "male", "userId": "student002" }
+  ]
+}

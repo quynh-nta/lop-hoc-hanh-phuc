@@ -1,14 +1,20 @@
 <template>
-  <div class="media-club-page py-16 bg-gray-50">
+  <div class="media-club-page py-8 bg-gray-50">
     <div class="container mx-auto px-4">
       <!-- Header -->
       <div class="text-center mb-12">
         <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
           📹 CLB Truyền thông học đường
         </h1>
-        <p class="text-xl text-gray-600">
+        <p class="text-xl text-gray-600 mb-0">
           Sân chơi sáng tạo - Nơi các em là tác giả của câu chuyện riêng
         </p>
+        <button 
+          @click="showCreateModal = true"
+          class="mt-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+        >
+          + Tạo sản phẩm mới
+        </button>
       </div>
 
       <!-- About Club -->
@@ -176,14 +182,60 @@
         </div>
       </div>
     </div>
+
+    <create-product-modal
+      v-model="showCreateModal"
+      @create-product="submitNewProduct"
+    />
   </div>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue'
+import CreateProductModal from '../components/Modal/CreateProductModal.vue'
 
 const selectedCategory = ref('all')
 const selectedProduct = ref(null)
+const showCreateModal = ref(false)
+
+const submitNewProduct = (newProduct) => {
+  const typeMap = {
+    'article': { name: 'Bài viết', id: 'article' },
+    'photo': { name: 'Ảnh', id: 'photo' },
+    'video': { name: 'Video', id: 'video' }
+  }
+
+  const newProductData = {
+    id: products.value.length + 1,
+    title: newProduct.title,
+    description: newProduct.description,
+    thumbnail: newProduct.thumbnail,
+    type: typeMap[newProduct.type].name,
+    typeId: typeMap[newProduct.type].id,
+    author: newProduct.author,
+    date: new Date().toLocaleDateString('vi-VN'),
+    featured: newProduct.featured,
+    fullContent: newProduct.fullContent
+  }
+
+  products.value.unshift(newProductData)
+  
+  // Reset form
+  newProduct = {
+    title: '',
+    type: '',
+    description: '',
+    fullContent: '',
+    thumbnail: '',
+    author: '',
+    featured: false
+  }
+  
+  showCreateModal.value = false
+  
+  // Show success message (optional)
+  alert('Tạo sản phẩm thành công!')
+}
 
 const categories = [
   { id: 'all', name: 'Tất cả', icon: '📚' },
