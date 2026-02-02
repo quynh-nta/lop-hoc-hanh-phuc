@@ -61,7 +61,7 @@
               <span class="text-2xl mr-3">👥</span>
               <div>
                 <p class="font-semibold text-gray-800">Sĩ số:</p>
-                <p class="text-gray-700">35 học sinh</p>
+                <p class="text-gray-700">33học sinh</p>
               </div>
             </div>
             <div class="flex items-start">
@@ -84,8 +84,8 @@
             <div class="w-32 h-32 mx-auto bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-white text-4xl font-bold mb-4">
               CN
             </div>
-            <h3 class="text-xl font-bold text-gray-800">Cô Đặng Xuân Tuyền</h3>
-            <p class="text-gray-600">Giáo viên Tiểu học</p>
+            <h3 class="text-xl font-bold text-gray-800">Cô Đặng Thị Xuân Tuyền</h3>
+            <p class="text-gray-600">Giáo viên chủ nhiệm</p>
           </div>
           <div class="space-y-3">
             <div class="flex items-center">

@@ -186,7 +186,7 @@
               📤 Chọn file Excel
             </button>
             <p class="text-sm text-gray-600 mt-4">
-              Hỗ trợ file .xlsx, .xls với cấu trúc: STT, Họ tên, Giới tính, Ngày sinh, SĐT Phụ huynh, Địa chỉ, Tên bố, Tên mẹ, Email
+              Hỗ trợ file .xlsx, .xls với cấu trúc: Stt, Họ và tên, Lớp, Ngày sinh, Giới tính, Nơi ở, Họ và tên cha, Nghề nghiệp, Số điện thoại cha, Họ và tên mẹ, Nghề nghiệp, Số điện thoại mẹ
             </p>
           </div>
           
@@ -200,7 +200,8 @@
                     <th class="px-4 py-2 text-left">Họ tên</th>
                     <th class="px-4 py-2 text-left">Giới tính</th>
                     <th class="px-4 py-2 text-left">Ngày sinh</th>
-                    <th class="px-4 py-2 text-left">SĐT</th>
+                    <th class="px-4 py-2 text-left">Lớp</th>
+                    <th class="px-4 py-2 text-left">Nơi ở</th>
                     <th class="px-4 py-2 text-left">Phụ huynh</th>
                   </tr>
                 </thead>
@@ -208,10 +209,14 @@
                   <tr v-for="(student, index) in importedStudents" :key="index" class="border-b">
                     <td class="px-4 py-2">{{ student.number }}</td>
                     <td class="px-4 py-2">{{ student.name }}</td>
-                    <td class="px-4 py-2">{{ student.gender }}</td>
+                    <td class="px-4 py-2">{{ student.gender === 'male' ? 'Nam' : 'Nữ' }}</td>
                     <td class="px-4 py-2">{{ student.dob }}</td>
-                    <td class="px-4 py-2">{{ student.phone }}</td>
-                    <td class="px-4 py-2 text-xs">{{ student.father }} / {{ student.mother }}</td>
+                    <td class="px-4 py-2">{{ student.className }}</td>
+                    <td class="px-4 py-2 text-xs">{{ student.address }}</td>
+                    <td class="px-4 py-2 text-xs">
+                      Cha: {{ student.parent.father }} ({{ student.parent.fatherPhone }})<br/>
+                      Mẹ: {{ student.parent.mother }} ({{ student.parent.motherPhone }})
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -461,26 +466,123 @@ const handleFileUpload = (event) => {
   reader.onload = (e) => {
     try {
       const data = new Uint8Array(e.target.result)
-      const workbook = XLSX.read(data, { type: 'array' })
+      // Read with raw strings to preserve UTF-8 encoding
+      const workbook = XLSX.read(data, { 
+        type: 'array',
+        raw: false,
+        codepage: 65001 // UTF-8
+      })
       const firstSheet = workbook.Sheets[workbook.SheetNames[0]]
-      const jsonData = XLSX.utils.sheet_to_json(firstSheet, { header: 1 })
+      const jsonData = XLSX.utils.sheet_to_json(firstSheet, { 
+        header: 1,
+        raw: false,
+        defval: ''
+      })
 
       // Skip header row and parse data
+      // CSV structure: Stt(0), Họ và tên(1), Lớp(2), Ngày sinh(3), Giới tính(4), Nơi ở(5), 
+      // Họ và tên cha(6), Nghề nghiệp(7), Số điện thoại cha(8), Họ và tên mẹ(9), Nghề nghiệp(10), Số điện thoại mẹ(11)
+      
+      // Function to remove Vietnamese diacritics
+      const removeVietnameseTones = (str) => {
+        if (!str) return ''
+        str = str.toLowerCase()
+        str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, 'a')
+        str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, 'e')
+        str = str.replace(/ì|í|ị|ỉ|ĩ/g, 'i')
+        str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, 'o')
+        str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, 'u')
+        str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, 'y')
+        str = str.replace(/đ/g, 'd')
+        str = str.replace(/\s+/g, '')
+        return str
+      }
+      
+      // Function to format date to DD/MM/YYYY
+      const formatDate = (dateStr) => {
+        if (!dateStr) return ''
+        dateStr = String(dateStr).trim()
+        
+        // If already in DD/MM/YYYY format, return as is
+        if (/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(dateStr)) {
+          return dateStr
+        }
+        
+        // Try to parse different formats
+        let day, month, year
+        
+        // Handle Excel date number
+        if (!isNaN(dateStr) && dateStr > 40000) {
+          const excelDate = new Date((dateStr - 25569) * 86400 * 1000)
+          day = excelDate.getDate()
+          month = excelDate.getMonth() + 1
+          year = excelDate.getFullYear()
+        } else {
+          // Try parsing string formats
+          const parts = dateStr.split(/[\/\-\.]/)
+          if (parts.length === 3) {
+            // Assume DD/MM/YYYY or D/M/YYYY
+            day = parseInt(parts[0])
+            month = parseInt(parts[1])
+            year = parseInt(parts[2])
+          }
+        }
+        
+        if (day && month && year) {
+          return `${String(day).padStart(2, '0')}/${String(month).padStart(2, '0')}/${year}`
+        }
+        
+        return dateStr
+      }
+      
       const students = []
       for (let i = 1; i < jsonData.length; i++) {
         const row = jsonData[i]
         if (row[0]) { // Check if row has data
+          // Helper function to ensure proper UTF-8 string
+          const cleanText = (text) => {
+            if (!text) return ''
+            let str = String(text).trim()
+            // Fix common encoding issues
+            try {
+              // If string contains weird characters, try to decode properly
+              if (str.includes('á»') || str.includes('Ã') || str.includes('â')) {
+                // Attempt to fix mojibake (encoding issues)
+                const bytes = new TextEncoder().encode(str)
+                str = new TextDecoder('utf-8').decode(bytes)
+              }
+            } catch (e) {
+              // If decoding fails, keep original
+            }
+            return str
+          }
+          
+          const name = cleanText(row[1])
+          const emailName = removeVietnameseTones(name) || 'student' + i
+          
           students.push({
+            id: i,
             number: String(row[0]).padStart(2, '0'),
-            name: row[1] || '',
-            gender: row[2] === 'Nam' ? 'male' : 'female',
-            dob: row[3] || '',
-            phone: row[4] || '',
-            address: row[5] || '',
-            father: row[6] || '',
-            mother: row[7] || '',
-            email: row[8] || '',
-            group: Math.ceil(i / 9) // Auto assign to groups of ~9
+            name: name,
+            className: cleanText(row[2]) || '6A1',
+            gender: String(row[4]) === 'Nam' ? 'male' : 'female',
+            dob: formatDate(row[3]),
+            address: cleanText(row[5]),
+            email: `${emailName}@student.edu.vn`,
+            isExcellent: false,
+            achievements: [],
+            position: '',
+            group: Math.ceil(i / 8), // Auto assign to groups of 8-9
+            weeklyPoints: 0,
+            parent: {
+              father: cleanText(row[6]),
+              fatherJob: cleanText(row[7]),
+              fatherPhone: cleanText(row[8]),
+              mother: cleanText(row[9]),
+              motherJob: cleanText(row[10]),
+              motherPhone: cleanText(row[11]),
+              phone: cleanText(row[8]) || cleanText(row[11]) || '' // Use father's or mother's phone
+            }
           })
         }
       }
@@ -494,25 +596,76 @@ const handleFileUpload = (event) => {
   }
   reader.readAsArrayBuffer(file)
 }
-const studentsToSave = importedStudents.value.map(student => ({
-    ...student,
-    id: Date.now() + Math.random(),
-    isExcellent: false,
-    achievements: [],
-    weeklyPoints: 0,
-    position: '',
-    parent: {
-      father: student.father || '',
-      mother: student.mother || '',
-      phone: student.phone
-    }
+const saveImportedStudents = async () => {
+  // Save to localStorage and prepare JSON for students.json
+  const studentsData = importedStudents.value.map(student => ({
+    id: student.id,
+    name: student.name,
+    number: student.number,
+    gender: student.gender,
+    dob: student.dob,
+    email: student.email,
+    address: student.address,
+    isExcellent: student.isExcellent,
+    achievements: student.achievements,
+    position: student.position,
+    group: student.group,
+    weeklyPoints: student.weeklyPoints,
+    parent: student.parent
   }))
-  localStorage.setItem('students', JSON.stringify(studentsToSave))
-  const saveImportedStudents = () => {
-  // In real app, save to database/backend
-  localStorage.setItem('students', JSON.stringify(importedStudents.value))
-  alert(`✅ Đã lưu ${importedStudents.value.length} học sinh vào hệ thống!`)
+  
+  // Save to localStorage (works on both local and production)
+  localStorage.setItem('students', JSON.stringify(studentsData))
+  
+  // Check if running in development mode
+  const isDev = import.meta.env.DEV
+  
+  if (isDev) {
+    // LOCAL DEVELOPMENT: Try to save to file via Vite dev server API
+    try {
+      const response = await fetch('/api/save-students', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(studentsData)
+      })
+      
+      const result = await response.json()
+      
+      if (response.ok && result.success) {
+        alert(`✅ [LOCAL] Đã lưu ${importedStudents.value.length} học sinh thành công!\n\n💾 File students.json đã được cập nhật tại: src/data/students.json\n\n🔄 Trang sẽ tải lại sau 2 giây.`)
+        importedStudents.value = []
+        setTimeout(() => {
+          window.location.reload()
+        }, 2000)
+        return
+      }
+    } catch (error) {
+      console.error('Error saving to dev server:', error)
+    }
+  }
+  
+  // PRODUCTION or API failed: Use localStorage only + download file
+  const jsonStr = JSON.stringify(studentsData, null, 2)
+  const blob = new Blob([jsonStr], { type: 'application/json' })
+  const link = document.createElement('a')
+  link.href = URL.createObjectURL(blob)
+  link.download = 'students.json'
+  link.click()
+  
+  if (isDev) {
+    alert(`⚠️ [LOCAL] Không thể lưu vào file!\n\n✅ Đã lưu vào localStorage (${importedStudents.value.length} học sinh)\n📥 File students.json đã được tải xuống\n\n📝 Thay thế file vào: src/data/students.json`)
+  } else {
+    alert(`✅ [PRODUCTION] Đã lưu ${importedStudents.value.length} học sinh!\n\n💡 LƯU Ý QUAN TRỌNG:\n\n1️⃣ Dữ liệu đã lưu vào TRÌNH DUYỆT (localStorage)\n   → Mỗi thiết bị/trình duyệt sẽ có dữ liệu riêng\n   → Dữ liệu sẽ mất nếu xóa cache/cookies\n\n2️⃣ File students.json đã được tải xuống\n   → Để cập nhật cho TẤT CẢ người dùng:\n   → Thay file vào src/data/students.json\n   → Commit code và redeploy lên Vercel\n\n🔄 Trang sẽ tải lại sau 3 giây.`)
+  }
+  
   importedStudents.value = []
+  
+  // Reload to show data from localStorage
+  setTimeout(() => {
+    window.location.reload()
+  }, isDev ? 2000 : 3000)
 }
 
 // Manual Student Entry

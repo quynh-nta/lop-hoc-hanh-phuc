@@ -50,7 +50,7 @@
                 CN
               </div>
               <div>
-                <h3 class="text-2xl font-bold text-gray-800">Cô Đặng Xuân Tuyền</h3>
+                <h3 class="text-2xl font-bold text-gray-800">Cô Đặng Thị Xuân Tuyền</h3>
                 <p class="text-gray-600">Giáo viên chủ nhiệm</p>
               </div>
             </div>

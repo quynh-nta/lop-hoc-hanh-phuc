@@ -7,7 +7,7 @@
           👥 Danh sách lớp học
         </h1>
         <p class="text-xxs text-gray-600">
-          35 học sinh và 35 phụ huynh của lớp 6A1
+          33 học sinh và 33 phụ huynh của lớp 6A1
         </p>
       </div>
 
@@ -356,14 +356,27 @@ const authStore = useAuthStore()
 const searchQuery = ref('')
 const filterGender = ref('all')
 const filterGroup = ref('all')
-const sortBy = ref('name')
+const sortBy = ref('number')
 const showChat = ref(false)
 const showProfile = ref(false)
 const showPointsModal = ref(false)
 const selectedStudent = ref(null)
 const weeklyPointsInput = ref(0)
 
-const students = ref(studentsData)
+// Load students from localStorage first, fallback to JSON file
+const loadStudents = () => {
+  const localData = localStorage.getItem('students')
+  if (localData) {
+    try {
+      return JSON.parse(localData)
+    } catch (e) {
+      console.error('Error parsing localStorage students:', e)
+    }
+  }
+  return studentsData
+}
+
+const students = ref(loadStudents())
 
 const filteredStudents = computed(() => {
   let result = students.value

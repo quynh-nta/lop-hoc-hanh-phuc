@@ -48,7 +48,7 @@
                 CN
               </div>
               <div>
-                <h4 class="font-bold text-gray-800">Cô Đặng Xuân Tuyền</h4>
+                <h4 class="font-bold text-gray-800">Cô Đặng Thị Xuân Tuyền</h4>
                 <p class="text-sm text-gray-600">GVCN Lớp 6A1</p>
               </div>
             </div>
