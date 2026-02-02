@@ -654,11 +654,7 @@ const saveImportedStudents = async () => {
   link.download = 'students.json'
   link.click()
   
-  if (isDev) {
-    alert(`⚠️ [LOCAL] Không thể lưu vào file!\n\n✅ Đã lưu vào localStorage (${importedStudents.value.length} học sinh)\n📥 File students.json đã được tải xuống\n\n📝 Thay thế file vào: src/data/students.json`)
-  } else {
-    alert(`✅ [PRODUCTION] Đã lưu ${importedStudents.value.length} học sinh!\n\n💡 LƯU Ý QUAN TRỌNG:\n\n1️⃣ Dữ liệu đã lưu vào TRÌNH DUYỆT (localStorage)\n   → Mỗi thiết bị/trình duyệt sẽ có dữ liệu riêng\n   → Dữ liệu sẽ mất nếu xóa cache/cookies\n\n2️⃣ File students.json đã được tải xuống\n   → Để cập nhật cho TẤT CẢ người dùng:\n   → Thay file vào src/data/students.json\n   → Commit code và redeploy lên Vercel\n\n🔄 Trang sẽ tải lại sau 3 giây.`)
-  }
+  alert(`✅ Đã lưu ${importedStudents.value.length} học sinh!\n\n🔄 Trang sẽ tải lại sau 3 giây.`)
   
   importedStudents.value = []
   
