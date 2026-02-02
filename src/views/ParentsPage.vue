@@ -32,8 +32,6 @@
         </div>
       </div>
 
-
-
       <!-- Messages from Teacher -->
       <section id="messages" class="mb-12">
         <h2 class="text-3xl font-bold text-gray-800 mb-6">💌 Nhắn gửi từ GVCN</h2>

@@ -15,22 +15,22 @@
       <div class="grid md:grid-cols-4 gap-6 mb-12">
         <div class="bg-white rounded-xl p-6 shadow-md text-center">
           <div class="text-4xl mb-2">👨‍🎓</div>
-          <p class="text-3xl font-bold text-blue-600">18</p>
+          <p class="text-3xl font-bold text-blue-600">{{ numberMale }}</p>
           <p class="text-gray-600">Nam</p>
         </div>
         <div class="bg-white rounded-xl p-6 shadow-md text-center">
           <div class="text-4xl mb-2">👩‍🎓</div>
-          <p class="text-3xl font-bold text-pink-600">17</p>
+          <p class="text-3xl font-bold text-pink-600">{{ numberFemale }}</p>
           <p class="text-gray-600">Nữ</p>
         </div>
         <div class="bg-white rounded-xl p-6 shadow-md text-center">
           <div class="text-4xl mb-2">⭐</div>
-          <p class="text-3xl font-bold text-yellow-600">12</p>
+          <p class="text-3xl font-bold text-yellow-600">{{ numberExcellent }}</p>
           <p class="text-gray-600">Học sinh giỏi</p>
         </div>
         <div class="bg-white rounded-xl p-6 shadow-md text-center">
           <div class="text-4xl mb-2">🏆</div>
-          <p class="text-3xl font-bold text-green-600">8</p>
+          <p class="text-3xl font-bold text-green-600">0</p>
           <p class="text-gray-600">Có giải thưởng</p>
         </div>
       </div>
@@ -157,10 +157,35 @@
             </div>
 
             <!-- Action Buttons -->
-            <div class="mt-auto flex flex-col space-y-2 mt-4">
+            <div class="mt-auto flex flex-col space-y-2 mt-4 relative">
+              <div
+                v-if="showChatPersons === student.id"
+                class="w-60 bg-white rounded-lg shadow-2xl z-50 absolute bottom-12 left-0"
+              >
+                <div class="bg-blue-600 text-white p-2 rounded-t-lg flex justify-between items-center">
+                  <h3 class="font-semibold">Chọn người chat</h3>
+                  <button @click="showChatPersons = null">
+                    ❌
+                  </button>
+                </div>
+                <div class="divide-y">
+                  <button
+                    @click="startChat(student)"
+                    class="p-2"
+                  >
+                    Chat với học sinh
+                  </button>
+                  <button
+                    @click="startChatParent(student.parent)"
+                    class="w-full p-2 text-left"
+                  >
+                    Chat với phụ huynh
+                  </button>
+                </div>
+              </div>
               <div class="flex space-x-2">
                 <button 
-                  @click="startChat(student)"
+                  @click="showChatPersons = showChatPersons === student.id ? null : student.id"
                   class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-1"
                 >
                   <span>💬</span>
@@ -196,7 +221,7 @@
     <!-- Chat Modal -->
     <ChatComponent 
       v-if="showChat"
-      :recipient="selectedStudent"
+      :recipient="selectedChatPerson"
       @close="showChat = false"
     />
 
@@ -362,6 +387,8 @@ const showProfile = ref(false)
 const showPointsModal = ref(false)
 const selectedStudent = ref(null)
 const weeklyPointsInput = ref(0)
+const showChatPersons = ref(null)
+const selectedChatPerson = ref(null)
 
 // Load students from localStorage first, fallback to JSON file
 const loadStudents = () => {
@@ -377,6 +404,9 @@ const loadStudents = () => {
 }
 
 const students = ref(loadStudents())
+const numberMale = computed(() => students.value.filter(s => s.gender === 'male').length)
+const numberFemale = computed(() => students.value.filter(s => s.gender === 'female').length)
+const numberExcellent = computed(() => students.value.filter(s => s.isExcellent).length)
 
 const filteredStudents = computed(() => {
   let result = students.value
@@ -427,9 +457,19 @@ const canSetPoints = computed(() => {
   return false
 })
 
-const startChat = (student) => {
-  selectedStudent.value = student
+const startChat = (person) => {
+  selectedChatPerson.value = person
   showChat.value = true
+  showChatPersons.value = null
+}
+
+const startChatParent = (person) => {
+  selectedChatPerson.value = {
+    name: person.father,
+    gender: 'male' // default
+  }
+  showChat.value = true
+  showChatPersons.value = null
 }
 
 const viewProfile = (student) => {

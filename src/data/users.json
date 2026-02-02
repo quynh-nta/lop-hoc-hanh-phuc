@@ -10,40 +10,192 @@
   },
   {
     "id": "student001",
-    "username": "minhan",
-    "password": "minhan123",
+    "username": "nguyenanan",
+    "password": "nguyenanan123",
     "role": "student",
-    "name": "Nguyễn Minh An",
+    "name": "Nguyễn An An",
     "studentId": 1,
-    "email": "minhan@student.edu.vn"
+    "email": "nguyenanan@student.edu.vn"
   },
   {
     "id": "student002",
-    "username": "baoan",
-    "password": "baoan123",
+    "username": "nguyenducan",
+    "password": "nguyenducan123",
     "role": "student",
-    "name": "Trần Bảo An",
+    "name": "Nguyễn Đức An",
     "studentId": 2,
-    "email": "baoan@student.edu.vn"
+    "email": "nguyenducan@student.edu.vn"
+  },
+  {
+    "id": "student003",
+    "username": "hohoanganh",
+    "password": "hohoanganh123",
+    "role": "student",
+    "name": "Hồ Hoàng Anh",
+    "studentId": 3,
+    "email": "hohoanganh@student.edu.vn"
+  },
+  {
+    "id": "student004",
+    "username": "ngophamquynhanh",
+    "password": "ngophamquynhanh123",
+    "role": "student",
+    "name": "Ngô Phạm Quỳnh Anh",
+    "studentId": 4,
+    "email": "ngophamquynhanh@student.edu.vn"
+  },
+  {
+    "id": "student005",
+    "username": "phamhuynhxuanduy",
+    "password": "phamhuynhxuanduy123",
+    "role": "student",
+    "name": "Phạm Huỳnh Xuân Duy",
+    "studentId": 5,
+    "email": "phamhuynhxuanduy@student.edu.vn"
+  },
+  {
+    "id": "student006",
+    "username": "tranhuuduy",
+    "password": "tranhuuduy123",
+    "role": "student",
+    "name": "Trần Hữu Duy",
+    "studentId": 6,
+    "email": "tranhuuduy@student.edu.vn"
+  },
+  {
+    "id": "student007",
+    "username": "truongquyduy",
+    "password": "truongquyduy123",
+    "role": "student",
+    "name": "Trương Quý Duy",
+    "studentId": 7,
+    "email": "truongquyduy@student.edu.vn"
+  },
+  {
+    "id": "student008",
+    "username": "vonguyentuyenduyen",
+    "password": "vonguyentuyenduyen123",
+    "role": "student",
+    "name": "Võ Nguyễn Tuyền Duyên",
+    "studentId": 8,
+    "email": "vonguyentuyenduyen@student.edu.vn"
+  },
+  {
+    "id": "student009",
+    "username": "lenguyengiadat",
+    "password": "lenguyengiadat123",
+    "role": "student",
+    "name": "Lê Nguyễn Gia Đạt",
+    "studentId": 9,
+    "email": "lenguyengiadat@student.edu.vn"
+  },
+  {
+    "id": "student010",
+    "username": "lehuynhkhanhdoan",
+    "password": "lehuynhkhanhdoan123",
+    "role": "student",
+    "name": "Lê Huỳnh Khánh Đoan",
+    "studentId": 10,
+    "email": "lehuynhkhanhdoan@student.edu.vn"
   },
   {
     "id": "parent001",
-    "username": "phminhan",
+    "username": "ph985488273",
     "password": "parent123",
     "role": "parent",
-    "name": "Nguyễn Văn A",
+    "name": "Nguyễn Đặng Đình Vũ",
     "childId": 1,
-    "childName": "Nguyễn Minh An",
-    "phone": "0123456789"
+    "childName": "Nguyễn An An",
+    "phone": "985488273"
   },
   {
     "id": "parent002",
-    "username": "phbaoan",
+    "username": "ph973790077",
     "password": "parent123",
     "role": "parent",
-    "name": "Trần Văn C",
+    "name": "Nguyễn Văn Nhót",
     "childId": 2,
-    "childName": "Trần Bảo An",
-    "phone": "0987654321"
+    "childName": "Nguyễn Đức An",
+    "phone": "973790077"
+  },
+  {
+    "id": "parent003",
+    "username": "ph389439842",
+    "password": "parent123",
+    "role": "parent",
+    "name": "Hồ Hoàn Sơn",
+    "childId": 3,
+    "childName": "Hồ Hoàng Anh",
+    "phone": "389439842"
+  },
+  {
+    "id": "parent004",
+    "username": "ph372077449",
+    "password": "parent123",
+    "role": "parent",
+    "name": "Ngô Văn Hoài",
+    "childId": 4,
+    "childName": "Ngô Phạm Quỳnh Anh",
+    "phone": "372077449"
+  },
+  {
+    "id": "parent005",
+    "username": "ph342895398",
+    "password": "parent123",
+    "role": "parent",
+    "name": "Phạm Ngọc Truyền",
+    "childId": 5,
+    "childName": "Phạm Huỳnh Xuân Duy",
+    "phone": "342895398"
+  },
+  {
+    "id": "parent006",
+    "username": "ph987992491",
+    "password": "parent123",
+    "role": "parent",
+    "name": "Trần Mua",
+    "childId": 6,
+    "childName": "Trần Hữu Duy",
+    "phone": "987992491"
+  },
+  {
+    "id": "parent007",
+    "username": "ph338934429",
+    "password": "parent123",
+    "role": "parent",
+    "name": "Trương Văn Cường",
+    "childId": 7,
+    "childName": "Trương Quý Duy",
+    "phone": "338934429"
+  },
+  {
+    "id": "parent008",
+    "username": "ph865460069",
+    "password": "parent123",
+    "role": "parent",
+    "name": "Võ Hồng Theo",
+    "childId": 8,
+    "childName": "Võ Nguyễn Tuyền Duyên",
+    "phone": "865460069"
+  },
+  {
+    "id": "parent009",
+    "username": "ph964896330",
+    "password": "parent123",
+    "role": "parent",
+    "name": "Lê Văn Toàn",
+    "childId": 9,
+    "childName": "Lê Nguyễn Gia Đạt",
+    "phone": "964896330"
+  },
+  {
+    "id": "parent010",
+    "username": "ph979754445",
+    "password": "parent123",
+    "role": "parent",
+    "name": "Lê Lai",
+    "childId": 10,
+    "childName": "Lê Huỳnh Khánh Đoan",
+    "phone": "979754445"
   }
 ]

@@ -138,11 +138,11 @@
             </div>
             <div class="flex items-center justify-between bg-gray-50 p-2 rounded">
               <span>👨‍👩‍👧 Phụ huynh:</span>
-              <code class="bg-white px-2 py-1 rounded">phminhan / parent123</code>
+              <code class="bg-white px-2 py-1 rounded">ph985488273 / parent123</code>
             </div>
             <div class="flex items-center justify-between bg-gray-50 p-2 rounded">
               <span>👨‍🎓 Học sinh:</span>
-              <code class="bg-white px-2 py-1 rounded">minhan / minhan123</code>
+              <code class="bg-white px-2 py-1 rounded">nguyenanan / nguyenanan123</code>
             </div>
           </div>
         </div>

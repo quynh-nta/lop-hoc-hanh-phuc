@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "name": "Nguyễn Minh An",
-    "initial": "M",
+    "name": "Nguyễn An An",
+    "initial": "A",
     "anonymous": false,
     "content": "Em rất vui khi được học trong lớp này. Thầy cô rất tốt và bạn bè thân thiện. Em cảm thấy mình được yêu thương và quan tâm mỗi ngày.",
     "category": "happy",
@@ -37,8 +37,8 @@
   },
   {
     "id": 4,
-    "name": "Trần Bảo An",
-    "initial": "B",
+    "name": "Nguyễn Dư Gia Hân",
+    "initial": "H",
     "anonymous": false,
     "content": "Em nghĩ rằng lớp học là ngôi nhà thứ hai của chúng em. Ở đây, em không chỉ học kiến thức mà còn học cách làm người, cách yêu thương và chia sẻ.",
     "category": "thoughts",
@@ -49,14 +49,14 @@
   },
   {
     "id": 5,
-    "name": "Phạm Thu Hà",
-    "initial": "H",
+    "name": "Hồ Quốc Kiệt",
+    "initial": "K",
     "anonymous": false,
-    "content": "Cảm ơn tất cả mọi người đã luôn ủng hộ em trong cuộc thi vẽ tranh. Em rất hạnh phúc khi giành được giải nhất!",
-    "category": "love",
+    "content": "Mỗi buổi sáng đến lớp, em đều cảm thấy vui vì được gặp các bạn. Chúng em cùng nhau học, cùng chơi và cùng lớn lên mỗi ngày.",
+    "category": "happy",
     "date": "1 tuần trước",
-    "likes": 45,
-    "comments": 12,
+    "likes": 21,
+    "comments": 4,
     "status": "approved"
   }
 ]

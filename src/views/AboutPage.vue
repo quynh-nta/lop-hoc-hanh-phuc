@@ -61,7 +61,7 @@
               <span class="text-2xl mr-3">👥</span>
               <div>
                 <p class="font-semibold text-gray-800">Sĩ số:</p>
-                <p class="text-gray-700">33học sinh</p>
+                <p class="text-gray-700">33 học sinh</p>
               </div>
             </div>
             <div class="flex items-start">
