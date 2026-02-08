@@ -16,6 +16,7 @@ import LoginPage from '../views/LoginPage.vue'
 import VinhDanhPage from '../views/VinhDanhPage.vue'
 import SettingsPage from '../views/SettingsPage.vue'
 import ResetPasswordPage from '../views/ResetPasswordPage.vue'
+import StudyCornerPage from '../views/StudyCornerPage.vue'
 
 const routes = [
   {
@@ -89,6 +90,11 @@ const routes = [
     path: '/danh-sach',
     name: 'Students',
     component: StudentsPage
+  },
+  {
+    path: '/goc-hoc-tap',
+    name: 'StudyCorner',
+    component: StudyCornerPage
   },
   {
     path: '/quan-tri',

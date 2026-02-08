@@ -1,0 +1,133 @@
+[
+  {
+    "id": 1,
+    "studentName": "Nguyễn Đức An",
+    "subject": "Toán học",
+    "title": "Bài toán về phân số khó quá các bạn ơi!",
+    "content": "Cho hai phân số 3/4 và 5/6. Tính tổng của hai phân số đó. Mình không hiểu cách quy đồng mẫu số lắm. Các bạn có thể giải thích cụ thể được không ạ? Cô giáo bảo phải tìm bội chung nhỏ nhất nhưng mình chưa rõ cách làm.",
+    "image": null,
+    "timestamp": "2025-02-07T14:30:00",
+    "likes": 12,
+    "comments": [
+      {
+        "id": 1,
+        "userName": "Hồ Hoàng Anh",
+        "content": "Mình giải thích nhé: Để cộng hai phân số, ta cần quy đồng mẫu số. Mẫu số chung của 4 và 6 là 12 (vì 12 chia hết cho cả 4 và 6). Ta có: 3/4 = 9/12 (nhân cả tử và mẫu với 3) và 5/6 = 10/12 (nhân cả tử và mẫu với 2). Vậy tổng là: 9/12 + 10/12 = 19/12",
+        "timestamp": "2025-02-07T15:15:00"
+      },
+      {
+        "id": 2,
+        "userName": "Trần Hữu Duy",
+        "content": "Để tìm mẫu số chung, bạn có thể liệt kê bội của từng mẫu: Bội của 4: 4, 8, 12, 16... Bội của 6: 6, 12, 18... Số nhỏ nhất xuất hiện ở cả hai dãy là 12 nha!",
+        "timestamp": "2025-02-07T15:45:00"
+      }
+    ],
+    "solved": true
+  },
+  {
+    "id": 2,
+    "studentName": "Ngô Phạm Quỳnh Anh",
+    "subject": "Tiếng Việt",
+    "title": "Phân biệt d và gi trong Tiếng Việt",
+    "content": "Các bạn ơi, mình hay bị nhầm lẫn giữa chữ 'd' và 'gi'. Ví dụ như từ 'dây' và 'giày', 'dầu' và 'giầu'. Trong bài kiểm tra hôm qua mình bị trừ điểm vì viết sai. Có cách nào dễ nhớ không ạ?",
+    "image": null,
+    "timestamp": "2025-02-06T10:20:00",
+    "likes": 8,
+    "comments": [
+      {
+        "id": 1,
+        "userName": "Lê Huỳnh Khánh Đoan",
+        "content": "Mẹo dễ nhớ nhé: Chữ 'd' phát âm giống 'z' trong tiếng Anh. Chữ 'gi' phát âm gần giống 'y'. Bạn thử đọc 'dầu' (zầu) và 'giầu' (yầu) sẽ nghe rõ khác biệt! Mình cũng hay bị nhầm lúc trước.",
+        "timestamp": "2025-02-06T11:00:00"
+      },
+      {
+        "id": 2,
+        "userName": "Lê La Khánh Ly",
+        "content": "Mình thường luyện tập bằng cách đọc to và viết nhiều lần. Cô giáo bảo tập viết mỗi ngày 10 từ có 'd' và 10 từ có 'gi'. Sau một tuần sẽ quen thôi bạn ạ!",
+        "timestamp": "2025-02-06T13:30:00"
+      }
+    ],
+    "solved": true
+  },
+  {
+    "id": 3,
+    "studentName": "Phạm Huỳnh Xuân Duy",
+    "subject": "Tiếng Anh",
+    "title": "Cách dùng thì hiện tại đơn và hiện tại tiếp diễn",
+    "content": "Mình hay bị nhầm lẫn giữa thì hiện tại đơn (Simple Present) và thì hiện tại tiếp diễn (Present Continuous). Ví dụ: 'I play football' và 'I am playing football'. Khi nào thì dùng cái nào vậy các bạn? Cô giáo giảng rồi nhưng mình vẫn chưa hiểu rõ.",
+    "image": null,
+    "timestamp": "2025-02-08T09:00:00",
+    "likes": 15,
+    "comments": [
+      {
+        "id": 1,
+        "userName": "Trương Yến Nhi",
+        "content": "Hiện tại đơn dùng cho thói quen, sự thật: 'I play football every weekend' (Tôi chơi bóng mỗi cuối tuần - thói quen). Hiện tại tiếp diễn dùng cho hành động đang xảy ra ngay lúc này: 'I am playing football now' (Tôi đang chơi bóng bây giờ). Nhìn có từ 'now, at the moment' thì dùng tiếp diễn nha!",
+        "timestamp": "2025-02-08T09:30:00"
+      }
+    ],
+    "solved": false
+  },
+  {
+    "id": 4,
+    "studentName": "Trần Quốc Hảo",
+    "subject": "Khoa học Tự nhiên",
+    "title": "Giải thích hiện tượng quang hợp ở cây xanh",
+    "content": "Thầy giáo cho bài tập về nhà: Giải thích quá trình quang hợp ở cây xanh và vai trò của ánh sáng mặt trời. Các bạn giúp mình với! Mình biết là cây cần ánh sáng nhưng không hiểu rõ tại sao và diễn ra như thế nào.",
+    "image": null,
+    "timestamp": "2025-02-07T16:45:00",
+    "likes": 10,
+    "comments": [
+      {
+        "id": 1,
+        "userName": "Nguyễn Dư Gia Hân",
+        "content": "Quang hợp là quá trình cây xanh sử dụng ánh sáng mặt trời, nước và khí CO2 để tạo ra chất dinh dưỡng (đường glucose) và khí O2. Đơn giản là: Cây hít CO2 + uống nước + nhận ánh sáng → tạo ra thức ăn cho cây + thả O2 ra ngoài cho người và động vật thở.",
+        "timestamp": "2025-02-07T17:20:00"
+      },
+      {
+        "id": 2,
+        "userName": "Lê Nguyễn Gia Huy",
+        "content": "Ánh sáng mặt trời rất quan trọng vì nó cung cấp năng lượng cho quá trình này. Diệp lục (chất màu xanh) trong lá cây hấp thụ ánh sáng. Không có ánh sáng thì cây không thể quang hợp được nhé!",
+        "timestamp": "2025-02-07T18:00:00"
+      }
+    ],
+    "solved": true
+  },
+  {
+    "id": 5,
+    "studentName": "Võ Trần Tuệ Lâm",
+    "subject": "Toán học",
+    "title": "Bài toán hình học: Tính chu vi và diện tích hình tròn",
+    "content": "Cho hình tròn có bán kính r = 5cm. Tính diện tích và chu vi của hình tròn đó. Biết π ≈ 3.14. Mình không nhớ công thức lắm, cô giáo có viết lên bảng nhưng mình quên mất rồi. Các bạn nhắc lại giúp mình với!",
+    "image": null,
+    "timestamp": "2025-02-08T08:15:00",
+    "likes": 6,
+    "comments": [],
+    "solved": false
+  },
+  {
+    "id": 6,
+    "studentName": "Nguyễn Hoàn Khôi",
+    "subject": "Lịch sử và Địa lý",
+    "title": "Những sự kiện quan trọng trong lịch sử Việt Nam thế kỷ 20",
+    "content": "Bài kiểm tra sắp tới về các sự kiện lịch sử quan trọng thế kỷ 20 mà mình học trong sách. Các bạn có thể giúp mình tóm tắt ngắn gọn các sự kiện như: Cách mạng tháng Tám năm 1945, Chiến thắng Điện Biên Phủ năm 1954, và Thống nhất đất nước năm 1975 được không?",
+    "image": null,
+    "timestamp": "2025-02-05T14:00:00",
+    "likes": 20,
+    "comments": [
+      {
+        "id": 1,
+        "userName": "Trần Phi Hoàng",
+        "content": "1. Cách mạng tháng Tám (tháng 8/1945): Nhân dân ta nổi dậy giành chính quyền từ tay thực dân Pháp và phát xít Nhật, thành lập nước Việt Nam Dân chủ Cộng hòa. Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập ngày 2/9/1945.",
+        "timestamp": "2025-02-05T15:30:00"
+      },
+      {
+        "id": 2,
+        "userName": "Võ Trần Hoàng Mỹ",
+        "content": "2. Chiến thắng Điện Biên Phủ (7/5/1954): Quân và dân ta đánh thắng quân Pháp tại Điện Biên Phủ, kết thúc cuộc kháng chiến chống Pháp. 3. Thống nhất đất nước (30/4/1975): Giải phóng hoàn toàn miền Nam, thống nhất đất nước.",
+        "timestamp": "2025-02-05T16:00:00"
+      }
+    ],
+    "solved": true
+  }
+]

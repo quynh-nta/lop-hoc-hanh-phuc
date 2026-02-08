@@ -26,13 +26,14 @@
         <!-- Desktop Menu -->
         <ul class="hidden md:flex items-center space-x-6">
           <li><router-link to="/" class="nav-link">🏠Trang chủ</router-link></li>
-          <li><router-link to="/vinh-danh" class="nav-link">🏆Vinh danh</router-link></li>
           <li><router-link to="/thong-bao" class="nav-link">Thông báo</router-link></li>
           <li><router-link to="/hoat-dong" class="nav-link">Hoạt động</router-link></li>
           <li><router-link to="/chia-se" class="nav-link">Góc chia sẻ</router-link></li>
+          <li><router-link to="/goc-hoc-tap" class="nav-link">Góc học tập</router-link></li>
           <li><router-link to="/phu-huynh" class="nav-link">Phụ huynh</router-link></li>
           <li><router-link to="/truyen-thong" class="nav-link">Truyền thông</router-link></li>
           <li><router-link to="/danh-sach" class="nav-link">Danh sách</router-link></li>
+          <li><router-link to="/vinh-danh" class="nav-link">🏆Vinh danh</router-link></li>
         </ul>
 
         <div>
@@ -79,21 +80,22 @@
       <div :class="showMenu ? 'max-h-screen' : 'max-h-0'" class="md:hidden overflow-hidden transition-all duration-300">
         <ul class="pb-4 space-y-2">
           <li><router-link to="/" @click="showMenu = false" class="mobile-nav-link">🏠Trang chủ</router-link></li>
-          <li><router-link to="/vinh-danh" @click="showMenu = false" class="mobile-nav-link">🏆Vinh danh</router-link>
-          </li>
-          <li><router-link to="/thong-bao" @click="showMenu = false" class="mobile-nav-link">📢Thông báo</router-link>
-          </li>
-          <li><router-link to="/hoat-dong" @click="showMenu = false" class="mobile-nav-link">Hoạt động</router-link>
-          </li>
-          <li><router-link to="/chia-se" @click="showMenu = false" class="mobile-nav-link">Góc chia sẻ</router-link>
-          </li>
-          <li><router-link to="/phu-huynh" @click="showMenu = false" class="mobile-nav-link">Phụ huynh</router-link>
-          </li>
-          <li><router-link to="/truyen-thong" @click="showMenu = false" class="mobile-nav-link">Truyền
-              thông</router-link></li>
-          <li><router-link to="/danh-sach" @click="showMenu = false" class="mobile-nav-link">👥 Danh sách
-              lớp</router-link></li>
-
+        <li><router-link to="/thong-bao" @click="showMenu = false" class="mobile-nav-link">📢Thông báo</router-link>
+        </li>
+        <li><router-link to="/hoat-dong" @click="showMenu = false" class="mobile-nav-link">Hoạt động</router-link>
+        </li>
+        <li><router-link to="/chia-se" @click="showMenu = false" class="mobile-nav-link">Góc chia sẻ</router-link>
+        </li>
+        <li><router-link to="/goc-hoc-tap" @click="showMenu = false" class="mobile-nav-link">📚Góc học tập</router-link>
+        </li>
+        <li><router-link to="/phu-huynh" @click="showMenu = false" class="mobile-nav-link">Phụ huynh</router-link>
+        </li>
+        <li><router-link to="/truyen-thong" @click="showMenu = false" class="mobile-nav-link">Truyền
+          thông</router-link></li>
+        <li><router-link to="/danh-sach" @click="showMenu = false" class="mobile-nav-link">👥 Danh sách
+            lớp</router-link></li>
+        <li><router-link to="/vinh-danh" @click="showMenu = false" class="mobile-nav-link">🏆Vinh danh</router-link></li>
+            
           <!-- Mobile User Menu -->
           <li v-if="authStore.isAuthenticated" class="pt-4 border-t border-gray-200 mt-4">
             <div class="px-4 py-2 text-sm font-medium text-gray-900">
