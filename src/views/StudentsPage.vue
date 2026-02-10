@@ -395,9 +395,12 @@ const loadStudents = () => {
   const localData = localStorage.getItem('students')
   if (localData) {
     try {
-      return JSON.parse(localData)
+      if (JSON.parse(localData).length > 0) {
+        return JSON.parse(localData)
+      } else {
+        return studentsData
+      }
     } catch (e) {
-      console.error('Error parsing localStorage students:', e)
     }
   }
   return studentsData

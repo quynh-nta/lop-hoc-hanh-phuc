@@ -7,8 +7,8 @@
     "image": "/Activities/bao_tang_quang_trung_du_lich_thu_duc_6.png",
     "category": "Trải nghiệm",
     "categoryId": "experience",
-    "date": "15/01/2025",
-    "month": "Tháng 1/2025",
+    "date": "15/10/2024",
+    "month": "Tháng 10/2024",
     "views": 234,
     "gallery": [
       "/Activities/baotang1.jpg",
@@ -24,8 +24,8 @@
     "image": "/Activities/vannghe.png",
     "category": "Văn nghệ",
     "categoryId": "art",
-    "date": "10/01/2025",
-    "month": "Tháng 1/2025",
+    "date": "20/09/2024",
+    "month": "Tháng 9/2024",
     "views": 312
   },
   {
@@ -36,8 +36,8 @@
     "image": "/Activities/soccer.jpg",
     "category": "Thể thao",
     "categoryId": "sports",
-    "date": "08/01/2025",
-    "month": "Tháng 1/2025",
+    "date": "15/11/2024",
+    "month": "Tháng 11/2024",
     "views": 278
   },
   {
@@ -48,8 +48,8 @@
     "image": "/Activities/teamwork.jpg",
     "category": "Kỹ năng sống",
     "categoryId": "life-skills",
-    "date": "05/01/2025",
-    "month": "Tháng 1/2025",
+    "date": "05/12/2024",
+    "month": "Tháng 12/2024",
     "views": 156
   },
   {
@@ -60,8 +60,8 @@
     "image": "/Activities/vuon-rau.jpg",
     "category": "Trải nghiệm",
     "categoryId": "experience",
-    "date": "20/12/2025",
-    "month": "Tháng 12/2025",
+    "date": "15/05/2025",
+    "month": "Tháng 5/2025",
     "views": 201
   }
 ]
