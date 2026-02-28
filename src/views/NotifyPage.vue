@@ -33,13 +33,13 @@
           class="px-6 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
           <option value="all">Tất cả các tháng</option>
           <option v-for="month in months" :key="month" :value="month">
-            {{ month }}
+            Tháng {{ month }}
           </option>
         </select>
       </div>
 
       <!-- Activities Grid -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
         <div v-for="announcement in filteredAnnouncements" :key="announcement.id"
           class="flex flex-col p-4 bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
           <div class="flex items-start justify-between mb-4">
@@ -243,9 +243,9 @@ const categories = [
 ]
 
 const months = [
-  'Tháng 9/2024', 'Tháng 10/2024', 'Tháng 11/2024', 'Tháng 12/2024',
-  'Tháng 1/2025', 'Tháng 2/2025', 'Tháng 3/2025', 'Tháng 4/2025',
-  'Tháng 5/2025'
+  '9/2024', '10/2024', '11/2024', '12/2024',
+  '1/2025', '2/2025', '3/2025', '4/2025',
+  '5/2025'
 ]
 
 const getPriorityText = (priority) => {
@@ -264,7 +264,12 @@ const filteredAnnouncements = computed(() => {
   }
 
   if (selectedMonth.value !== 'all') {
-    result = result.filter(a => a.month === selectedMonth.value)
+    result = result.filter(a => 
+  {
+    const [day, month, year] = a.date.split(' ')[0].split('/').map(Number)
+    const announcementMonth = `${month}/${year}`
+    return announcementMonth === selectedMonth.value
+  })
   }
 
   return result

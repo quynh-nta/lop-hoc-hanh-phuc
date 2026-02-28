@@ -1,67 +1,72 @@
 [
   {
     "id": 1,
-    "title": "Tham quan bảo tàng lịch sử",
-    "description": "Chuyến đi thú vị đến bảo tàng, các em được tìm hiểu về lịch sử dân tộc.",
-    "fullDescription": "Hôm nay, cả lớp chúng mình đã có một chuyến tham quan vô cùng ý nghĩa tại Bảo tàng Lịch sử Việt Nam. \n\nCác em được nghe cô hướng dẫn viên kể những câu chuyện về lịch sử dân tộc, xem các hiện vật quý giá từ các thời kỳ khác nhau. Đặc biệt, các em rất thích thú khi được tham gia các hoạt động trải nghiệm như mặc trang phục truyền thống, chơi các trò chơi dân gian.\n\nQua chuyến đi, các em không chỉ học được kiến thức lịch sử mà còn hiểu hơn về truyền thống văn hóa của dân tộc, từ đó có thêm tình yêu quê hương đất nước.",
-    "image": "/Activities/bao_tang_quang_trung_du_lich_thu_duc_6.png",
-    "category": "Trải nghiệm",
-    "categoryId": "experience",
-    "date": "15/10/2024",
-    "month": "Tháng 10/2024",
-    "views": 234,
+    "title": "Hội diễn văn nghệ chào mừng Ngày Giải phóng miền Nam 30/4",
+    "description": "Đêm văn nghệ đầy cảm xúc với những tiết mục ý nghĩa nhân dịp 30/4.",
+    "fullDescription": "Tối ngày 26/4/2025, lớp 6A1 đã có một đêm văn nghệ thật đáng nhớ trong Hội diễn chào mừng Ngày Giải phóng miền Nam, thống nhất đất nước 30/4.\n\nTiết mục \"Nối vòng tay lớn\" của các em đã để lại ấn tượng sâu sắc với khán giả. Các em đã chuẩn bị rất kỹ lưỡng từ trang phục, đạo cụ đến lời ca, điệu múa. Đặc biệt, phần thể hiện ca khúc \"Như có Bác Hồ trong ngày vui đại thắng\" đã làm rung động lòng người xem.\n\nQua hoạt động này, các em không chỉ được rèn luyện kỹ năng biểu diễn mà còn hiểu thêm về truyền thống yêu nước, lòng tự hào dân tộc. Phụ huynh đến cổ vũ rất đông, tạo không khí sôi động và ấm cúng cho cả buổi diễn.\n\nĐây quả là một đêm văn nghệ ý nghĩa, giúp các em thêm yêu quý đất nước và trân trọng hòa bình!",
+    "image": "/Activities/vannghe.png",
+    "category": "Văn nghệ",
+    "categoryId": "art",
+    "date": "26/04/2025",
+    "month": "Tháng 4/2025",
+    "views": 342,
     "gallery": [
-      "/Activities/baotang1.jpg",
-      "/Activities/baotang2.jpg",
-      "/Activities/baotang3.jpg"
     ]
   },
   {
     "id": 2,
-    "title": "Ngày hội văn nghệ \"Tài năng nhí\"",
-    "description": "Các em thể hiện tài năng ca hát, múa, kể chuyện trong ngày hội văn nghệ.",
-    "fullDescription": "Ngày hội văn nghệ \"Tài năng nhí\" đã diễn ra thành công tốt đẹp với sự tham gia nhiệt tình của toàn thể học sinh lớp 6A1.\n\nCác tiết mục đa dạng từ ca hát, múa, kịch, kể chuyện đều thể hiện sự sáng tạo và tự tin của các em. Đặc biệt, tiết mục múa \"Bông hoa đẹp nhất\" của nhóm bạn nữ đã để lại ấn tượng sâu sắc cho khán giả.\n\nNgày hội không chỉ là dịp để các em thể hiện tài năng mà còn giúp các em rèn luyện kỹ năng biểu diễn, tự tin trước đám đông.",
-    "image": "/Activities/vannghe.png",
-    "category": "Văn nghệ",
-    "categoryId": "art",
-    "date": "20/09/2024",
-    "month": "Tháng 9/2024",
-    "views": 312
+    "title": "Hội thi Văn hóa truyền thống cấp trường",
+    "description": "Lớp 6A1 tỏa sáng với các phần thi vẽ tranh, tiếng hát và kể chuyện.",
+    "fullDescription": "Ngày 28/2/2025, lớp 6A1 đã có một ngày thi đấu vô cùng xuất sắc tại Hội thi Văn hóa truyền thống cấp trường tổ chức tại trường THCS Hoài Hải.\n\nTrong phần thi vẽ tranh, em Nguyễn Minh An đã giành giải Nhất với bức tranh \"Làng quê em\" đầy màu sắc và sinh động. Phần thi tiếng hát, nhóm đồng ca của lớp đã thể hiện ca khúc \"Lý con sáo\" một cách ngọt ngào, đậm chất dân gian. Đặc biệt, em Trần Hương Giang đã kể chuyện \"Sơn Tinh - Thủy Tinh\" rất hay, làm say mê cả khán phòng.\n\nNhờ sự cổ vũ nhiệt tình của quý phụ huynh cùng sự chuẩn bị kỹ lưỡng, lớp chúng mình đã đạt giải Nhì toàn đoàn. Các em vui mừng khôn xiết và tự hào về những gì mình đã làm được.\n\nHội thi không chỉ giúp các em thể hiện tài năng mà còn giúp các em hiểu hơn về văn hóa truyền thống tốt đẹp của dân tộc.",
+    "image": "",
+    "category": "Văn hóa",
+    "categoryId": "culture",
+    "date": "28/02/2025",
+    "month": "Tháng 2/2025",
+    "views": 287,
+    "gallery": [
+    ]
   },
   {
     "id": 3,
-    "title": "Giải bóng đá mini liên lớp",
-    "description": "Đội bóng lớp 6A1 vô địch giải bóng đá mini cấp trường.",
-    "fullDescription": "Sau những trận đấu căng thẳng và kịch tính, đội bóng lớp 6A1 đã xuất sắc giành chức vô địch giải bóng đá mini cấp trường.\n\nVới tinh thần đoàn kết, chiến thuật thông minh và kỹ năng chơi bóng tốt, các cầu thủ đã mang về vinh quang cho lớp. Trận chung kết với tỷ số 3-2 đã để lại những khoảnh khắc đáng nhớ.\n\nCả lớp đều tự hào về đội bóng của mình. Đây là minh chứng cho tinh thần thể thao và sự nỗ lực không ngừng của các em.",
-    "image": "/Activities/soccer.jpg",
-    "category": "Thể thao",
-    "categoryId": "sports",
-    "date": "15/11/2024",
-    "month": "Tháng 11/2024",
-    "views": 278
+    "title": "Ngày hội 'Vì bạn' năm 2025",
+    "description": "Chia sẻ yêu thương và giúp đỡ các bạn có hoàn cảnh khó khăn.",
+    "fullDescription": "Ngày 15/2/2025, lớp 6A1 đã có một buổi chiều thật ý nghĩa khi tham gia 'Ngày hội Vì bạn' tại trường THCS Hoài Hải.\n\nTrước đó, các em đã cùng nhau quyên góp sách vở, quần áo, đồ dùng học tập để tặng các bạn có hoàn cảnh khó khăn. Nhiều em còn tự tay làm thiệp, viết lời chúc động viên để gửi đến các bạn. Khi trao tặng, các em được nghe những câu chuyện về hoàn cảnh của bạn bè, từ đó các em hiểu hơn về giá trị của sự sẻ chia và lòng biết ơn.\n\nPhần hoạt động vui chơi chung cũng rất sôi nổi với các trò chơi dân gian như nhảy sạc, kéo co, ô ăn quan. Các em đã cùng nhau vui đùa, hòa mình vào không khí đoàn kết, yêu thương.\n\nQua Ngày hội, các em học được bài học quý giá: Hạnh phúc không chỉ là nhận mà còn là biết cho đi và chia sẻ với người khác. Lớp chúng mình đã thêm gắn kết, yêu thương nhau hơn!",
+    "image": "",
+    "category": "Từ thiện",
+    "categoryId": "charity",
+    "date": "15/02/2025",
+    "month": "Tháng 2/2025",
+    "views": 298,
+    "gallery": [
+    ]
   },
   {
     "id": 4,
-    "title": "Kỹ năng giao tiếp và làm việc nhóm",
-    "description": "Buổi workshop về kỹ năng mềm cho học sinh.",
-    "fullDescription": "Buổi học kỹ năng mềm hôm nay tập trung vào giao tiếp và làm việc nhóm - hai kỹ năng quan trọng trong cuộc sống.\n\nQua các trò chơi tương tác và bài tập nhóm, các em đã học được cách lắng nghe, chia sẻ ý kiến và làm việc hiệu quả với người khác. Các em cũng hiểu được tầm quan trọng của việc tôn trọng ý kiến đóng góp của bạn bè.\n\nNhững kỹ năng này sẽ rất hữu ích không chỉ trong học tập mà còn trong cuộc sống hàng ngày.",
-    "image": "/Activities/teamwork.jpg",
-    "category": "Kỹ năng sống",
-    "categoryId": "life-skills",
-    "date": "05/12/2024",
-    "month": "Tháng 12/2024",
-    "views": 156
+    "title": "Cuộc thi chào mừng ngày Nhà giáo Việt Nam 20/11",
+    "description": "Lớp 6A1 tham gia cuộc thi cắm hoa và làm báo tường đầy sáng tạo.",
+    "fullDescription": "Nhân dịp kỷ niệm Ngày Nhà giáo Việt Nam 20/11, lớp 6A1 đã tham gia cuộc thi cắm hoa và làm báo tường do nhà trường tổ chức.\n\nPhần thi cắm hoa, các em đã chọn chủ đề 'Tri ân thầy cô' với những bông hồng đỏ tươi, hoa cúc vàng và hoa ly trắng được cắm khéo léo trong chiếc lọ hình trái tim. Mỗi bông hoa đều chứa đựng tình cảm yêu quý, biết ơn sâu sắc của các em dành cho thầy cô.\n\nPhần thi báo tường cũng rất đặc sắc với các hình ảnh, thơ ca, lời chúc được thiết kế đẹp mắt và ý nghĩa. Các em đã dành nhiều buổi chiều ở lại trường để cùng nhau vẽ, viết, trang trí. Quý phụ huynh cũng nhiệt tình hỗ trợ, đồng hành cùng các em.\n\nKết quả, lớp chúng mình đã giành giải Nhất phần cắm hoa và giải Nhì phần báo tường. Niềm vui của các em thật khó tả! Quan trọng hơn, qua hoạt động này, các em hiểu hơn về nghề giáo cao quý và biết trân trọng công ơn dạy dỗ của thầy cô.",
+    "image": "",
+    "category": "Văn hóa",
+    "categoryId": "culture",
+    "date": "20/11/2024",
+    "month": "Tháng 11/2024",
+    "views": 265,
+    "gallery": [
+    ]
   },
   {
     "id": 5,
-    "title": "Dự án làm vườn xanh",
-    "description": "Các em tự tay trồng và chăm sóc vườn rau sạch của lớp.",
-    "fullDescription": "Dự án \"Vườn xanh lớp 6A1\" đã chính thức khởi động. Mỗi em đều được phân công chăm sóc một luống rau riêng.\n\nCác em học cách xới đất, gieo hạt, tưới nước và chăm sóc cây trồng hàng ngày. Qua dự án này, các em không chỉ học được kiến thức về nông nghiệp mà còn hiểu được giá trị của lao động và thực phẩm sạch.\n\nTrong tháng tới, chúng mình sẽ thu hoạch những rau sạch đầu tiên do chính tay mình trồng!",
-    "image": "/Activities/vuon-rau.jpg",
-    "category": "Trải nghiệm",
-    "categoryId": "experience",
-    "date": "15/05/2025",
-    "month": "Tháng 5/2025",
-    "views": 201
+    "title": "Giải bóng đá cấp trường - Lớp 6A1 vào bán kết",
+    "description": "Những trận cầu đầy kịch tính với tinh thần chiến đấu hết mình.",
+    "fullDescription": "Tháng 10/2024, đội bóng lớp 6A1 đã tham gia Giải bóng đá cấp trường với tinh thần quyết tâm cao và sự cổ vũ nhiệt tình của phụ huynh.\n\nTrận đầu tiên ngày 05/10 gặp đội lớp 7A1, các em đã chơi rất tốt với chiến thuật phòng thủ chặt chẽ và tấn công nhanh. Mặc dù thua 1-2 nhưng các em đã thể hiện được tinh thần không bỏ cuộc. Trận thứ hai ngày 06/10 với lớp 6A2 diễn ra căng thẳng hơn, với tỷ số hòa 2-2 sau 90 phút, các em đã giành chiến thắng 4-3 trên chấm luân lưu 11m đầy kịch tính.\n\nTrận gặp lớp 7A2 ngày 08/10 là trận hay nhất, các em đã có chiến thắng ngoạn mục 3-1, qua đó lọt vào vòng bán kết. Bàn thắng quyết định của em Hoàng Minh đã khiến cả khán đài phụ huynh vỡ òa.\n\nDù sau đó không vô địch, nhưng các em đã học được bài học quý giá về tinh thần đồng đội, sự kiên trì và fair-play trong thể thao. Đây là kỷ niệm đẹp mà cả lớp sẽ không bao giờ quên!",
+    "image": "/Activities/soccer.jpg",
+    "category": "Thể thao",
+    "categoryId": "sports",
+    "date": "08/10/2024",
+    "month": "Tháng 10/2024",
+    "views": 321,
+    "gallery": [
+    ]
   }
 ]

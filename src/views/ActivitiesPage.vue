@@ -45,7 +45,10 @@
         <div v-for="activity in filteredActivities" :key="activity.id"
           class="flex flex-col bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
           <div class="relative">
-            <img :src="activity.image" :alt="activity.title" class="w-full h-56 object-cover" />
+            <img v-if="activity.image" :src="activity.image" :alt="activity.title" class="w-full h-56 object-cover" />
+            <div v-else class="w-full h-24 bg-white flex items-center justify-center border-b border-gray-200">
+              <span class="text-gray-500 text-4xl">📸</span>
+            </div>
             <div class="absolute top-4 right-4">
               <span class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-gray-800">
                 {{ activity.category }}
@@ -82,7 +85,7 @@
     <CommonModal v-model="selectedActivity" :title="selectedActivity?.title || ''" maxWidth="max-w-4xl">
       <div @click.stop class="bg-white rounded-2xl max-w-4xl w-full">
         <div class="relative rounded-t-2xl">
-          <img :src="selectedActivity.image" :alt="selectedActivity.title"
+          <img v-if="selectedActivity.image" :src="selectedActivity.image" :alt="selectedActivity.title"
             class="w-full h-96 object-cover rounded-t-2xl" />
           <button @click="selectedActivity = null"
             class="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
