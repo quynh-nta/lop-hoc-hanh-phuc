@@ -100,12 +100,26 @@
             <h2 class="text-3xl font-bold text-gray-800 mb-4">{{ selectedActivity.title }}</h2>
             <p class="text-gray-600 mb-4">📅 {{ selectedActivity.date }} | 👁️ {{ selectedActivity.views }} lượt xem</p>
             <p class="text-gray-700 leading-relaxed whitespace-pre-line">{{ selectedActivity.fullDescription }}</p>
-            <!-- Image Gallery -->
+            <!-- Image/Video Gallery -->
             <div v-if="selectedActivity.gallery" class="mt-8">
-              <h3 class="text-xl font-bold text-gray-800 mb-4">📸 Thư viện ảnh</h3>
+              <h3 class="text-xl font-bold text-gray-800 mb-4">📸 Thư viện ảnh & Video</h3>
               <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <img v-for="(img, index) in selectedActivity.gallery" :key="index" :src="img"
-                  class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition-opacity cursor-pointer" />
+                <div v-for="(item, index) in selectedActivity.gallery" :key="index" 
+                  @click="openGalleryItem(item)"
+                  class="relative group cursor-pointer rounded-lg overflow-hidden">
+                  <img v-if="isImage(item)" :src="item"
+                    class="w-full h-48 object-cover hover:opacity-75 transition-opacity" />
+                  <div v-else class="relative">
+                    <video :src="item" class="w-full h-48 object-cover"></video>
+                    <div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-all flex items-center justify-center">
+                      <div class="bg-white/90 rounded-full p-3 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -119,6 +133,29 @@
       v-model="showSubmitForm"
       @submit="handleCreateActivity"
     />
+
+    <!-- Gallery Item Viewer Modal -->
+    <CommonModal v-model="galleryViewer" title="" maxWidth="max-w-6xl">
+      <div @click.stop class="bg-black rounded-2xl max-w-6xl w-full">
+        <div class="relative">
+          <button @click="galleryViewer = null"
+            class="absolute top-4 right-4 z-10 w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors">
+            ✕
+          </button>
+          <div class="flex items-center justify-center min-h-[60vh] max-h-[85vh] p-4">
+            <img v-if="galleryViewer && isImage(galleryViewer.item)" 
+              :src="galleryViewer.item"
+              class="max-w-full max-h-[80vh] object-contain rounded-lg" />
+            <video v-else-if="galleryViewer && !isImage(galleryViewer.item)"
+              :src="galleryViewer.item"
+              controls
+              autoplay
+              class="max-w-full max-h-[80vh] rounded-lg">
+            </video>
+          </div>
+        </div>
+      </div>
+    </CommonModal>
 
   </div>
 </template>
@@ -135,6 +172,7 @@ const selectedCategory = ref('all')
 const selectedMonth = ref('all')
 const selectedActivity = ref(null)
 const showSubmitForm = ref(false)
+const galleryViewer = ref(null)
 
 const categories = [
   { id: 'all', name: 'Tất cả', icon: '📚' },
@@ -186,6 +224,16 @@ const handleCreateActivity = (newActivity) => {
   
   // Hiển thị thông báo thành công (có thể thêm toast notification)
   console.log('Hoạt động mới đã được tạo:', newActivity)
+}
+
+const isImage = (url) => {
+  if (!url) return false
+  const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg']
+  return imageExtensions.some(ext => url.toLowerCase().endsWith(ext))
+}
+
+const openGalleryItem = (item) => {
+  galleryViewer.value = { item }
 }
 </script>
 
