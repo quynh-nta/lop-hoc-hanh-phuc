@@ -398,24 +398,10 @@ const currentComments = computed(() => {
 const openComments = (share) => {
   currentShareId.value = share.id
   commentModalOpen.value = true
+
+  //change commentsdata from sharesData
   
-  // Initialize comments for this share if not exists
-  if (!commentsData.value[share.id]) {
-    commentsData.value[share.id] = [
-      {
-        id: 1,
-        author: 'Phụ huynh Minh',
-        text: 'Cảm ơn cô đã thông báo!',
-        time: '10:30'
-      },
-      {
-        id: 2,
-        author: 'Phụ huynh Hương',
-        text: 'Em tôi rất thích hoạt động này.',
-        time: '11:15'
-      }
-    ]
-  }
+  commentsData.value[share.id] = share.commentsData
 }
 
 const addComment = () => {

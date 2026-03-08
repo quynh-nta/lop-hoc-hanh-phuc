@@ -85,7 +85,8 @@
               <button @click="handleLike(announcement.id)"
                 class="flex items-center space-x-1 hover:text-pink-600 transition-colors">
                 <span>❤️</span>
-                <span>{{ announcement.likes }}</span>
+                <span>33</span> 
+                <!-- {{ announcement.likes }} -->
               </button>
                | 
               <Tooltip :title="`${announcement.likes} người thích`" position="top">

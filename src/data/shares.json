@@ -1,14 +1,34 @@
 [
   {
     "id": 1,
-    "name": "Nguyễn An An",
-    "initial": "A",
-    "anonymous": false,
-    "content": "Em rất vui khi được học trong lớp này. Thầy cô rất tốt và bạn bè thân thiện. Em cảm thấy mình được yêu thương và quan tâm mỗi ngày.",
-    "category": "happy",
+    "name": "Học sinh ẩn danh",
+    "initial": "?",
+    "anonymous": true,
+    "content": "Mình rất run mỗi khi cô hỏi bài. Dù biết câu trả lời nhưng mình sợ nói sai các bạn cười.",
+    "category": "thoughts",
     "date": "2 ngày trước",
-    "likes": 24,
-    "comments": 5,
+    "likes": 28,
+    "comments": 3,
+    "commentsData": [
+      {
+        "id": 1,
+        "author": "Bạn ẩn danh",
+        "text": "Bạn thử tập nói trước gương hoặc nói thử với bạn thân.",
+        "time": "10:15"
+      },
+      {
+        "id": 2,
+        "author": "Bạn ẩn danh",
+        "text": "Bạn hãy thử bắt đầu phát biểu từ câu dễ.",
+        "time": "11:30"
+      },
+      {
+        "id": 3,
+        "author": "Bạn ẩn danh",
+        "text": "Không sao đâu bạn câu trả lời sai giúp chúng ta nhớ lâu hơn.",
+        "time": "12:45"
+      }
+    ],
     "status": "approved"
   },
   {
@@ -16,11 +36,25 @@
     "name": "Học sinh ẩn danh",
     "initial": "?",
     "anonymous": true,
-    "content": "Khoảnh khắc hạnh phúc của em là khi được cùng bạn bè làm dự án nhóm. Mọi người cùng nhau động não, chia sẻ ý tưởng và hoàn thành công việc. Em học được rất nhiều điều.",
-    "category": "happy",
+    "content": "Bạn thân nghĩ mình nói xấu bạn ấy. Mình giải thích nhưng bạn không tin.",
+    "category": "thoughts",
     "date": "3 ngày trước",
-    "likes": 18,
-    "comments": 3,
+    "likes": 22,
+    "comments": 2,
+    "commentsData": [
+      {
+        "id": 1,
+        "author": "Bạn ẩn danh",
+        "text": "Hãy gặp riêng, nói rõ và giữ thái độ bình tĩnh.",
+        "time": "14:20"
+      },
+      {
+        "id": 2,
+        "author": "Bạn ẩn danh",
+        "text": "Bạn có thể nhờ bạn chung làm trung gian.",
+        "time": "15:10"
+      }
+    ],
     "status": "approved"
   },
   {
@@ -28,35 +62,179 @@
     "name": "Học sinh ẩn danh",
     "initial": "?",
     "anonymous": true,
-    "content": "Em muốn nói lời cảm ơn đến cô giáo đã luôn quan tâm và động viên em. Có những lúc em không tự tin, nhưng cô đã giúp em vượt qua và trở nên mạnh mẽ hơn.",
-    "category": "love",
+    "content": "Mình thấy bạn nào cũng có điểm mạnh, còn mình thì bình thường.",
+    "category": "thoughts",
     "date": "5 ngày trước",
-    "likes": 32,
-    "comments": 8,
+    "likes": 35,
+    "comments": 3,
+    "commentsData": [
+      {
+        "id": 1,
+        "author": "Bạn ẩn danh",
+        "text": "Bạn hãy liệt kê những điều mình làm được.",
+        "time": "09:15"
+      },
+      {
+        "id": 2,
+        "author": "Bạn ẩn danh",
+        "text": "Bạn hãy thử tham gia hoạt động mới.",
+        "time": "10:20"
+      },
+      {
+        "id": 3,
+        "author": "Bạn ẩn danh",
+        "text": "Mỗi người có mỗi điểm mạnh khác nhau nên bạn cứ tận dụng hết những cơ hội để phát huy điểm mạnh của mình",
+        "time": "11:30"
+      }
+    ],
     "status": "approved"
   },
   {
     "id": 4,
-    "name": "Nguyễn Dư Gia Hân",
-    "initial": "H",
-    "anonymous": false,
-    "content": "Em nghĩ rằng lớp học là ngôi nhà thứ hai của chúng em. Ở đây, em không chỉ học kiến thức mà còn học cách làm người, cách yêu thương và chia sẻ.",
+    "name": "Học sinh ẩn danh",
+    "initial": "?",
+    "anonymous": true,
+    "content": "Cô nghĩ mình nói chuyện trong giờ nhưng thật ra mình không nói.",
     "category": "thoughts",
     "date": "1 tuần trước",
-    "likes": 28,
-    "comments": 6,
+    "likes": 18,
+    "comments": 2,
+    "commentsData": [
+      {
+        "id": 1,
+        "author": "Bạn ẩn danh",
+        "text": "Bạn hãy gặp riêng cô để giải thích nhẹ nhàng.",
+        "time": "13:00"
+      },
+      {
+        "id": 2,
+        "author": "Bạn ẩn danh",
+        "text": "Bạn hãy rút kinh nghiệm ngồi tập trung hơn",
+        "time": "14:15"
+      }
+    ],
     "status": "approved"
   },
   {
     "id": 5,
-    "name": "Hồ Quốc Kiệt",
-    "initial": "K",
-    "anonymous": false,
-    "content": "Mỗi buổi sáng đến lớp, em đều cảm thấy vui vì được gặp các bạn. Chúng em cùng nhau học, cùng chơi và cùng lớn lên mỗi ngày.",
-    "category": "happy",
+    "name": "Học sinh ẩn danh",
+    "initial": "?",
+    "anonymous": true,
+    "content": "Ba mẹ bận nên ít nói chuyện với mình.",
+    "category": "thoughts",
     "date": "1 tuần trước",
-    "likes": 21,
+    "likes": 25,
+    "comments": 2,
+    "commentsData": [
+      {
+        "id": 1,
+        "author": "Bạn ẩn danh",
+        "text": "Bạn hãy chủ động kể chuyện ở trường cho ba mẹ nghe.",
+        "time": "16:30"
+      },
+      {
+        "id": 2,
+        "author": "Bạn ẩn danh",
+        "text": "Ba mẹ bận nhưng vẫn luôn yêu thương bạn đấy. Nhà mình cũng vậy nhưng khi mình có vấn đề khó khăn thì ba mẹ luôn sẵn sàng lắng nghe mình nói và giúp đỡ mình. Nên bạn cứ chia sẻ để ba mẹ hiểu mình hơn nhé.",
+        "time": "17:00"
+      }
+    ],
+    "status": "approved"
+  },
+  {
+    "id": 6,
+    "name": "Học sinh ẩn danh",
+    "initial": "?",
+    "anonymous": true,
+    "content": "Các bạn ơi càng gần thi mình càng lo, đêm khó ngủ.",
+    "category": "thoughts",
+    "date": "2 tuần trước",
+    "likes": 32,
+    "comments": 3,
+    "commentsData": [
+      {
+        "id": 1,
+        "author": "Bạn ẩn danh",
+        "text": "Bạn hãy ôn tập theo từng phần, đừng nhồi nhét kiến thức quá",
+        "time": "08:00"
+      },
+      {
+        "id": 2,
+        "author": "Bạn ẩn danh",
+        "text": "Bạn hãy nghỉ ngơi đủ giấc để giữ gìn sức khỏe, đừng thức quá khuya",
+        "time": "09:15"
+      },
+      {
+        "id": 3,
+        "author": "Bạn ẩn danh",
+        "text": "Thời gian giải lao cố gắng chơi thể thao nhẹ, hít thật sâu để giảm căng thẳng",
+        "time": "10:30"
+      }
+    ],
+    "status": "approved"
+  },
+  {
+    "id": 7,
+    "name": "Học sinh ẩn danh",
+    "initial": "?",
+    "anonymous": true,
+    "content": "Trong nhóm của mình có bạn không làm bài nhưng lại muốn nhận công.",
+    "category": "thoughts",
+    "date": "2 tuần trước",
+    "likes": 20,
+    "comments": 2,
+    "commentsData": [
+      {
+        "id": 1,
+        "author": "Bạn ẩn danh",
+        "text": "Bạn hãy phân công nhiệm vụ cụ thể cho từng bạn và kèm bảng phân công này khi nộp bài cho giáo viên",
+        "time": "13:45"
+      },
+      {
+        "id": 2,
+        "author": "Bạn ẩn danh",
+        "text": "Bạn có thể nhờ giáo viên giúp đỡ nếu tình huống quá căng thẳng",
+        "time": "14:30"
+      }
+    ],
+    "status": "approved"
+  },
+  {
+    "id": 8,
+    "name": "Học sinh ẩn danh",
+    "initial": "?",
+    "anonymous": true,
+    "content": "Môn Anh văn khó quá, mình muốn bỏ cuộc.",
+    "category": "thoughts",
+    "date": "3 tuần trước",
+    "likes": 30,
     "comments": 4,
+    "commentsData": [
+      {
+        "id": 1,
+        "author": "Bạn ẩn danh",
+        "text": "Bạn hãy cố gắng học mỗi ngày một ít, nhờ sự giúp đỡ của giáo viên bộ môn",
+        "time": "15:00"
+      },
+      {
+        "id": 2,
+        "author": "Bạn ẩn danh",
+        "text": "Bạn có thể xem các video học vui nhộn để tạo hứng thú học tập",
+        "time": "15:45"
+      },
+      {
+        "id": 3,
+        "author": "Bạn ẩn danh",
+        "text": "Bạn hãy chia sẻ với các bạn về khó khăn của mình để các bạn cùng giúp đỡ nhé",
+        "time": "16:20"
+      },
+      {
+        "id": 4,
+        "author": "Bạn ẩn danh",
+        "text": "Cố lên bạn ơi, không gì là không thể",
+        "time": "17:00"
+      }
+    ],
     "status": "approved"
   }
 ]

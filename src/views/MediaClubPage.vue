@@ -179,6 +179,28 @@
           <div class="prose max-w-none">
             <p class="text-gray-700 leading-relaxed whitespace-pre-line">{{ selectedProduct.fullContent }}</p>
           </div>
+                      <!-- Image/Video Gallery -->
+            <div v-if="selectedProduct.gallery" class="mt-8">
+              <h3 class="text-xl font-bold text-gray-800 mb-4">📸 Thư viện ảnh & Video</h3>
+              <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div v-for="(item, index) in selectedProduct.gallery" :key="index" 
+                  @click="openGalleryItem(item)"
+                  class="relative group cursor-pointer rounded-lg overflow-hidden">
+                  <img v-if="isImage(item)" :src="item"
+                    class="w-full h-48 object-cover hover:opacity-75 transition-opacity" />
+                  <div v-else class="relative">
+                    <video :src="item" class="w-full h-48 object-cover"></video>
+                    <div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-all flex items-center justify-center">
+                      <div class="bg-white/90 rounded-full p-3 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
       </div>
     </div>
@@ -239,6 +261,16 @@ const submitNewProduct = (newProduct) => {
   alert('Tạo sản phẩm thành công!')
 }
 
+const isImage = (url) => {
+  if (!url) return false
+  const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg']
+  return imageExtensions.some(ext => url.toLowerCase().endsWith(ext))
+}
+
+const openGalleryItem = (item) => {
+  galleryViewer.value = { item }
+}
+
 const categories = [
   { id: 'all', name: 'Tất cả', icon: '📚' },
   { id: 'article', name: 'Bài viết', icon: '✍️' },
@@ -249,83 +281,115 @@ const categories = [
 const products = ref([
   {
     id: 1,
-    title: 'Một ngày của lớp 6A1',
-    description: 'Video ghi lại những khoảnh khắc vui vẻ trong ngày học của lớp.',
-    thumbnail: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&h=600&fit=crop',
-    type: 'Video',
-    typeId: 'video',
-    author: 'Nguyễn Minh An',
-    date: '20/01/2025',
+    title: 'Ngày hội "Vì bạn" 💙',
+    description: 'Gian hàng ẩm thực đầy ý nghĩa của lớp 6A1 tại Ngày hội "Vì bạn".',
+    thumbnail: '/MediaClub/viban.jpg',
+    type: 'Bài viết',
+    typeId: 'article',
+    author: 'Xuân Duy- Yến Nhi- Câu lạc bộ truyền thông',
+    date: '15/02/2025',
     featured: true,
-    fullContent: 'Video 5 phút ghi lại những khoảnh khắc vui vẻ, ý nghĩa trong một ngày học của lớp 6A1. Từ giờ chào cờ đầu tuần, các tiết học sôi nổi, đến giờ ra chơi náo nhiệt. Đây là sản phẩm của cả nhóm sau 2 tuần quay và dựng.'
+    fullContent: `Chiều nay, sân trường chúng em trở nên nhộn nhịp hơn khi Ngày hội "Vì bạn" diễn ra với nhiều gian hàng ẩm thực hấp dẫn do các lớp chuẩn bị. Từ đầu giờ chiều, lớp chúng em đã cùng nhau sắp xếp bàn ghế, bày các món ăn và trang trí gian hàng thật đẹp để chào đón thầy cô và các bạn đến ủng hộ.
+
+Gian hàng của lớp có nhiều món ăn quen thuộc như bánh, nước uống và các món ăn vặt. Mỗi bạn đều rất hào hứng: bạn thì bán hàng, bạn thì giới thiệu món ăn, bạn thì mời khách. Không khí lúc nào cũng rộn ràng tiếng nói cười, tạo nên một buổi chiều thật vui và đáng nhớ.
+
+Điều ý nghĩa nhất là số tiền thu được từ gian hàng sẽ góp phần hỗ trợ các bạn có hoàn cảnh khó khăn trong trường. Vì vậy, mỗi món ăn bán ra đều mang theo sự sẻ chia và tình cảm của tập thể lớp.
+
+Buổi chiều của Ngày hội "Vì bạn" không chỉ mang lại niềm vui mà còn giúp chúng em hiểu hơn về tinh thần đoàn kết và lòng nhân ái. Đây chắc chắn sẽ là một kỷ niệm đẹp trong những năm tháng học trò. 💙`,
+    gallery: [
+      '/MediaClub/viban1.jpg'
+    ]
   },
   {
     id: 2,
-    title: 'Bài viết: Lớp học của em',
-    description: 'Bài viết cảm xúc về lớp học và những người bạn thân yêu.',
-    thumbnail: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&h=600&fit=crop',
+    title: '🌷 Tri ân thầy cô nhân ngày 20/11 🌷',
+    description: 'Lời chúc và lòng biết ơn chân thành gửi đến thầy cô.',
+    thumbnail: '/MediaClub/trian.jpg',
     type: 'Bài viết',
     typeId: 'article',
-    author: 'Trần Bảo An',
-    date: '18/01/2025',
-    featured: false,
-    fullContent: `Lớp học của em là một ngôi nhà ấm áp, nơi mà mỗi ngày đến trường đều mang lại niềm vui mới. 
+    author: 'Quỳnh Anh- Câu lạc văn hóa đọc',
+    date: '20/11/2025',
+    featured: true,
+    fullContent: `Nhân dịp Ngày Nhà giáo Việt Nam 20/11, chúng em muốn gửi đến thầy cô những lời chúc tốt đẹp và lòng biết ơn chân thành nhất. Thầy cô không chỉ là người dạy cho chúng em kiến thức mà còn là người luôn tận tình chỉ bảo, động viên và đồng hành cùng chúng em trong từng bước trưởng thành.
 
-Ở đây, em có những người bạn thân thiết, luôn cùng nhau học tập và vui chơi. Thầy cô luôn tận tâm, kiên nhẫn hướng dẫn chúng em. 
+Mỗi ngày đến lớp, chúng em được nghe những bài giảng đầy tâm huyết, được thầy cô kiên nhẫn hướng dẫn khi chưa hiểu bài và luôn khích lệ khi chúng em cố gắng. Có những lúc chúng em còn mắc lỗi, nhưng thầy cô vẫn nhẹ nhàng nhắc nhở và giúp chúng em nhận ra điều đúng đắn.
 
-Em nghĩ rằng, lớp học không chỉ là nơi để học chữ, học toán, mà còn là nơi giúp em trưởng thành, học cách yêu thương và chia sẻ.`
+Đối với chúng em, thầy cô giống như những người lái đò thầm lặng, đưa bao thế hệ học trò cập bến tri thức. Những bài học, những lời dạy của thầy cô không chỉ theo chúng em trong suốt những năm tháng học trò mà còn là hành trang quý giá cho tương lai.
+
+Nhân ngày 20/11, chúng em kính chúc thầy cô luôn mạnh khỏe, hạnh phúc và luôn giữ mãi ngọn lửa nhiệt huyết với nghề. Chúng em sẽ cố gắng học tập thật tốt để không phụ lòng dạy dỗ của thầy cô.`
   },
   {
     id: 3,
-    title: 'Album ảnh: Chuyến tham quan',
-    description: 'Bộ ảnh đẹp trong chuyến tham quan bảo tàng.',
-    thumbnail: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&h=600&fit=crop',
-    type: 'Ảnh',
-    typeId: 'photo',
-    author: 'Lê Quỳnh Anh',
-    date: '15/01/2025',
-    featured: true,
-    fullContent: 'Bộ ảnh 20 tấm ghi lại chuyến tham quan bảo tàng lịch sử. Các em rất vui vẻ và hào hứng khi được tìm hiểu về lịch sử dân tộc qua các hiện vật quý giá.'
+    title: 'Ơn thầy cô',
+    description: 'Bài thơ tri ân thầy cô nhân ngày 20/11.',
+    thumbnail: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=600&fit=crop',
+    type: 'Bài viết',
+    typeId: 'article',
+    author: 'Hằng Ni- Câu lạc Chia sẻ kĩ năng sống',
+    date: '20/11/2025',
+    featured: false,
+    fullContent: `Ơn thầy cô
+
+Tháng mười một gió dịu dàng
+Chúng em nhớ mãi bảng vàng phấn bay.
+
+Lời thầy ấm áp mỗi ngày
+Dẫn đường tri thức, chắp đầy ước mơ.
+
+Bao năm bụi phấn lặng lờ
+Tóc thầy điểm bạc vẫn chờ đàn em.
+
+Cô như ánh nắng dịu êm
+Dạy em bài học dịu hiền, yêu thương.
+
+Mai sau đi khắp nẻo đường
+Ơn thầy nghĩa cô vẫn vương trong lòng.`
   },
   {
     id: 4,
-    title: 'Video: Thử thách STEM',
-    description: 'Ghi lại quá trình các em làm dự án robot.',
-    thumbnail: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=600&fit=crop',
-    type: 'Video',
-    typeId: 'video',
-    author: 'Phạm Tuấn Anh',
-    date: '12/01/2025',
+    title: 'Những khoảnh khắc yêu thương trong cuộc họp phụ huynh lớp 6A1',
+    description: 'Album ảnh ghi lại những khoảnh khắc ấm áp của buổi họp phụ huynh.',
+    thumbnail: '/MediaClub/ph.jpg',
+    typeId: 'photo',
+    author: 'Câu lạc bộ Truyền thông',
+    date: '03/11/2025',
     featured: false,
-    fullContent: 'Video 3 phút ghi lại quá trình các nhóm làm việc, từ ý tưởng ban đầu, gặp khó khăn, cho đến khi hoàn thành robot mini. Rất nhiều cảm xúc và bài học ý nghĩa!'
+    fullContent: 'Bộ ảnh ghi lại những khoảnh khắc ấm áp và ý nghĩa trong buổi họp phụ huynh lớp 6A1. Sự gặp gỡ giữa thầy cô và phụ huynh để cùng nhau chia sẻ về quá trình học tập, rèn luyện của các em. Những nụ cười, những ánh mắt tin yêu đều thể hiện sự quan tâm sâu sắc của gia đình và nhà trường dành cho các em.',
+    gallery: [
+      '/MediaClub/ph1.mp4',
+      '/MediaClub/ph2.mp4',
+      '/MediaClub/ph1.jpg',
+      '/MediaClub/ph2.jpg',
+      '/MediaClub/ph3.jpg',
+      '/MediaClub/ph4.jpg',
+    ]
   },
   {
     id: 5,
-    title: 'Bài viết: Người bạn thân của em',
-    description: 'Chia sẻ về tình bạn đẹp trong lớp.',
-    thumbnail: 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=800&h=600&fit=crop',
+    title: '⚽ Trận bóng đá kịch tính giữa lớp 6A1 và 6A2',
+    description: 'Trận đấu đầy cảm xúc tại sân vận động liên thôn với tỉ số 3-2.',
+    thumbnail: '/MediaClub/bongda.jpg',
     type: 'Bài viết',
     typeId: 'article',
-    author: 'Hoàng Mai Linh',
-    date: '10/01/2025',
-    featured: false,
-    fullContent: `Bạn thân của em là một người rất tốt bụng và vui tính. Chúng em đã là bạn từ lớp 1 và luôn bên nhau trong mọi hoạt động.
+    author: 'Câu lạc bộ Truyền thông',
+    date: '06/10/2024',
+    featured: true,
+    fullContent: `Chiều ngày 6/10 lúc 16 giờ, tại sân vận động liên thôn, một trận bóng đá đầy hấp dẫn đã diễn ra giữa lớp 6A1 và lớp 6A2. Từ rất sớm, nhiều bạn học sinh đã có mặt để cổ vũ, tạo nên bầu không khí vô cùng sôi động. Tiếng reo hò, tiếng vỗ tay và những lời động viên làm cho sân bóng trở nên náo nhiệt như một ngày hội nhỏ của tuổi học trò.
 
-Bạn ấy luôn động viên em khi em gặp khó khăn, chia sẻ với em niềm vui và nỗi buồn. Em rất biết ơn vì có một người bạn như vậy.
+Ngay khi tiếng còi khai cuộc vang lên, hai đội nhanh chóng nhập cuộc với tinh thần thi đấu quyết tâm. Các cầu thủ của cả hai lớp liên tục tổ chức những pha tấn công đẹp mắt, khiến trận đấu trở nên vô cùng gay cấn. Không ít lần bóng tiến sát khung thành trong sự hồi hộp của các cổ động viên đứng quanh sân.
 
-Em hy vọng chúng em sẽ mãi là bạn thân, dù sau này có đi đâu, làm gì.`
-  },
-  {
-    id: 6,
-    title: 'Poster: An toàn giao thông',
-    description: 'Thiết kế poster tuyên truyền an toàn giao thông.',
-    thumbnail: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=600&fit=crop',
-    type: 'Ảnh',
-    typeId: 'photo',
-    author: 'Nguyễn Đức Thắng',
-    date: '08/01/2025',
-    featured: false,
-    fullContent: 'Poster thiết kế với thông điệp "An toàn giao thông - Hạnh phúc mỗi nhà", sử dụng màu sắc bắt mắt và hình ảnh sinh động để thu hút sự chú ý.'
+Lớp 6A1 đã có bàn mở tỉ số sớm, nhưng lớp 6A2 cũng nhanh chóng đáp trả bằng những pha tấn công mạnh mẽ. Trận đấu diễn ra rất cân bằng khi hai đội liên tục ghi bàn và bám đuổi tỉ số. Mỗi bàn thắng được ghi đều nhận được những tràng vỗ tay và tiếng cổ vũ vang dội từ các bạn học sinh.
+
+Những phút cuối của trận đấu thực sự kịch tính khi hai đội thi đấu với tất cả sự nỗ lực và tinh thần đồng đội. Sau những pha bóng đầy cảm xúc, trận đấu khép lại với tỉ số 3–2 nghiêng về lớp 6A1. Đây là một chiến thắng đầy hồi hộp và đáng nhớ sau một trận đấu đẹp của cả hai đội.
+
+Dù kết quả ra sao, điều đáng quý nhất chính là tinh thần thể thao, sự đoàn kết và niềm vui khi được cùng nhau tham gia hoạt động. Trận đấu đã để lại nhiều khoảnh khắc đáng nhớ và chắc chắn sẽ trở thành một kỷ niệm đẹp trong quãng thời gian học tập của các bạn học sinh.
+
+⚽ Một trận đấu nhỏ – nhưng chứa đựng cả nhiệt huyết và tình bạn của tuổi học trò.`,
+    gallery: [
+      '/MediaClub/bongda1.jpg',
+      '/MediaClub/bongda2.jpg',
+      '/MediaClub/bongda3.jpg',
+    ]
   }
 ])
 

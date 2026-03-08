@@ -266,11 +266,11 @@
               <p class="font-semibold text-gray-800">{{ selectedStudent.gender === 'male' ? 'Nam' : 'Nữ' }}</p>
             </div>
             <div class="bg-green-50 rounded-lg p-4">
-              <p class="text-sm text-gray-600 mb-1">Học lực</p>
+              <p class="text-sm text-gray-600 mb-1">Kết quả học tập</p>
               <p class="font-semibold text-gray-800">{{ selectedStudent.isExcellent ? 'Xuất sắc' : 'Khá' }}</p>
             </div>
             <div class="bg-yellow-50 rounded-lg p-4">
-              <p class="text-sm text-gray-600 mb-1">Hạnh kiểm</p>
+              <p class="text-sm text-gray-600 mb-1">Kết quả rèn luyện</p>
               <p class="font-semibold text-gray-800">Tốt</p>
             </div>
             <div class="bg-orange-50 rounded-lg p-4">

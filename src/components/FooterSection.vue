@@ -24,7 +24,7 @@
         <div>
           <router-link to="/lien-he" class="nav-link">Liên hệ</router-link>
           <p class="text-blue-100 mb-2">📧 Email: lophochangphuc@school.edu.vn</p>
-          <p class="text-blue-100 mb-2">📱 Hotline: 0123 456 789</p>
+          <p class="text-blue-100 mb-2">📱 Hotline: 0981251679</p>
           <p class="text-blue-100">🏫 Trường THCS Hoài Hải</p>
         </div>
       </div>

@@ -52,7 +52,16 @@
             </div>
             <h3 class="text-xl font-bold text-gray-800 mb-2">{{ message.title }}</h3>
             <p class="text-gray-700 mb-4 leading-relaxed">{{ message.content }}</p>
+
+            <div class="mt-auto flex items-center justify-between text-sm text-gray-500 mt-4">
+              <div class="flex items-center space-x-1 hover:text-pink-600 transition-colors">
             <p class="text-sm text-gray-500">📅 {{ message.date }}</p>
+              </div>
+              <button @click="openComments(message)" class="flex items-center space-x-1 hover:text-blue-600 transition-colors">
+                <span>💬</span>
+                <span>{{ message.comments }} bình luận</span>
+              </button>
+          </div>
           </div>
         </div>
       </section>
@@ -150,12 +159,77 @@
         </form>
       </div>
     </div>
+     <CommonModal
+      v-model="commentModalOpen"
+      title="💬 Bình luận"
+      maxWidth="max-w-2xl" >
+      <!-- Modal Header -->
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-t-2xl flex items-center justify-between">
+          <h3 class="text-xl font-bold">💬 Bình luận</h3>
+          <button
+            @click="commentModalOpen = false"
+            class="w-8 h-8 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors"
+          >
+            ✕
+          </button>
+        </div>
+
+        <!-- Comments List -->
+        <div class="flex-1 overflow-y-auto p-6 space-y-4">
+          <div
+            v-for="comment in currentComments"
+            :key="comment.id"
+            class="flex space-x-3 p-4 bg-gray-50 rounded-lg"
+          >
+            <div class="w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold flex-shrink-0">
+              {{ comment.author.charAt(0) }}
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between mb-1">
+                <h4 class="font-bold text-gray-800">{{ comment.author }}</h4>
+                <span class="text-xs text-gray-500">{{ comment.time }}</span>
+              </div>
+              <p class="text-gray-700">{{ comment.text }}</p>
+            </div>
+          </div>
+          <div v-if="currentComments.length === 0" class="text-center py-8 text-gray-500">
+            <div class="text-4xl mb-2">💬</div>
+            <p>Chưa có bình luận nào. Hãy là người đầu tiên!</p>
+          </div>
+        </div>
+
+        <!-- Add Comment Input -->
+        <div class="p-4 border-t">
+          <div class="flex space-x-3">
+            <input
+              v-model="newComment"
+              @keypress.enter="addComment"
+              type="text"
+              placeholder="Viết bình luận..."
+              class="flex-1 px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <button
+              @click="addComment"
+              :disabled="!newComment.trim()"
+              :class="[
+                'px-6 py-3 rounded-full font-semibold transition-all duration-300',
+                newComment.trim()
+                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-lg'
+                  : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+              ]"
+            >
+              Gửi
+            </button>
+          </div>
+        </div>
+    </CommonModal>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import teacherMessagesData from '../data/teacherMessages.json'
+import CommonModal from '../components/CommonModal.vue'
 
 const showFeedbackForm = ref(false)
 
@@ -187,5 +261,34 @@ const submitFeedback = () => {
     type: 'feedback',
     content: ''
   }
+}
+
+const newComment = ref('')
+
+const commentModalOpen = ref(false)
+const currentShareId = ref(null)
+const commentsData = ref({})
+const currentComments = computed(() => {
+  return commentsData.value[currentShareId.value] || []
+})
+const openComments = (message) => {
+  currentShareId.value = message.id
+  commentModalOpen.value = true
+
+  commentsData.value[message.id] = message.commentsData || []
+}
+
+const addComment = () => {
+  if (!newComment.value.trim()) return
+
+  const newCommentObj = {
+    id: Date.now(),
+    author: feedbackData.value.name,
+    text: newComment.value,
+    time: new Date().toLocaleString()
+  }
+
+  commentsData.value[currentShareId.value].push(newCommentObj)
+  newComment.value = ''
 }
 </script>

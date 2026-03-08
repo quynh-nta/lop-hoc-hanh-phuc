@@ -1,26 +1,362 @@
 [
   {
     "id": 1,
-    "title": "Cảm ơn sự đồng hành",
-    "content": "Quý phụ huynh thân mến, tháng vừa qua các em đã có nhiều tiến bộ đáng kể. Điều này không thể thiếu sự quan tâm, động viên của gia đình. Cô xin gửi lời cảm ơn sâu sắc đến quý phụ huynh!",
-    "date": "15/01/2025"
+    "author": "Phụ huynh",
+    "title": "Chúc mừng đội bóng đá của lớp",
+    "content": "Chúc mừng đội bóng đá của lớp đã giành chiến thắng nhé",
+    "date": "10/10/2024",
+    "likes": 45,
+    "likesData": [
+      "Phụ huynh An An",
+      "Phụ huynh Đức An",
+      "Phụ huynh Hoàng Anh",
+      "Phụ huynh Quỳnh Anh",
+      "Phụ huynh Xuân Duy",
+      "Phụ huynh Hữu Duy",
+      "Phụ huynh Quý Duy",
+      "Phụ huynh Tuyền Duyên",
+      "Phụ huynh Gia Đạt",
+      "Phụ huynh Khánh Đoan"
+    ],
+    "comments": 0
   },
   {
     "id": 2,
-    "title": "Một số lưu ý về học tập",
-    "content": "Để các em có kết quả học tập tốt hơn, cô mong quý phụ huynh giúp các em: Đọc sách mỗi ngày ít nhất 30 phút, hoàn thành bài tập đúng hạn, và tham gia đầy đủ các hoạt động ngoại khóa.",
-    "date": "10/01/2025"
+    "author": "Phụ huynh",
+    "title": "Đề xuất tổ chức ăn mừng chiến thắng",
+    "content": "Cô ơi! Tổ chức cho lớp ăn mừng chiến thắng vô địch giải bóng đá nhé. Phụ huynh lớp mình có đồng ý không ạ",
+    "date": "11/10/2024",
+    "likes": 33,
+    "likesData": [
+      "Phụ huynh An An",
+      "Phụ huynh Đức An",
+      "Phụ huynh Hoàng Anh",
+      "Phụ huynh Quỳnh Anh",
+      "Phụ huynh Xuân Duy"
+    ],
+    "comments": 15,
+    "commentsData": [
+      {
+        "id": 1,
+        "author": "Phụ huynh Hữu Duy",
+        "text": "Đồng ý ạ",
+        "time": "14:00 11/10/2024"
+      },
+      {
+        "id": 2,
+        "author": "Phụ huynh Quý Duy",
+        "text": "Ủng hộ nhé",
+        "time": "14:15 11/10/2024"
+      },
+      {
+        "id": 3,
+        "author": "Phụ huynh Tuyền Duyên",
+        "text": "Đồng ý ạ",
+        "time": "14:30 11/10/2024"
+      },
+      {
+        "id": 4,
+        "author": "Phụ huynh Gia Đạt",
+        "text": "Tôi đồng ý",
+        "time": "15:00 11/10/2024"
+      },
+      {
+        "id": 5,
+        "author": "Phụ huynh Khánh Đoan",
+        "text": "Ủng hộ",
+        "time": "15:15 11/10/2024"
+      },
+      {
+        "id": 6,
+        "author": "Phụ huynh Quốc Hảo",
+        "text": "Đồng ý luôn",
+        "time": "15:30 11/10/2024"
+      },
+      {
+        "id": 7,
+        "author": "Phụ huynh Gia Hân",
+        "text": "Tôi ủng hộ",
+        "time": "15:45 11/10/2024"
+      },
+      {
+        "id": 8,
+        "author": "Phụ huynh Phi Hoàng",
+        "text": "OK nha",
+        "time": "16:00 11/10/2024"
+      },
+      {
+        "id": 9,
+        "author": "Phụ huynh Gia Huy",
+        "text": "Đồng ý ạ",
+        "time": "16:15 11/10/2024"
+      },
+      {
+        "id": 10,
+        "author": "Phụ huynh Hoàng Gia Huy",
+        "text": "Ủng hộ nhé",
+        "time": "16:30 11/10/2024"
+      },
+      {
+        "id": 11,
+        "author": "Phụ huynh Gia Hưng",
+        "text": "Đồng ý",
+        "time": "16:45 11/10/2024"
+      },
+      {
+        "id": 12,
+        "author": "Phụ huynh Hoàn Khôi",
+        "text": "OK luôn",
+        "time": "17:00 11/10/2024"
+      },
+      {
+        "id": 13,
+        "author": "Phụ huynh Quốc Kiệt",
+        "text": "Tôi đồng ý",
+        "time": "17:15 11/10/2024"
+      },
+      {
+        "id": 14,
+        "author": "Phụ huynh Tuệ Lâm",
+        "text": "Ủng hộ ạ",
+        "time": "17:30 11/10/2024"
+      },
+      {
+        "id": 15,
+        "author": "Phụ huynh Khánh Ly",
+        "text": "Đồng ý nhé",
+        "time": "17:45 11/10/2024"
+      }
+    ]
   },
   {
     "id": 3,
-    "title": "Kế hoạch tháng 2",
-    "content": "Tháng 2 sắp tới, lớp sẽ tổ chức nhiều hoạt động ý nghĩa: ngày hội đọc sách, cuộc thi STEM, và chuyến tham quan tại vườn quốc gia. Cô rất mong được sự ủng hộ của quý phụ huynh.",
-    "date": "08/01/2025"
+    "author": "Phụ huynh",
+    "title": "Chúc mừng giải văn hóa truyền thống",
+    "content": "Chúc mừng các bạn đạt giải thi văn hóa truyền thống cấp trường nhé",
+    "date": "01/03/2025",
+    "likes": 38,
+    "likesData": [
+      "Phụ huynh An An",
+      "Phụ huynh Đức An",
+      "Phụ huynh Hoàng Anh",
+      "Phụ huynh Quỳnh Anh",
+      "Phụ huynh Xuân Duy",
+      "Phụ huynh Hữu Duy",
+      "Phụ huynh Quý Duy",
+      "Phụ huynh Tuyền Duyên"
+    ],
+    "comments": 12,
+    "commentsData": [
+      {
+        "id": 1,
+        "author": "Phụ huynh Gia Đạt",
+        "text": "Chúc mừng các em nhé!",
+        "time": "09:00 01/03/2025"
+      },
+      {
+        "id": 2,
+        "author": "Phụ huynh Khánh Đoan",
+        "text": "Giỏi quá các con!",
+        "time": "09:15 01/03/2025"
+      },
+      {
+        "id": 3,
+        "author": "Phụ huynh Quốc Hảo",
+        "text": "Chúc mừng lớp mình!",
+        "time": "09:30 01/03/2025"
+      },
+      {
+        "id": 4,
+        "author": "Phụ huynh Gia Hân",
+        "text": "Tự hào về các con!",
+        "time": "09:45 01/03/2025"
+      },
+      {
+        "id": 5,
+        "author": "Phụ huynh Phi Hoàng",
+        "text": "Chúc mừng nhé các em",
+        "time": "10:00 01/03/2025"
+      },
+      {
+        "id": 6,
+        "author": "Phụ huynh Gia Huy",
+        "text": "Giỏi lắm!",
+        "time": "10:15 01/03/2025"
+      },
+      {
+        "id": 7,
+        "author": "Phụ huynh Hoàng Gia Huy",
+        "text": "Chúc mừng lớp 6A1",
+        "time": "10:30 01/03/2025"
+      },
+      {
+        "id": 8,
+        "author": "Phụ huynh Gia Hưng",
+        "text": "Xuất sắc quá!",
+        "time": "10:45 01/03/2025"
+      },
+      {
+        "id": 9,
+        "author": "Phụ huynh Hoàn Khôi",
+        "text": "Tuyệt vời các em!",
+        "time": "11:00 01/03/2025"
+      },
+      {
+        "id": 10,
+        "author": "Phụ huynh Quốc Kiệt",
+        "text": "Chúc mừng!",
+        "time": "11:15 01/03/2025"
+      },
+      {
+        "id": 11,
+        "author": "Phụ huynh Tuệ Lâm",
+        "text": "Giỏi lắm các con ạ!",
+        "time": "11:30 01/03/2025"
+      },
+      {
+        "id": 12,
+        "author": "Phụ huynh Khánh Ly",
+        "text": "Chúc mừng lớp mình nhé!",
+        "time": "11:45 01/03/2025"
+      }
+    ]
   },
   {
     "id": 4,
-    "title": "Website \"Lớp học hạnh phúc\"",
-    "content": "Cô rất vui khi ra mắt website lớp học này. Đây là nơi để các em được thể hiện, chia sẻ và phát triển. Cô mong quý phụ huynh thường xuyên theo dõi và động viên các em!",
-    "date": "05/01/2025"
+    "author": "GVCN",
+    "title": "Thông báo chuẩn bị kiểm tra giữa học kì I",
+    "content": "Kính gửi Quý Phụ huynh lớp 6A1,\n\nHiện nay các em đang bước vào giai đoạn ôn tập chuẩn bị cho kiểm tra giữa học kì I. Đây là mốc quan trọng giúp các con hệ thống lại kiến thức đã học từ đầu năm và rèn luyện kĩ năng làm bài.\n\nGiáo viên bộ môn đã hướng dẫn nội dung trọng tâm và nhắc các em chuẩn bị đầy đủ bài vở. Tuy nhiên, để việc ôn tập đạt hiệu quả tốt hơn, rất mong Quý Phụ huynh quan tâm, nhắc nhở và tạo điều kiện cho các con:\n• Sắp xếp thời gian ôn tập hợp lí, tránh học dồn vào sát ngày kiểm tra.\n• Hoàn thành đầy đủ bài tập và xem lại các lỗi sai trong vở.\n• Hạn chế sử dụng điện thoại, thiết bị điện tử khi đang học bài.\n• Nghỉ ngơi đúng giờ, đảm bảo sức khỏe trước ngày kiểm tra.\n\nRất mong sự phối hợp của Quý Phụ huynh để các con có tâm thế tự tin, bình tĩnh và đạt kết quả tốt nhất.\n\nXin chân thành cảm ơn và kính chúc Quý Phụ huynh nhiều sức khỏe.",
+    "date": "22/10/2024",
+    "likes": 33,
+    "likesData": [
+      "Phụ huynh An An",
+      "Phụ huynh Đức An",
+      "Phụ huynh Hoàng Anh",
+      "Phụ huynh Quỳnh Anh",
+      "Phụ huynh Xuân Duy"
+    ],
+    "comments": 5,
+    "commentsData": [
+      {
+        "id": 1,
+        "author": "Phụ huynh Hữu Duy",
+        "text": "Cảm ơn cô giáo nhé",
+        "time": "14:00 22/10/2024"
+      },
+      {
+        "id": 2,
+        "author": "Phụ huynh Quý Duy",
+        "text": "Cảm ơn cô",
+        "time": "14:30 22/10/2024"
+      },
+      {
+        "id": 3,
+        "author": "Phụ huynh Tuyền Duyên",
+        "text": "Xin chân thành cảm ơn cô",
+        "time": "15:00 22/10/2024"
+      },
+      {
+        "id": 4,
+        "author": "Phụ huynh Gia Đạt",
+        "text": "Cảm ơn cô giáo nhiều",
+        "time": "15:30 22/10/2024"
+      },
+      {
+        "id": 5,
+        "author": "Phụ huynh Khánh Đoan",
+        "text": "Cảm ơn GVCN",
+        "time": "16:00 22/10/2024"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "author": "GVCN",
+    "title": "Thông báo chuẩn bị kiểm tra cuối học kì I",
+    "content": "Kính gửi Quý Phụ huynh,\n\nCác con đang bước vào giai đoạn ôn tập kiểm tra cuối học kì I. Mong phụ huynh quan tâm nhắc các con ôn bài đầy đủ, hạn chế điện thoại và ngủ nghỉ đúng giờ để đảm bảo sức khỏe. Rất mong sự phối hợp của gia đình để các con tự tin đạt kết quả tốt nhất ạ. 🌷",
+    "date": "20/12/2024",
+    "likes": 33,
+    "likesData": [
+      "Phụ huynh An An",
+      "Phụ huynh Đức An",
+      "Phụ huynh Hoàng Anh",
+      "Phụ huynh Quỳnh Anh",
+      "Phụ huynh Xuân Duy"
+    ],
+    "comments": 4,
+    "commentsData": [
+      {
+        "id": 1,
+        "author": "Phụ huynh Quốc Hảo",
+        "text": "Cảm ơn cô ạ",
+        "time": "09:00 20/12/2024"
+      },
+      {
+        "id": 2,
+        "author": "Phụ huynh Gia Hân",
+        "text": "Phụ huynh sẽ nhắc nhở",
+        "time": "09:30 20/12/2024"
+      },
+      {
+        "id": 3,
+        "author": "Phụ huynh Phi Hoàng",
+        "text": "Phụ huynh lớp cố gắng nha",
+        "time": "10:00 20/12/2024"
+      },
+      {
+        "id": 4,
+        "author": "Phụ huynh Gia Huy",
+        "text": "Chúc các em kiểm tra tốt",
+        "time": "10:30 20/12/2024"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "author": "Phụ huynh",
+    "title": "Kế hoạch liên hoan cuối năm",
+    "content": "Lớp mình lên kế hoạch liên hoan cuối năm nhé",
+    "date": "15/12/2024",
+    "likes": 33,
+    "likesData": [
+      "Phụ huynh An An",
+      "Phụ huynh Đức An",
+      "Phụ huynh Hoàng Anh",
+      "Phụ huynh Quỳnh Anh",
+      "Phụ huynh Xuân Duy"
+    ],
+    "comments": 5,
+    "commentsData": [
+      {
+        "id": 1,
+        "author": "Phụ huynh Hoàng Gia Huy",
+        "text": "Liên hoan tại lớp hay ở quán vậy lớp mình?",
+        "time": "14:00 15/12/2024"
+      },
+      {
+        "id": 2,
+        "author": "Phụ huynh Gia Hưng",
+        "text": "Liên hoan ở quán cho tiện đi lớp",
+        "time": "14:30 15/12/2024"
+      },
+      {
+        "id": 3,
+        "author": "Phụ huynh Hoàn Khôi",
+        "text": "Ban đại diện lên thực đơn nhé",
+        "time": "15:00 15/12/2024"
+      },
+      {
+        "id": 4,
+        "author": "Phụ huynh Quốc Kiệt",
+        "text": "Lớp nhiều thành tích nên liên hoan hoành tráng nhé lớp",
+        "time": "15:30 15/12/2024"
+      },
+      {
+        "id": 5,
+        "author": "Phụ huynh Tuệ Lâm",
+        "text": "Kinh phí từ quỹ lớp còn dư, mình hô hào ủng hộ thêm nhé phụ huynh",
+        "time": "16:00 15/12/2024"
+      }
+    ]
   }
 ]

@@ -1,13 +1,13 @@
 {
-  "weekly": [
+  "monthly": [
     {
-      "week": "Tuần 1 (22-26/01/2025)",
+      "month": "Tháng 5/2025",
       "topStudents": [
         {
           "id": 1,
           "name": "Nguyễn An An",
           "number": "01",
-          "points": 95,
+          "points": 96,
           "achievement": "Xuất sắc trong học tập và giúp đỡ bạn bè",
           "avatar": "👧"
         },
@@ -15,7 +15,7 @@
           "id": 12,
           "name": "Nguyễn Dư Gia Hân",
           "number": "12",
-          "points": 92,
+          "points": 94,
           "achievement": "Tích cực tham gia hoạt động lớp",
           "avatar": "👧"
         },
@@ -23,20 +23,20 @@
           "id": 18,
           "name": "Hồ Quốc Kiệt",
           "number": "18",
-          "points": 90,
+          "points": 92,
           "achievement": "Luôn hoàn thành bài tập đúng hạn",
           "avatar": "👦"
         }
       ]
     },
     {
-      "week": "Tuần 2 (13-17/01/2025)",
+      "month": "Tháng 4/2025",
       "topStudents": [
         {
           "id": 3,
           "name": "Hồ Hoàng Anh",
           "number": "03",
-          "points": 94,
+          "points": 95,
           "achievement": "Tiến bộ vượt bậc trong học tập",
           "avatar": "👦"
         },
@@ -44,48 +44,104 @@
           "id": 6,
           "name": "Trần Hữu Duy",
           "number": "06",
-          "points": 91,
+          "points": 93,
           "achievement": "Giúp đỡ bạn trong giờ học nhóm",
           "avatar": "👦"
         },
         {
-          "id": 9,
-          "name": "Lê Nguyễn Gia Đạt",
-          "number": "09",
-          "points": 89,
+          "id": 22,
+          "name": "Võ Trần Hoàng Mỹ",
+          "number": "22",
+          "points": 91,
           "achievement": "Tích cực trong hoạt động ngoại khóa",
-          "avatar": "👦"
+          "avatar": "👧"
         }
       ]
-    }
-  ],
-  "monthly": [
+    },
+    {
+      "month": "Tháng 3/2025",
+      "topStudents": [
+        {
+          "id": 5,
+          "name": "Phạm Huỳnh Xuân Duy",
+          "number": "05",
+          "points": 94,
+          "achievement": "Học sinh xuất sắc tháng 3",
+          "avatar": "👦"
+        },
+        {
+          "id": 17,
+          "name": "Nguyễn Hoàn Khôi",
+          "number": "17",
+          "points": 92,
+          "achievement": "Hoàn thành tốt mọi bài tập",
+          "avatar": "👦"
+        },
+        {
+          "id": 28,
+          "name": "Nguyễn Hằng Ni",
+          "number": "28",
+          "points": 90,
+          "achievement": "Tích cực tham gia hoạt động văn hóa",
+          "avatar": "👧"
+        }
+      ]
+    },
+    {
+      "month": "Tháng 2/2025",
+      "topStudents": [
+        {
+          "id": 7,
+          "name": "Trương Quý Duy",
+          "number": "07",
+          "points": 95,
+          "achievement": "Luôn đạt điểm cao trong các bài kiểm tra",
+          "avatar": "👦"
+        },
+        {
+          "id": 11,
+          "name": "Trần Quốc Hảo",
+          "number": "11",
+          "points": 93,
+          "achievement": "Giúp đỡ bạn bè nhiệt tình",
+          "avatar": "👦"
+        },
+        {
+          "id": 24,
+          "name": "Phan Thị Mỹ Ngoan",
+          "number": "24",
+          "points": 91,
+          "achievement": "Tiến bộ vượt bậc",
+          "avatar": "👧"
+        }
+      ]
+    },
     {
       "month": "Tháng 1/2025",
       "topStudents": [
         {
-          "id": 1,
-          "name": "Nguyễn An An",
-          "number": "01",
+          "id": 9,
+          "name": "Lê Nguyễn Gia Đạt",
+          "number": "09",
           "points": 96,
           "achievement": "Học sinh xuất sắc tháng 1",
-          "avatar": "👧"
-        },
-        {
-          "id": 12,
-          "name": "Nguyễn Dư Gia Hân",
-          "number": "12",
-          "points": 93,
-          "achievement": "Tiến bộ vượt bậc trong học tập",
-          "avatar": "👧"
-        },
-        {
-          "id": 18,
-          "name": "Hồ Quốc Kiệt",
-          "number": "18",
-          "points": 91,
-          "achievement": "Tích cực tham gia hoạt động lớp",
           "avatar": "👦"
+        },
+        {
+          "id": 13,
+          "name": "Trần Phi Hoàng",
+          "number": "13",
+          "points": 94,
+          "achievement": "Tích cực trong hoạt động lớp",
+          "avatar": "👦"
+        },
+        {
+          "id": 20,
+          "name": "Lê La Khánh Ly",
+          "number": "20",
+          "points": 92,
+          "achievement": "Luôn hoàn thành tốt nhiệm vụ",
+          "avatar": "👧"
         }
       ]
     },
@@ -93,27 +149,85 @@
       "month": "Tháng 12/2024",
       "topStudents": [
         {
+          "id": 2,
+          "name": "Nguyễn Đức An",
+          "number": "02",
+          "points": 95,
+          "achievement": "Xuất sắc trong học tập",
+          "avatar": "👦"
+        },
+        {
+          "id": 16,
+          "name": "Trần Nguyễn Gia Hưng",
+          "number": "16",
+          "points": 93,
+          "achievement": "Tích cực tham gia hoạt động ngoại khóa",
+          "avatar": "👦"
+        },
+        {
+          "id": 26,
+          "name": "Nguyễn Phan Khôi Nguyên",
+          "number": "26",
+          "points": 91,
+          "achievement": "Giúp đỡ bạn bè trong học tập",
+          "avatar": "👦"
+        }
+      ]
+    },
+    {
+      "month": "Tháng 11/2024",
+      "topStudents": [
+        {
+          "id": 1,
+          "name": "Nguyễn An An",
+          "number": "01",
+          "points": 94,
+          "achievement": "Học sinh xuất sắc tháng 11",
+          "avatar": "👧"
+        },
+        {
+          "id": 12,
+          "name": "Nguyễn Dư Gia Hân",
+          "number": "12",
+          "points": 92,
+          "achievement": "Tiến bộ vượt bậc trong học tập",
+          "avatar": "👧"
+        },
+        {
+          "id": 18,
+          "name": "Hồ Quốc Kiệt",
+          "number": "18",
+          "points": 90,
+          "achievement": "Tích cực trong hoạt động lớp",
+          "avatar": "👦"
+        }
+      ]
+    },
+    {
+      "month": "Tháng 10/2024",
+      "topStudents": [
+        {
           "id": 3,
           "name": "Hồ Hoàng Anh",
           "number": "03",
-          "points": 94,
+          "points": 95,
           "achievement": "Luôn hoàn thành bài tập đúng hạn",
           "avatar": "👦"
         },
         {
-          "id": 10,
-          "name": "Lê Huỳnh Khánh Đoan",
-          "number": "10",
-          "points": 92,
+          "id": 6,
+          "name": "Trần Hữu Duy",
+          "number": "06",
+          "points": 93,
           "achievement": "Giúp đỡ bạn bè trong học tập",
-          "avatar": "👧"
+          "avatar": "👦"
         },
         {
-          "id": 20,
-          "name": "Lê La Khánh Ly",
-          "number": "20",
-          "points": 90,
-          "achievement": "Tích cực trong hoạt động ngoại khóa",
+          "id": 22,
+          "name": "Võ Trần Hoàng Mỹ",
+          "number": "22",
+          "points": 91,
+          "achievement": "Tích cực tham gia hoạt động văn hóa",
           "avatar": "👧"
         }
       ]

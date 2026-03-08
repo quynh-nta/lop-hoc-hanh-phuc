@@ -27,16 +27,14 @@
               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               <option value="">Chọn môn học</option>
-              <option value="Toán học">Toán học</option>
-              <option value="Tiếng Việt">Tiếng Việt</option>
+              <option value="Toán">Toán</option>
+              <option value="Ngữ văn">Ngữ văn</option>
               <option value="Tiếng Anh">Tiếng Anh</option>
-              <option value="Khoa học">Khoa học</option>
-              <option value="Lịch sử">Lịch sử</option>
-              <option value="Địa lý">Địa lý</option>
-              <option value="Âm nhạc">Âm nhạc</option>
-              <option value="Mỹ thuật">Mỹ thuật</option>
-              <option value="Thể dục">Thể dục</option>
-              <option value="Khác">Khác</option>
+              <option value="Lịch sử và địa lý">Lịch sử và địa lý</option>
+              <option value="Khoa học tự nhiên">Khoa học tự nhiên</option>
+              <option value="Tin học">Tin học</option>
+              <option value="Công nghệ">Công nghệ</option>
+              <option value="Công dân">Công dân</option>
             </select>
           </div>
 

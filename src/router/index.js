@@ -17,6 +17,7 @@ import VinhDanhPage from '../views/VinhDanhPage.vue'
 import SettingsPage from '../views/SettingsPage.vue'
 import ResetPasswordPage from '../views/ResetPasswordPage.vue'
 import StudyCornerPage from '../views/StudyCornerPage.vue'
+import AdminManagementPage from '../views/AdminManagementPage.vue'
 
 const routes = [
   {
@@ -95,6 +96,11 @@ const routes = [
     path: '/goc-hoc-tap',
     name: 'StudyCorner',
     component: StudyCornerPage
+  },
+  {
+    path: '/quan-tri-lop',
+    name: 'AdminManagement',
+    component: AdminManagementPage
   },
   {
     path: '/quan-tri',

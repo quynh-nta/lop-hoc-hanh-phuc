@@ -34,6 +34,7 @@
           <li><router-link to="/truyen-thong" class="nav-link">Truyền thông</router-link></li>
           <li><router-link to="/danh-sach" class="nav-link">Danh sách</router-link></li>
           <li><router-link to="/vinh-danh" class="nav-link">🏆Vinh danh</router-link></li>
+          <li><router-link to="/quan-tri-lop" class="nav-link">Quản trị</router-link></li>
         </ul>
 
         <div>
@@ -95,6 +96,7 @@
         <li><router-link to="/danh-sach" @click="showMenu = false" class="mobile-nav-link">👥 Danh sách
             lớp</router-link></li>
         <li><router-link to="/vinh-danh" @click="showMenu = false" class="mobile-nav-link">🏆Vinh danh</router-link></li>
+        <li><router-link to="/quan-tri-lop" @click="showMenu = false" class="mobile-nav-link">Quản trị lớp</router-link></li>
             
           <!-- Mobile User Menu -->
           <li v-if="authStore.isAuthenticated" class="pt-4 border-t border-gray-200 mt-4">
