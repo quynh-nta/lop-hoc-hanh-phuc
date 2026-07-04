@@ -6,38 +6,38 @@
     "title": "Giải thích tại sao một số động vật có xương sống thuộc lớp lưỡng cư và lớp chim là bạn của nhà nông?",
     "content": "Giải thích tại sao một số động vật có xương sống thuộc lớp lưỡng cư và lớp chim là bạn của nhà nông? Cho ví dụ minh họa? Giúp mình câu này với các bạn",
     "image": null,
-    "timestamp": "2025-02-25T14:30:00",
+    "timestamp": "2026-02-25T14:30:00",
     "likes": 15,
     "comments": [
       {
         "id": 1,
         "userName": "Hồ Quốc Kiệt",
         "content": "Theo mình nghĩ chúng giúp tiêu diệt sâu bọ, côn trùng và động vật gặm nhấm (chuột) phá hoại cây trồng",
-        "timestamp": "2025-02-25T15:00:00"
+        "timestamp": "2026-02-25T15:00:00"
       },
       {
         "id": 2,
         "userName": "Nguyễn Dư Gia Hân",
         "content": "Mình cũng nghĩ như bạn Kiệt bổ sung thêm chúng góp phần bảo vệ mùa màng mà không cần dùng thuốc hóa học.",
-        "timestamp": "2025-02-25T15:15:00"
+        "timestamp": "2026-02-25T15:15:00"
       },
       {
         "id": 3,
         "userName": "Trần Quốc Hảo",
         "content": "Ví dụ Lớp Lưỡng cư: Ếch, nhái: Ăn các loại côn trùng, sâu bọ, rầy phá hoại lúa và hoa màu.",
-        "timestamp": "2025-02-25T15:30:00"
+        "timestamp": "2026-02-25T15:30:00"
       },
       {
         "id": 4,
         "userName": "Trần Hữu Duy",
         "content": "Lớp Chim: Chim sâu, chim sẻ: Ăn các loại sâu non, rầy, châu chấu",
-        "timestamp": "2025-02-25T15:45:00"
+        "timestamp": "2026-02-25T15:45:00"
       },
       {
         "id": 5,
         "userName": "Trương Quý Duy",
         "content": "Chim cú mèo: Là kẻ thù tự nhiên của chuột, giúp giảm số lượng chuột.",
-        "timestamp": "2025-02-25T16:00:00"
+        "timestamp": "2026-02-25T16:00:00"
       }
     ],
     "solved": true
@@ -49,20 +49,20 @@
     "title": "Bài toán tìm số tự nhiên n",
     "content": "Bài toán này mình chưa biết cách giải quyết như thế nào? Các bạn giúp mình với. Tìm số tự nhiên n để 2n+1<5",
     "image": null,
-    "timestamp": "2025-02-24T10:20:00",
+    "timestamp": "2026-02-24T10:20:00",
     "likes": 12,
     "comments": [
       {
         "id": 1,
         "userName": "Nguyễn An An",
         "content": "Để 2n+1<5 thì 2n+1∈{1;3;5}. Lập bảng:\n2n+1 | 1 | 3 | 5\nn     | 0 | 1 | 2",
-        "timestamp": "2025-02-24T11:00:00"
+        "timestamp": "2026-02-24T11:00:00"
       },
       {
         "id": 2,
         "userName": "Nguyễn Hằng Ni",
         "content": "Để 2n+1<5 thì 2n+1∈{1;3;5}. Lập bảng:\n2n+1 | 1 | 3 | 5\nn     | 0 | 1 | 2",
-        "timestamp": "2025-02-24T11:15:00"
+        "timestamp": "2026-02-24T11:15:00"
       }
     ],
     "solved": true
@@ -72,9 +72,9 @@
     "studentName": "Ngô Huyền Trang",
     "subject": "Toán",
     "title": "Bài toán về học sinh lớp 6A",
-    "content": "Kết quả Học kỳ I năm học 2024 – 2025 của 45 học sinh lớp 6A ở một trường THCS được xếp như sau: giỏi, khá, trung bình (không có học sinh yếu kém). Trong đó số học sinh giỏi chiếm 4/9 số học sinh cả lớp. Số học sinh trung bình bằng 60% số học sinh giỏi.\na) Tính số học sinh giỏi và số học sinh khá.\nb) Biết 20% số học sinh giỏi khối 6 của trường THCS này bằng 2/3 số học sinh lớp 6A. Tính số học sinh khối 6 của trường THCS.\nBài này mình giải quyết như thế nào các bạn",
+    "content": "Kết quả Học kỳ I năm học 2026 – 2026 của 45 học sinh lớp 6A ở một trường THCS được xếp như sau: giỏi, khá, trung bình (không có học sinh yếu kém). Trong đó số học sinh giỏi chiếm 4/9 số học sinh cả lớp. Số học sinh trung bình bằng 60% số học sinh giỏi.\na) Tính số học sinh giỏi và số học sinh khá.\nb) Biết 20% số học sinh giỏi khối 6 của trường THCS này bằng 2/3 số học sinh lớp 6A. Tính số học sinh khối 6 của trường THCS.\nBài này mình giải quyết như thế nào các bạn",
     "image": null,
-    "timestamp": "2025-02-23T09:00:00",
+    "timestamp": "2026-02-23T09:00:00",
     "likes": 18,
     "comments": [],
     "solved": false
@@ -86,26 +86,26 @@
     "title": "Hỏi về phương tiện trong tiếng Anh",
     "content": "Trong tiếng Anh hỏi phương tiện bắt đầu bằng từ để hỏi gì các bạn ơi",
     "image": null,
-    "timestamp": "2025-02-22T14:30:00",
+    "timestamp": "2026-02-22T14:30:00",
     "likes": 8,
     "comments": [
       {
         "id": 1,
         "userName": "Trần Quốc Hảo",
         "content": "How nhé",
-        "timestamp": "2025-02-22T14:45:00"
+        "timestamp": "2026-02-22T14:45:00"
       },
       {
         "id": 2,
         "userName": "Nguyễn Phan Khôi Nguyên",
         "content": "How nhen",
-        "timestamp": "2025-02-22T15:00:00"
+        "timestamp": "2026-02-22T15:00:00"
       },
       {
         "id": 3,
         "userName": "Nguyễn Thị Thu Thảo",
         "content": "How",
-        "timestamp": "2025-02-22T15:15:00"
+        "timestamp": "2026-02-22T15:15:00"
       }
     ],
     "solved": true
@@ -117,26 +117,26 @@
     "title": "Sắp xếp câu tiếng Anh",
     "content": "He/ usually/ play/ football/ his friends/ Saturdays. Câu này mình viết lại là 'He usually play football his friends on Saturdays' đúng không các bạn",
     "image": null,
-    "timestamp": "2025-02-21T10:00:00",
+    "timestamp": "2026-02-21T10:00:00",
     "likes": 10,
     "comments": [
       {
         "id": 1,
         "userName": "Trần Nguyễn Gia Hưng",
         "content": "play thêm 's' nhen",
-        "timestamp": "2025-02-21T10:30:00"
+        "timestamp": "2026-02-21T10:30:00"
       },
       {
         "id": 2,
         "userName": "Nguyễn Đức An",
         "content": "play có 's' nhé",
-        "timestamp": "2025-02-21T10:45:00"
+        "timestamp": "2026-02-21T10:45:00"
       },
       {
         "id": 3,
         "userName": "Phạm Huỳnh Xuân Duy",
         "content": "with his friends nhen",
-        "timestamp": "2025-02-21T11:00:00"
+        "timestamp": "2026-02-21T11:00:00"
       }
     ],
     "solved": true
@@ -148,20 +148,20 @@
     "title": "Biện pháp phòng tránh bệnh giun sán",
     "content": "Việt Nam có tỉ lệ trẻ em bị nhiễm giun sán khá cao. Nhiều loài giun sán kí sinh trong cơ thể người sinh sôi phát triển, gây bệnh khiến cơ thể gầy yếu, thiếu máu, … Em hãy đưa ra biện pháp phòng tránh các bệnh giun sán kí sinh ở người. Gợi ý giúp mình một số biện pháp với các bạn",
     "image": null,
-    "timestamp": "2025-02-20T13:00:00",
+    "timestamp": "2026-02-20T13:00:00",
     "likes": 14,
     "comments": [
       {
         "id": 1,
         "userName": "Lê Huỳnh Khánh Đoan",
         "content": "Ăn chín uống sôi",
-        "timestamp": "2025-02-20T13:30:00"
+        "timestamp": "2026-02-20T13:30:00"
       },
       {
         "id": 2,
         "userName": "Trương Quý Duy",
         "content": "Rửa tay bằng xà phòng trước khi ăn và sau khi đi vệ sinh",
-        "timestamp": "2025-02-20T14:00:00"
+        "timestamp": "2026-02-20T14:00:00"
       }
     ],
     "solved": true
@@ -173,14 +173,14 @@
     "title": "Cách dùng thì hiện tại đơn và hiện tại tiếp diễn",
     "content": "Mình hay bị nhầm lẫn giữa thì hiện tại đơn (Simple Present) và thì hiện tại tiếp diễn (Present Continuous). Ví dụ: 'I play football' và 'I am playing football'. Khi nào thì dùng cái nào vậy các bạn? Cô giáo giảng rồi nhưng mình vẫn chưa hiểu rõ.",
     "image": null,
-    "timestamp": "2025-02-08T09:00:00",
+    "timestamp": "2026-02-08T09:00:00",
     "likes": 15,
     "comments": [
       {
         "id": 1,
         "userName": "Trương Yến Nhi",
         "content": "Hiện tại đơn dùng cho thói quen, sự thật: 'I play football every weekend' (Tôi chơi bóng mỗi cuối tuần - thói quen). Hiện tại tiếp diễn dùng cho hành động đang xảy ra ngay lúc này: 'I am playing football now' (Tôi đang chơi bóng bây giờ). Nhìn có từ 'now, at the moment' thì dùng tiếp diễn nha!",
-        "timestamp": "2025-02-08T09:30:00"
+        "timestamp": "2026-02-08T09:30:00"
       }
     ],
     "solved": false

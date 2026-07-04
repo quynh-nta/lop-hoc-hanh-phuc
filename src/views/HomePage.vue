@@ -216,7 +216,7 @@ const latestActivities = [
     description: 'Chuyến đi thú vị đến bảo tàng lịch sử, các em học hỏi được nhiều điều bổ ích.',
     image: '/Activities/bao_tang_quang_trung_du_lich_thu_duc_6.png',
     category: 'Trải nghiệm',
-    date: '15/01/2025'
+    date: '15/01/2026'
   },
   {
     id: 2,
@@ -224,7 +224,7 @@ const latestActivities = [
     description: 'Các em thể hiện tài năng ca hát, múa hát và kể chuyện.',
     image: '/Activities/vannghe.png',
     category: 'Văn nghệ',
-    date: '10/01/2025',
+    date: '10/01/2026',
   },
   {
     id: 3,
@@ -232,7 +232,7 @@ const latestActivities = [
     description: 'Đội bóng lớp 6A1 vô địch giải bóng đá mini cấp trường.',
     image: '/Activities/soccer.jpg',
     category: 'Thể thao',
-    date: '08/01/2025',
+    date: '08/01/2026',
   }
 ]
 

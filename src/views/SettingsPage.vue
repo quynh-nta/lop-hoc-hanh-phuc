@@ -383,10 +383,10 @@ const activeTab = ref('schoolYear')
 // School Year Management
 const currentSchoolYear = ref({
   id: 1,
-  name: '2024-2025',
+  name: '2025-2026',
   className: '6A1',
   startDate: '01/09/2024',
-  endDate: '31/05/2025',
+  endDate: '31/05/2026',
   isActive: true
 })
 

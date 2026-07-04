@@ -185,8 +185,8 @@ const categories = [
 
 const months = [
   'Tháng 9/2024', 'Tháng 10/2024', 'Tháng 11/2024', 'Tháng 12/2024',
-  'Tháng 1/2025', 'Tháng 2/2025', 'Tháng 3/2025', 'Tháng 4/2025',
-  'Tháng 5/2025'
+  'Tháng 1/2026', 'Tháng 2/2026', 'Tháng 3/2026', 'Tháng 4/2026',
+  'Tháng 5/2026'
 ]
 
 // Load activities from JSON and update image URLs

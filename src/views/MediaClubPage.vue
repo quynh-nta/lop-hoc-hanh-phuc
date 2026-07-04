@@ -287,7 +287,7 @@ const products = ref([
     type: 'Bài viết',
     typeId: 'article',
     author: 'Xuân Duy- Yến Nhi- Câu lạc bộ truyền thông',
-    date: '15/02/2025',
+    date: '15/02/2026',
     featured: true,
     fullContent: `Chiều nay, sân trường chúng em trở nên nhộn nhịp hơn khi Ngày hội "Vì bạn" diễn ra với nhiều gian hàng ẩm thực hấp dẫn do các lớp chuẩn bị. Từ đầu giờ chiều, lớp chúng em đã cùng nhau sắp xếp bàn ghế, bày các món ăn và trang trí gian hàng thật đẹp để chào đón thầy cô và các bạn đến ủng hộ.
 
@@ -308,7 +308,7 @@ Buổi chiều của Ngày hội "Vì bạn" không chỉ mang lại niềm vui 
     type: 'Bài viết',
     typeId: 'article',
     author: 'Quỳnh Anh- Câu lạc văn hóa đọc',
-    date: '20/11/2025',
+    date: '20/11/2026',
     featured: true,
     fullContent: `Nhân dịp Ngày Nhà giáo Việt Nam 20/11, chúng em muốn gửi đến thầy cô những lời chúc tốt đẹp và lòng biết ơn chân thành nhất. Thầy cô không chỉ là người dạy cho chúng em kiến thức mà còn là người luôn tận tình chỉ bảo, động viên và đồng hành cùng chúng em trong từng bước trưởng thành.
 
@@ -326,7 +326,7 @@ Nhân ngày 20/11, chúng em kính chúc thầy cô luôn mạnh khỏe, hạnh 
     type: 'Bài viết',
     typeId: 'article',
     author: 'Hằng Ni- Câu lạc Chia sẻ kĩ năng sống',
-    date: '20/11/2025',
+    date: '20/11/2026',
     featured: false,
     fullContent: `Ơn thầy cô
 
@@ -352,7 +352,7 @@ Mai sau đi khắp nẻo đường
     thumbnail: '/MediaClub/ph.jpg',
     typeId: 'photo',
     author: 'Câu lạc bộ Truyền thông',
-    date: '03/11/2025',
+    date: '03/11/2026',
     featured: false,
     fullContent: 'Bộ ảnh ghi lại những khoảnh khắc ấm áp và ý nghĩa trong buổi họp phụ huynh lớp 6A1. Sự gặp gỡ giữa thầy cô và phụ huynh để cùng nhau chia sẻ về quá trình học tập, rèn luyện của các em. Những nụ cười, những ánh mắt tin yêu đều thể hiện sự quan tâm sâu sắc của gia đình và nhà trường dành cho các em.',
     gallery: [

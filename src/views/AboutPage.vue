@@ -54,7 +54,7 @@
               <span class="text-2xl mr-3">📅</span>
               <div>
                 <p class="font-semibold text-gray-800">Năm học:</p>
-                <p class="text-gray-700">2024 - 2025</p>
+                <p class="text-gray-700">2025 – 2026</p>
               </div>
             </div>
             <div class="flex items-start">

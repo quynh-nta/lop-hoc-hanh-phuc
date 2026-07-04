@@ -38,7 +38,7 @@
               </p>
               <p class="flex items-center">
                 <span class="text-2xl mr-3">📅</span>
-                <span>Năm học 2024-2025</span>
+                <span>Năm học 2025-2026</span>
               </p>
             </div>
           </div>

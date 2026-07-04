@@ -66,7 +66,7 @@
         <div class="grid md:grid-cols-2 gap-8 mb-8">
           <!-- Satisfaction Chart -->
           <div class="bg-white rounded-xl p-8 shadow-lg">
-            <h3 class="text-xl font-bold text-gray-800 mb-6">Mức độ hài lòng tháng 12/2025</h3>
+            <h3 class="text-xl font-bold text-gray-800 mb-6">Mức độ hài lòng tháng 12/2026</h3>
             <div class="space-y-4">
               <div>
                 <div class="flex justify-between mb-2">
@@ -166,7 +166,7 @@
                   Nhiều phụ huynh đề xuất thêm chức năng tìm kiếm để dễ dàng tìm lại các bài viết, hoạt động cũ.
                 </p>
                 <div class="inline-block px-4 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
-                  ✅ Đã cải tiến - Sẽ ra mắt tháng 2/2025
+                  ✅ Đã cải tiến - Sẽ ra mắt tháng 2/2026
                 </div>
               </div>
             </div>
@@ -181,7 +181,7 @@
                   Một số hình ảnh hiển thị chưa tốt trên điện thoại di động.
                 </p>
                 <div class="inline-block px-4 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
-                  ✅ Đã cải tiến - Cập nhật ngày 15/01/2025
+                  ✅ Đã cải tiến - Cập nhật ngày 15/01/2026
                 </div>
               </div>
             </div>

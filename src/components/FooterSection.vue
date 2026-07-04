@@ -5,7 +5,7 @@
         <!-- Thông tin lớp -->
         <div>
           <h3 class="text-2xl font-bold mb-4">🎓 Lớp Học Hạnh Phúc 6A1</h3>
-          <p class="text-blue-100 mb-2">Năm học 2024-2025</p>
+          <p class="text-blue-100 mb-2">Năm học 2025-2026</p>
           <p class="text-blue-100">Nơi chia sẻ khoảnh khắc đẹp và lan tỏa hạnh phúc</p>
         </div>
 

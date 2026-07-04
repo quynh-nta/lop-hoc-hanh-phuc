@@ -10,7 +10,7 @@
           </div>
           <div>
             <h1 class="text-xl font-bold text-gray-800">Lớp Học Hạnh Phúc 6A1</h1>
-            <p class="text-xs text-gray-500">Năm học 2024-2025</p>
+            <p class="text-xs text-gray-500">Năm học 2025-2026</p>
           </div>
         </router-link>
 
